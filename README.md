@@ -1,6 +1,13 @@
 # FunRun
 
-**FunRun** is ...
+**FunRun** is an application makes running more fun and training more continuable.
+Many people run these days, for their health, for diet,  to train for full marathon. They spend a lot of hours for running. Most of them run with smartphone to use a running application or GPS watch to track the running activiy. Running app is key tool for many runners. However existing running app is not perfect enough.
+1. Runners love to check their running activities and some stastical data from their activies, but existing applicatiosn/services charge a lot for analytics data. One of existing applicaiton charges $10/month. We believe this feature should be default feature. 
+2. Many runners does not have personal running coach or running specialist in their friends, they need variety of advises, such as advise for shoose or running pace, etc.
+3. Most of existing running applciations my or friend's activitis UI is simple table view. It is not funncy enough to check friend's activities like Facebook app. The app provide FUNNCY UI.
+4. Existing apps just draws red line on the map for course. The app provide more information like course colored by running pace per mile.
+5. May of us are interested in what other runners are listing during run, and they need recommendation. The app could provide music recommenation for running.
+Our new running application will solve aboves. We will build next genation running application!!
 
 ## User Stories
 
