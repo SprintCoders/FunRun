@@ -13,35 +13,68 @@ Our new running application will solve aboves. We will build next genation runni
 
 The following **required** functionality is completed:
 
-- [ ] A home time line that list the posts of your friends.
-- [ ] Select on a post to see its details (photo, GIF).
-- [ ] GPS tracking when start a running.
-- [ ] Illustrate the route of the running on the map.
-- [ ] Illustrate statistical data of speed, distance and rest time in professional histograms.
-- [ ] User can share the running trials with comments to his friends' time line.
-- [ ] User can share photos, GIF, videos to friends' time line.
-- [ ] Import iHealth data into statistical analysis.
-- [ ] Find other runners near you by showing tags on map.
-- [ ] Tag a location in your track with your photo.
-- [ ] Rank the user's running performance among his friends.
-- [ ] Share a running result (distance, route, time, photos) to other social apps (Twitter, Facebook, etc.)
-- [ ] Recommend popular running trials, running shoes, music to runners.
-- [ ] Make comments, like, repost a friend's post.
-- [ ] Remind a user if he hasn't run for a long time.
+- [ ] Home Page
+    - [ ] A home time line that list your friends' posts and live statuses if someone is currently running.
+    - [ ] Track what the runner is listenning to when he is running, reflect that on his live status. **[Optional]**
+    - [ ] A home time line that list the current user's activity history.
+    - [ ] Recommend popular running trials, running shoes, music to runners (naturally included in hoem time line).
+    - [ ] Switch between friends' posts list and my own post list.
+    - [ ] Buttons to filter out only posts, only live statuses, or only recommendations.
+    - [ ] Select on a post to see its details (photo, GIF).
+    - [ ] Import friends from user's other social platform account (e.g. Facebook) and automatically send invitation emails to them. **[Optional]**
+    - [ ] Include a preview of the media (photo, GIF, video) in the home time line. **[Optional]**
+    - [ ] Make comments, like, repost a friend's post.
+    - [ ] Interact with a friend's photo post by scrawling on it and automatically repost with that scrawling. **[Optional]**
+    
+- [ ] Cruise Page
+    - [ ] A map with green flashing dots representing other current runnining users, and blue flashing dot representing your location.
+    - [ ] Clicking the green dots brings to that user's profile page.
+    - [ ] The map also has image tags at different locations, meaning that some users shared photos at those locations.
+    - [ ] A subscript number of each image tag represents how many photos have been taken at that location (larger number means more popular).
+    - [ ] Clicking the image tag brings to a collection of those photos.
+    
+- [ ] Running Page
+    - [ ] The running route on map refelcts speed change by using different colors for different speed levels.
+    - [ ] A blue dot on map representing your current location.
+    - [ ] Dash board showing distance, speed, time.
+    - [ ] Voice advice (e.g. reminder to rest) **[Optional]**
+    - [ ] Take photos/video clips, post to friends' time line.
+    - [ ] Live video broadcast streaming during running. **[Optional]**
+    
+- [ ] Statistics Page
+    - [ ] The running route on map refelcts speed change by using different colors for different speed levels.
+    - [ ] Illustrate statistical data of speed, distance and rest time in professional histograms. **[Optional]**
+    - [ ] Share a running result (distance, route, time, photos) to other social apps (Twitter, Facebook, etc.) **[Optional]**
+    - [ ] Comment on the running trials and post to friends' time line.
+    - [ ] Rank the user's running performance among his friends.
+    
+- [ ] Me page
+    - [ ] Health profile (weight, height, fat rate, etc.)
+    - [ ] Import iHealth data. **[Optional]**
+    - [ ] Provide simple training courses for new runners. **[Optional]**
+    - [ ] Make monthly schedule and set goals.
+    - [ ] Remind the user if he hasn't run for a long time.
 
-The following **optional** features are implemented:
 
-- [ ] Include a preview of the media (photo, GIF, video) in the home time line.
-- [ ] The running route on map refelcts speed change by using different colors for different speed levels.
-- [ ] Track what the runner is listenning to during his running process, reflect that on his status.
-- [ ] Import friends from user's account on other social platform (e.g. Facebook) and automatically send invitation messages to them.
-- [ ] User can view what other users tag for a location on the map to find places that interst him.
+The following are **optional** features that may not be implemented if time is limited:
 
-The following **additional** features are implemented:
+- [ ] Home Page
+    - [ ] Track what the runner is listenning to when he is running, reflect that on his live status.
+    - [ ] Import friends from user's other social platform account (e.g. Facebook) and automatically send invitation emails to them.
+    - [ ] Include a preview of the media (photo, GIF, video) in the home time line.
+    - [ ] Interact with a friend's photo post by scrawling on it and automatically repost with that scrawling.
 
-- [ ] Provide simple training courses and advices for new runners.
-- [ ] Interact with a friend's photo by scrawling on it and automatically repost with that scrawling.
-- [ ] Live cast during running.
+- [ ] Running Page
+    - [ ] Voice advice (e.g. reminder to rest)
+    - [ ] Live video broadcast streaming during running.
+   
+- [ ] Statistics Page
+    - [ ] Illustrate statistical data of speed, distance and rest time in professional histograms.
+    - [ ] Share a running result (distance, route, time, photos) to other social apps (Twitter, Facebook, etc.)
+
+- [ ] Me Page
+    - [ ] Import iHealth data.
+    - [ ] Provide simple training courses for new runners.
 
 
 ## Video Walkthrough
