@@ -11,7 +11,7 @@ Our new running application will solve aboves. We will build next genation runni
 
 ## User Stories
 
-The following **required** functionality is completed:
+The following functionality are supposed to be implemented:
 
 - [ ] Home Page
     - [ ] A home time line that list your friends' posts and live statuses if someone is currently running.
