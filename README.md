@@ -81,7 +81,7 @@ The following are **optional** features that may not be implemented if time is l
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/SprintCoders/FunRun/raw/master/funrun.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
