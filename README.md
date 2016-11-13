@@ -104,7 +104,7 @@ Our new running application will solve aboves. We will build next genation runni
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/SprintCoders/FunRun/raw/master/funrun.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/SprintCoders/FunRun/blob/master/public_images/wire_frame/wire-frames.png' title='wire-framing' width='' alt='wire-graming' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
