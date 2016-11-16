@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="83m-gS-LSH">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="83m-gS-LSH">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZMY-fr-TRb">
@@ -53,7 +53,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dhC-sJ-Cta" firstAttribute="top" secondItem="83m-gS-LSH" secondAttribute="bottom" id="4xw-nv-sWg"/>
+                            <constraint firstItem="dhC-sJ-Cta" firstAttribute="top" secondItem="83m-gS-LSH" secondAttribute="bottom" constant="-49" id="4xw-nv-sWg"/>
                             <constraint firstItem="jWM-Th-lQ2" firstAttribute="centerX" secondItem="IWy-00-EiX" secondAttribute="centerX" id="8nE-m5-tg4"/>
                             <constraint firstItem="ZMY-fr-TRb" firstAttribute="top" secondItem="kxO-2X-vEr" secondAttribute="bottom" constant="8" id="939-l2-CUk"/>
                             <constraint firstItem="83m-gS-LSH" firstAttribute="leading" secondItem="IWy-00-EiX" secondAttribute="leading" id="CQw-CE-AjU"/>
@@ -94,7 +94,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pLB-ds-AJO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1865" y="682"/>
+            <point key="canvasLocation" x="1865" y="1296"/>
+        </scene>
+        <!--Goal-->
+        <scene sceneID="eUq-Sd-44g">
+            <objects>
+                <viewController id="mJo-i4-ocB" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XXC-aS-hoW"/>
+                        <viewControllerLayoutGuide type="bottom" id="psZ-vl-6rK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rbE-uI-qZx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Goal" id="oPD-4b-CbA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T2a-yG-imr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="745" y="1296"/>
         </scene>
         <!--Statistics-->
         <scene sceneID="bgz-pa-MbU">
@@ -113,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M9D-aw-caM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1865" y="-826"/>
+            <point key="canvasLocation" x="1865" y="-1221"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="TXh-6S-cB5">
@@ -128,6 +147,7 @@
                         <segue destination="QFo-Qk-ioj" kind="relationship" relationship="viewControllers" id="7hZ-tg-aNL"/>
                         <segue destination="Tjv-Xf-Yna" kind="relationship" relationship="viewControllers" id="u1Z-nb-FeH"/>
                         <segue destination="fwT-bg-K2B" kind="relationship" relationship="viewControllers" id="edM-Yz-gCR"/>
+                        <segue destination="mJo-i4-ocB" kind="relationship" relationship="viewControllers" id="GO9-EQ-ecC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zZ-a6-tG1" userLabel="First Responder" sceneMemberID="firstResponder"/>
