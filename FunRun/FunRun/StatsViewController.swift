@@ -31,8 +31,8 @@ class StatsViewController: UIViewController {
         // profile
         self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2
         self.profileImageView.clipsToBounds = true
-        //self.profileImageView.layer.borderWidth = 1.0
-        //self.profileImageView.layer.borderColor = UIColor.white.cgColor
+        self.profileImageView.layer.borderWidth = 1.0
+        self.profileImageView.layer.borderColor = UIColor.white.cgColor
         self.profileImageView.layer.cornerRadius = 10.0
         
         
