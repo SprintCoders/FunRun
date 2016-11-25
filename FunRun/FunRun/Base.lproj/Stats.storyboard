@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Stats View Controller-->
+        <!--Statistics-->
         <scene sceneID="HAU-A8-Fjf">
             <objects>
                 <viewController storyboardIdentifier="StatsViewController" automaticallyAdjustsScrollViewInsets="NO" id="9GQ-aX-dON" customClass="StatsViewController" customModule="FunRun" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                         <viewControllerLayoutGuide type="bottom" id="cUM-Bl-csb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fbo-OE-6f5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1900"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="1900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLG-dE-H0A">
@@ -656,7 +656,7 @@
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YRD-yZ-jZT" userLabel="Spacer View">
                                                         <rect key="frame" x="0.0" y="1841" width="375" height="59"/>
-                                                        <color key="backgroundColor" red="0.31115019817000378" green="0.74296710077791062" blue="0.9152488112449646" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" red="0.36862745099999999" green="0.63137254899999995" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="0.69001354739999998" blue="0.94909661310000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -709,8 +709,10 @@
                             <constraint firstItem="mLG-dE-H0A" firstAttribute="leading" secondItem="fbo-OE-6f5" secondAttribute="leading" id="gj2-hy-2Di"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" title="Statistics" id="E2z-Ho-q5j"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="1900"/>
+                    <size key="freeformSize" width="375" height="1964"/>
                     <connections>
                         <outlet property="caloriesBarChartView" destination="9ur-gM-ugK" id="NIZ-MU-cIO"/>
                         <outlet property="distanceBarChartView" destination="fpS-hA-rsI" id="nMX-9z-K7I"/>
@@ -720,7 +722,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Vh-Tc-Q46" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-346.39999999999998" y="-397.60119940029989"/>
+            <point key="canvasLocation" x="592.79999999999995" y="-397.60119940029989"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2XB-54-Ahh">
+            <objects>
+                <navigationController storyboardIdentifier="StatsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="ozc-iC-0Pn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oiq-8x-XvR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9GQ-aX-dON" kind="relationship" relationship="rootViewController" id="T8D-tg-w3K"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1kY-bN-ZYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-346.39999999999998" y="-398.05097451274366"/>
         </scene>
     </scenes>
     <resources>

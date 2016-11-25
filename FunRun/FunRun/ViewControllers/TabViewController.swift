@@ -13,13 +13,14 @@ class TabViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let statsStoryBoard: UIStoryboard = UIStoryboard(name: "Stats", bundle: nil)
-        let statsViewController:UIViewController = statsStoryBoard.instantiateViewController(withIdentifier: "StatsViewController") as UIViewController
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Stats", bundle: nil)
+        //let viewController:UIViewController = storyBoard.instantiateViewController(withIdentifier: "StatsViewController") as UIViewController
+        let viewController:UIViewController = storyBoard.instantiateViewController(withIdentifier: "StatsNavigationController") as UIViewController
         //let icon1 = UITabBarItem(title: "Title", image: UIImage(named: "someImage.png"), selectedImage: UIImage(named: "otherImage.png"))
-        statsViewController.tabBarItem.title = "Statistics"
+        viewController.tabBarItem.title = "Statistics"
         
         var controllers = self.viewControllers
-        controllers?.insert(statsViewController, at: 0)
+        controllers?.insert(viewController, at: 0)
         self.viewControllers = controllers
     }
 }
