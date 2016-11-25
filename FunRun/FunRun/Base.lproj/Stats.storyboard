@@ -213,6 +213,10 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fpS-hA-rsI" userLabel="Distance Bar Chart" customClass="BarChartView" customModule="Charts">
                                                                 <rect key="frame" x="8" y="72" width="359" height="270"/>
                                                                 <color key="backgroundColor" red="1" green="0.98949343469999995" blue="0.86478935580000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <gestureRecognizers/>
+                                                                <connections>
+                                                                    <outletCollection property="gestureRecognizers" destination="WWd-yc-jXF" appends="YES" id="esk-Z0-b9V"/>
+                                                                </connections>
                                                             </view>
                                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IfF-zd-0KA">
                                                                 <rect key="frame" x="8" y="36" width="359" height="29"/>
@@ -449,7 +453,7 @@
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WgU-3p-XlY" userLabel="calories">
-                                                                                <rect key="frame" x="0.0" y="122" width="343" height="45.5"/>
+                                                                                <rect key="frame" x="0.0" y="122" width="343" height="45"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories Burned" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFK-eM-HpM">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="130" height="20.5"/>
@@ -490,7 +494,7 @@
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1Q-YH-Ffz" userLabel="Pace">
-                                                                                <rect key="frame" x="0.0" y="183.5" width="343" height="45"/>
+                                                                                <rect key="frame" x="0.0" y="183" width="343" height="45"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average Pace" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uu-C5-Nbm">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="130" height="20.5"/>
@@ -531,7 +535,7 @@
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5E-s3-qEZ" userLabel="Elevation">
-                                                                                <rect key="frame" x="0.0" y="244.5" width="343" height="45"/>
+                                                                                <rect key="frame" x="0.0" y="244" width="343" height="45.5"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elevation Climb" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BaY-sZ-HwN">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="130" height="20.5"/>
@@ -718,11 +722,71 @@
                         <outlet property="distanceBarChartView" destination="fpS-hA-rsI" id="nMX-9z-K7I"/>
                         <outlet property="durationBarChartView" destination="ceo-w3-sbS" id="pkZ-2R-5aP"/>
                         <outlet property="profileImageView" destination="574-2r-4KJ" id="3hA-g4-xuO"/>
+                        <segue destination="Caf-BP-aax" kind="show" identifier="chartSegue" id="jDG-QC-jbo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Vh-Tc-Q46" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="WWd-yc-jXF" userLabel="Distance Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="didTapGesture:" destination="9GQ-aX-dON" id="6fQ-4E-5e9"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="592.79999999999995" y="-397.60119940029989"/>
+            <point key="canvasLocation" x="588" y="-399"/>
+        </scene>
+        <!--Chart View Controller-->
+        <scene sceneID="jcu-TE-5fJ">
+            <objects>
+                <viewController storyboardIdentifier="ChartViewController" id="Caf-BP-aax" customClass="ChartViewController" customModule="FunRun" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uUx-ev-el2"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tao-zV-Uu8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ICp-Aq-RBs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1964"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSd-P5-y6O">
+                                <rect key="frame" x="8" y="80" width="359" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Hdo-ok-if2">
+                                <rect key="frame" x="8" y="117" width="359" height="29"/>
+                                <segments>
+                                    <segment title="Daily"/>
+                                    <segment title="Weekly"/>
+                                    <segment title="Monthly"/>
+                                    <segment title="Yearly"/>
+                                </segments>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FNf-1f-h0I" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="8" y="161" width="359" height="1787"/>
+                                <color key="backgroundColor" red="1" green="0.98949343469999995" blue="0.86478935580000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="RSd-P5-y6O" secondAttribute="trailing" constant="8" id="0sL-cO-dQK"/>
+                            <constraint firstItem="FNf-1f-h0I" firstAttribute="top" secondItem="Hdo-ok-if2" secondAttribute="bottom" constant="16" id="9be-HM-GDN"/>
+                            <constraint firstAttribute="trailing" secondItem="Hdo-ok-if2" secondAttribute="trailing" constant="8" id="Cdb-b6-xON"/>
+                            <constraint firstItem="RSd-P5-y6O" firstAttribute="top" secondItem="uUx-ev-el2" secondAttribute="bottom" constant="16" id="FFf-bR-4ck"/>
+                            <constraint firstItem="RSd-P5-y6O" firstAttribute="leading" secondItem="ICp-Aq-RBs" secondAttribute="leading" constant="8" id="Mmc-R7-F7u"/>
+                            <constraint firstItem="FNf-1f-h0I" firstAttribute="leading" secondItem="ICp-Aq-RBs" secondAttribute="leading" constant="8" id="UKh-rp-4Cl"/>
+                            <constraint firstItem="Hdo-ok-if2" firstAttribute="top" secondItem="RSd-P5-y6O" secondAttribute="bottom" constant="16" id="Wrv-et-LZQ"/>
+                            <constraint firstItem="Hdo-ok-if2" firstAttribute="leading" secondItem="ICp-Aq-RBs" secondAttribute="leading" constant="8" id="bUA-nt-8aN"/>
+                            <constraint firstAttribute="trailing" secondItem="FNf-1f-h0I" secondAttribute="trailing" constant="8" id="v30-ME-c2V"/>
+                            <constraint firstItem="Tao-zV-Uu8" firstAttribute="top" secondItem="FNf-1f-h0I" secondAttribute="bottom" constant="16" id="xyJ-Ze-3YF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="barChartView" destination="FNf-1f-h0I" id="FXE-KW-EKY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U5E-kY-wfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1424.8" y="-399.40029985007499"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2XB-54-Ahh">
@@ -740,7 +804,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1kY-bN-ZYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-346.39999999999998" y="-398.05097451274366"/>
+            <point key="canvasLocation" x="-218" y="-400"/>
         </scene>
     </scenes>
     <resources>

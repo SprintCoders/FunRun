@@ -14,6 +14,7 @@
 		852AE6461DDABFCF00FEAA82 /* FunRunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852AE6451DDABFCF00FEAA82 /* FunRunTests.swift */; };
 		852AE6531DDAC11300FEAA82 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852AE6521DDAC11300FEAA82 /* TabViewController.swift */; };
 		852AE6551DDACCFA00FEAA82 /* StartRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852AE6541DDACCFA00FEAA82 /* StartRunningViewController.swift */; };
+		B80DFD7D1DE820D6004CA633 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80DFD7C1DE820D6004CA633 /* ChartViewController.swift */; };
 		B83064BA1DE27B6300FD3BC0 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B83064B41DE27AA700FD3BC0 /* Charts.framework */; };
 		B83064BB1DE27B6300FD3BC0 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B83064B41DE27AA700FD3BC0 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B85F6A551DE25E3B000F2A3A /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F6A541DE25E3B000F2A3A /* StatsViewController.swift */; };
@@ -84,6 +85,7 @@
 		852AE6471DDABFCF00FEAA82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		852AE6521DDAC11300FEAA82 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabViewController.swift; path = ViewControllers/TabViewController.swift; sourceTree = "<group>"; };
 		852AE6541DDACCFA00FEAA82 /* StartRunningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartRunningViewController.swift; path = ViewControllers/StartRunningViewController.swift; sourceTree = "<group>"; };
+		B80DFD7C1DE820D6004CA633 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		B83064AD1DE27AA700FD3BC0 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../test/Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		B85F6A541DE25E3B000F2A3A /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		B89EC13B1DE22B940076CBEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Stats.storyboard; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				852AE6521DDAC11300FEAA82 /* TabViewController.swift */,
 				852AE6541DDACCFA00FEAA82 /* StartRunningViewController.swift */,
 				B85F6A541DE25E3B000F2A3A /* StatsViewController.swift */,
+				B80DFD7C1DE820D6004CA633 /* ChartViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				852AE6311DDABFCF00FEAA82 /* AppDelegate.swift in Sources */,
 				B85F6A551DE25E3B000F2A3A /* StatsViewController.swift in Sources */,
 				852AE6551DDACCFA00FEAA82 /* StartRunningViewController.swift in Sources */,
+				B80DFD7D1DE820D6004CA633 /* ChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

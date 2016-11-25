@@ -25,6 +25,13 @@ class StatsViewController: UIViewController {
     var months:[String]!
 
     
+    // actions
+    @IBAction func didTapGesture(_ sender: UITapGestureRecognizer) {
+        self.performSegue(withIdentifier: "chartSegue", sender: self.navigationController)
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
