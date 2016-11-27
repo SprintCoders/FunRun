@@ -14,6 +14,8 @@
 		852AE6461DDABFCF00FEAA82 /* FunRunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852AE6451DDABFCF00FEAA82 /* FunRunTests.swift */; };
 		852AE6531DDAC11300FEAA82 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852AE6521DDAC11300FEAA82 /* TabViewController.swift */; };
 		852AE6551DDACCFA00FEAA82 /* StartRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852AE6541DDACCFA00FEAA82 /* StartRunningViewController.swift */; };
+		8544D8B01DEA8BAD0019D011 /* DuringRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544D8AF1DEA8BAD0019D011 /* DuringRunningViewController.swift */; };
+		8544D8B21DEA93F20019D011 /* FinishRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544D8B11DEA93F20019D011 /* FinishRunningViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		852AE6471DDABFCF00FEAA82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		852AE6521DDAC11300FEAA82 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabViewController.swift; path = ViewControllers/TabViewController.swift; sourceTree = "<group>"; };
 		852AE6541DDACCFA00FEAA82 /* StartRunningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartRunningViewController.swift; path = ViewControllers/StartRunningViewController.swift; sourceTree = "<group>"; };
+		8544D8AF1DEA8BAD0019D011 /* DuringRunningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DuringRunningViewController.swift; path = ViewControllers/DuringRunningViewController.swift; sourceTree = "<group>"; };
+		8544D8B11DEA93F20019D011 /* FinishRunningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FinishRunningViewController.swift; path = ViewControllers/FinishRunningViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 			children = (
 				852AE6521DDAC11300FEAA82 /* TabViewController.swift */,
 				852AE6541DDACCFA00FEAA82 /* StartRunningViewController.swift */,
+				8544D8AF1DEA8BAD0019D011 /* DuringRunningViewController.swift */,
+				8544D8B11DEA93F20019D011 /* FinishRunningViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -223,6 +229,8 @@
 				852AE6531DDAC11300FEAA82 /* TabViewController.swift in Sources */,
 				852AE6311DDABFCF00FEAA82 /* AppDelegate.swift in Sources */,
 				852AE6551DDACCFA00FEAA82 /* StartRunningViewController.swift in Sources */,
+				8544D8B21DEA93F20019D011 /* FinishRunningViewController.swift in Sources */,
+				8544D8B01DEA8BAD0019D011 /* DuringRunningViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +442,7 @@
 				852AE64C1DDABFCF00FEAA82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		852AE64D1DDABFCF00FEAA82 /* Build configuration list for PBXNativeTarget "FunRunTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +451,7 @@
 				852AE64F1DDABFCF00FEAA82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
