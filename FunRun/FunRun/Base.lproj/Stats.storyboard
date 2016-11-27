@@ -18,17 +18,17 @@
                         <viewControllerLayoutGuide type="bottom" id="cUM-Bl-csb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fbo-OE-6f5">
-                        <rect key="frame" x="0.0" y="64" width="375" height="1900"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="2150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLG-dE-H0A">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1900"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="2150"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vb4-go-HgD" userLabel="Container View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1900"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="2150"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="oae-Je-2d1">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1900"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="2150"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Z4-32-ewk" userLabel="Profile View">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="156"/>
@@ -94,7 +94,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNQ-na-NV1" userLabel="Distance">
-                                                                <rect key="frame" x="191.5" y="53" width="167.5" height="50.5"/>
+                                                                <rect key="frame" x="191.5" y="53" width="167.5" height="50"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TOTAL DISTANCE:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcl-bO-rk5">
                                                                         <rect key="frame" x="0.0" y="0.0" width="168" height="17"/>
@@ -117,7 +117,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5zD-89-vNA" userLabel="Calories">
-                                                                <rect key="frame" x="16" y="110.5" width="167.5" height="50.5"/>
+                                                                <rect key="frame" x="16" y="111" width="167.5" height="50"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="606,062" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Y8-b9-rzj">
                                                                         <rect key="frame" x="0.0" y="27" width="168" height="23"/>
@@ -140,7 +140,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tDd-15-7Zx" userLabel="Elevation Climb">
-                                                                <rect key="frame" x="191.5" y="110.5" width="167.5" height="50.5"/>
+                                                                <rect key="frame" x="191.5" y="111" width="167.5" height="50"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TOTAL CLIMB:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYB-NK-2oG">
                                                                         <rect key="frame" x="0.0" y="0.0" width="168" height="17"/>
@@ -201,8 +201,57 @@
                                                             <constraint firstAttribute="height" constant="1" id="bvg-rD-vgT"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLL-ET-nRw" userLabel="Activities">
+                                                        <rect key="frame" x="0.0" y="335.5" width="375" height="157"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activities" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajK-Z2-Ss9">
+                                                                <rect key="frame" x="8" y="8" width="359" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2Y-Hj-dCV">
+                                                                <rect key="frame" x="8" y="36.5" width="359" height="112"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86b-u2-PAx" userLabel="contentView" customClass="ActivityChartView" customModule="FunRun" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="-0.5" width="772" height="112"/>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="112" id="AUu-kg-hrd"/>
+                                                                            <constraint firstAttribute="width" constant="772" id="gVu-20-Iak"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="86b-u2-PAx" secondAttribute="trailing" id="3kO-Yp-SLi"/>
+                                                                    <constraint firstItem="86b-u2-PAx" firstAttribute="top" secondItem="Y2Y-Hj-dCV" secondAttribute="top" id="SJd-9W-MzB"/>
+                                                                    <constraint firstAttribute="height" constant="112" id="ffy-Iq-WcT"/>
+                                                                    <constraint firstItem="86b-u2-PAx" firstAttribute="leading" secondItem="Y2Y-Hj-dCV" secondAttribute="leading" id="hI6-xb-XsT"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="86b-u2-PAx" secondAttribute="bottom" id="jcE-LQ-Xg2"/>
+                                                                </constraints>
+                                                            </scrollView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstItem="ajK-Z2-Ss9" firstAttribute="top" secondItem="aLL-ET-nRw" secondAttribute="top" constant="8" id="3h7-qC-dzl"/>
+                                                            <constraint firstAttribute="height" constant="157" id="BhT-dh-Mlj"/>
+                                                            <constraint firstItem="ajK-Z2-Ss9" firstAttribute="leading" secondItem="aLL-ET-nRw" secondAttribute="leading" constant="8" id="Dgp-GR-xZH"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Y2Y-Hj-dCV" secondAttribute="trailing" constant="8" id="FIR-B7-kXe"/>
+                                                            <constraint firstItem="Y2Y-Hj-dCV" firstAttribute="top" secondItem="ajK-Z2-Ss9" secondAttribute="bottom" constant="8" id="Jbl-E7-qkG"/>
+                                                            <constraint firstAttribute="trailing" secondItem="ajK-Z2-Ss9" secondAttribute="trailing" constant="8" id="W6a-Hh-mif"/>
+                                                            <constraint firstItem="Y2Y-Hj-dCV" firstAttribute="leading" secondItem="aLL-ET-nRw" secondAttribute="leading" constant="8" id="skl-sM-RDY"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L44-ye-ZYD" userLabel="border">
+                                                        <rect key="frame" x="0.0" y="493" width="375" height="1"/>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="AC5-yt-Azs"/>
+                                                        </constraints>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h5n-cQ-eJG" userLabel="Distance Chart View">
-                                                        <rect key="frame" x="0.0" y="335.5" width="375" height="350"/>
+                                                        <rect key="frame" x="0.0" y="494.5" width="375" height="350"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6r1-Eq-QzO">
                                                                 <rect key="frame" x="8" y="8" width="359" height="20.5"/>
@@ -211,7 +260,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fpS-hA-rsI" userLabel="Distance Bar Chart" customClass="BarChartView" customModule="Charts">
-                                                                <rect key="frame" x="8" y="72" width="359" height="270"/>
+                                                                <rect key="frame" x="8" y="72.5" width="359" height="269.5"/>
                                                                 <color key="backgroundColor" red="1" green="0.98949343469999995" blue="0.86478935580000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <gestureRecognizers/>
                                                                 <connections>
@@ -219,7 +268,7 @@
                                                                 </connections>
                                                             </view>
                                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IfF-zd-0KA">
-                                                                <rect key="frame" x="8" y="36" width="359" height="29"/>
+                                                                <rect key="frame" x="8" y="36.5" width="359" height="29"/>
                                                                 <segments>
                                                                     <segment title="Daily"/>
                                                                     <segment title="Weekly"/>
@@ -244,14 +293,14 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nuk-C1-bfA" userLabel="border">
-                                                        <rect key="frame" x="0.0" y="686" width="375" height="1"/>
+                                                        <rect key="frame" x="0.0" y="845" width="375" height="1"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="0WT-42-Rw5"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oFT-DQ-HqL" userLabel="Duration Chart View">
-                                                        <rect key="frame" x="0.0" y="687.5" width="375" height="350"/>
+                                                        <rect key="frame" x="0.0" y="846.5" width="375" height="350"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVh-vR-8h4">
                                                                 <rect key="frame" x="8" y="8" width="359" height="20.5"/>
@@ -290,14 +339,14 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VdL-Rd-GBe" userLabel="border">
-                                                        <rect key="frame" x="0.0" y="1038" width="375" height="1"/>
+                                                        <rect key="frame" x="0.0" y="1197" width="375" height="1"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="vkQ-5K-64R"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fK-Wh-Wxy" userLabel="Calories Chart View">
-                                                        <rect key="frame" x="0.0" y="1039.5" width="375" height="350"/>
+                                                        <rect key="frame" x="0.0" y="1198.5" width="375" height="350"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories Burned" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUi-1p-MCk">
                                                                 <rect key="frame" x="8" y="8" width="359" height="20.5"/>
@@ -306,11 +355,11 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ur-gM-ugK" userLabel="Calories Bar Chart" customClass="BarChartView" customModule="Charts">
-                                                                <rect key="frame" x="8" y="72" width="359" height="270"/>
+                                                                <rect key="frame" x="8" y="72.5" width="359" height="269.5"/>
                                                                 <color key="backgroundColor" red="1" green="0.98949343469999995" blue="0.86478935580000005" alpha="1" colorSpace="calibratedRGB"/>
                                                             </view>
                                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aat-K6-5mQ">
-                                                                <rect key="frame" x="8" y="36" width="359" height="29"/>
+                                                                <rect key="frame" x="8" y="36.5" width="359" height="29"/>
                                                                 <segments>
                                                                     <segment title="Daily"/>
                                                                     <segment title="Weekly"/>
@@ -335,14 +384,14 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yWt-ae-y8a" userLabel="border">
-                                                        <rect key="frame" x="0.0" y="1390" width="375" height="1"/>
+                                                        <rect key="frame" x="0.0" y="1549" width="375" height="1"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="Ngr-X6-FMd"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1q9-RM-kga" userLabel="PR View">
-                                                        <rect key="frame" x="0.0" y="1391.5" width="375" height="449"/>
+                                                        <rect key="frame" x="0.0" y="1550.5" width="375" height="449"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Records" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khP-Ev-r8c">
                                                                 <rect key="frame" x="8" y="8" width="359" height="21"/>
@@ -368,7 +417,7 @@
                                                                 <rect key="frame" x="16" y="83" width="343" height="350"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="KpL-gB-cTs">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="350.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="350"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xP3-ZJ-fSS" userLabel="distance">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="45"/>
@@ -535,7 +584,7 @@
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5E-s3-qEZ" userLabel="Elevation">
-                                                                                <rect key="frame" x="0.0" y="244" width="343" height="45.5"/>
+                                                                                <rect key="frame" x="0.0" y="244" width="343" height="45"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elevation Climb" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BaY-sZ-HwN">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="130" height="20.5"/>
@@ -576,7 +625,7 @@
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKZ-px-Xf2" userLabel="Activities">
-                                                                                <rect key="frame" x="0.0" y="305.5" width="343" height="45"/>
+                                                                                <rect key="frame" x="0.0" y="305" width="343" height="45"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ai-TZ-AOa">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="130" height="20.5"/>
@@ -659,7 +708,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YRD-yZ-jZT" userLabel="Spacer View">
-                                                        <rect key="frame" x="0.0" y="1841" width="375" height="59"/>
+                                                        <rect key="frame" x="0.0" y="2000" width="375" height="150"/>
                                                         <color key="backgroundColor" red="0.36862745099999999" green="0.63137254899999995" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     </view>
                                                 </subviews>
@@ -667,11 +716,13 @@
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="YRD-yZ-jZT" secondAttribute="bottom" id="5TP-gy-0uO"/>
                                                     <constraint firstAttribute="trailing" secondItem="3Z4-32-ewk" secondAttribute="trailing" id="BIv-ID-7LU"/>
+                                                    <constraint firstAttribute="trailing" secondItem="aLL-ET-nRw" secondAttribute="trailing" id="C1O-Ez-94i"/>
                                                     <constraint firstItem="1q9-RM-kga" firstAttribute="top" secondItem="1fK-Wh-Wxy" secondAttribute="bottom" constant="2" id="EpE-wG-BXS"/>
                                                     <constraint firstAttribute="trailing" secondItem="h5n-cQ-eJG" secondAttribute="trailing" id="EzB-GC-mGd"/>
                                                     <constraint firstItem="YRD-yZ-jZT" firstAttribute="leading" secondItem="oae-Je-2d1" secondAttribute="leading" id="FSN-6X-uld"/>
                                                     <constraint firstItem="oFT-DQ-HqL" firstAttribute="leading" secondItem="oae-Je-2d1" secondAttribute="leading" id="IrK-iV-zM7"/>
                                                     <constraint firstAttribute="trailing" secondItem="1q9-RM-kga" secondAttribute="trailing" id="SHh-ft-jMz"/>
+                                                    <constraint firstItem="aLL-ET-nRw" firstAttribute="leading" secondItem="oae-Je-2d1" secondAttribute="leading" id="TCI-5W-NCx"/>
                                                     <constraint firstAttribute="trailing" secondItem="oFT-DQ-HqL" secondAttribute="trailing" id="WmD-Dt-1ib"/>
                                                     <constraint firstAttribute="trailing" secondItem="enX-h8-hQd" secondAttribute="trailing" id="Xal-du-H4n"/>
                                                     <constraint firstAttribute="trailing" secondItem="YRD-yZ-jZT" secondAttribute="trailing" id="bjl-DY-yMN"/>
@@ -688,7 +739,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="oae-Je-2d1" firstAttribute="top" secondItem="vb4-go-HgD" secondAttribute="top" id="Ob7-fy-4bb"/>
-                                            <constraint firstAttribute="height" constant="1900" id="cGg-Rq-thj"/>
+                                            <constraint firstAttribute="height" constant="2150" id="cGg-Rq-thj"/>
                                             <constraint firstAttribute="trailing" secondItem="oae-Je-2d1" secondAttribute="trailing" id="mFc-nw-l7e"/>
                                             <constraint firstItem="oae-Je-2d1" firstAttribute="leading" secondItem="vb4-go-HgD" secondAttribute="leading" id="xrH-Tc-kt3"/>
                                             <constraint firstAttribute="bottom" secondItem="oae-Je-2d1" secondAttribute="bottom" id="yrO-vz-Pn4"/>
@@ -716,9 +767,10 @@
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Statistics" id="E2z-Ho-q5j"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="1964"/>
+                    <size key="freeformSize" width="375" height="2214"/>
                     <connections>
                         <outlet property="caloriesBarChartView" destination="9ur-gM-ugK" id="NIZ-MU-cIO"/>
+                        <outlet property="dailyActivitiesView" destination="86b-u2-PAx" id="7ce-5f-h6D"/>
                         <outlet property="distanceBarChartView" destination="fpS-hA-rsI" id="nMX-9z-K7I"/>
                         <outlet property="durationBarChartView" destination="ceo-w3-sbS" id="pkZ-2R-5aP"/>
                         <outlet property="profileImageView" destination="574-2r-4KJ" id="3hA-g4-xuO"/>
@@ -732,7 +784,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="588" y="-399"/>
+            <point key="canvasLocation" x="588" y="-399.40029985007499"/>
         </scene>
         <!--Chart View Controller-->
         <scene sceneID="jcu-TE-5fJ">
@@ -743,7 +795,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Tao-zV-Uu8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ICp-Aq-RBs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1964"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="2214"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSd-P5-y6O">
@@ -762,7 +814,7 @@
                                 </segments>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FNf-1f-h0I" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="8" y="161" width="359" height="1787"/>
+                                <rect key="frame" x="8" y="161" width="359" height="2037"/>
                                 <color key="backgroundColor" red="1" green="0.98949343469999995" blue="0.86478935580000005" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>

@@ -12,6 +12,8 @@ class ChartViewController: UIViewController {
 
     @IBOutlet weak var barChartView: BarChartView!
     
+    
+
     var months:[String]!
     
     override func viewDidLoad() {
@@ -24,6 +26,9 @@ class ChartViewController: UIViewController {
         months = ["Jan '16", "Feb '16","Mar '16","Apr '16","May '16","Jun '16","Jul '16","Aug '16","Sep '16","Oct '16","Nov '16","Dec '16"]
         let distancePerMonth = [84.4, 53.2, 50.2, 93.4, 127.4, 149.7, 188.0, 36.7, 89.6, 55.5, 0.0, 0.0]
         setChart(barChartView:barChartView, dataPoints: months, values: distancePerMonth, label:"Monthly distance (mile)")
+        
+        
+
     }
 
     func setChart(barChartView:BarChartView!, dataPoints:[String], values:[Double], label:String!){
@@ -57,3 +62,5 @@ extension ChartViewController : IAxisValueFormatter, ChartViewDelegate {
         print("\(entry.y) in \(entry.x)")
     }
 }
+
+

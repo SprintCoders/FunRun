@@ -19,6 +19,7 @@
 		B83064BB1DE27B6300FD3BC0 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B83064B41DE27AA700FD3BC0 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B85F6A551DE25E3B000F2A3A /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F6A541DE25E3B000F2A3A /* StatsViewController.swift */; };
 		B89EC13C1DE22B940076CBEE /* Stats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B89EC13A1DE22B940076CBEE /* Stats.storyboard */; };
+		B8B48DBD1DEA6C57007EAAAD /* ActivityChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B48DBC1DEA6C57007EAAAD /* ActivityChartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		B83064AD1DE27AA700FD3BC0 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../test/Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		B85F6A541DE25E3B000F2A3A /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		B89EC13B1DE22B940076CBEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Stats.storyboard; sourceTree = "<group>"; };
+		B8B48DBC1DEA6C57007EAAAD /* ActivityChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityChartView.swift; path = ViewControllers/ActivityChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				852AE6541DDACCFA00FEAA82 /* StartRunningViewController.swift */,
 				B85F6A541DE25E3B000F2A3A /* StatsViewController.swift */,
 				B80DFD7C1DE820D6004CA633 /* ChartViewController.swift */,
+				B8B48DBC1DEA6C57007EAAAD /* ActivityChartView.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				852AE6311DDABFCF00FEAA82 /* AppDelegate.swift in Sources */,
 				B85F6A551DE25E3B000F2A3A /* StatsViewController.swift in Sources */,
 				852AE6551DDACCFA00FEAA82 /* StartRunningViewController.swift in Sources */,
+				B8B48DBD1DEA6C57007EAAAD /* ActivityChartView.swift in Sources */,
 				B80DFD7D1DE820D6004CA633 /* ChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
