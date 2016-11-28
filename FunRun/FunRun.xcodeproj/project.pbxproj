@@ -16,6 +16,8 @@
 		852AE6551DDACCFA00FEAA82 /* StartRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852AE6541DDACCFA00FEAA82 /* StartRunningViewController.swift */; };
 		8544D8B01DEA8BAD0019D011 /* DuringRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544D8AF1DEA8BAD0019D011 /* DuringRunningViewController.swift */; };
 		8544D8B21DEA93F20019D011 /* FinishRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544D8B11DEA93F20019D011 /* FinishRunningViewController.swift */; };
+		85ECFFC51DEBA8960058CBA4 /* DispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECFFC41DEBA8960058CBA4 /* DispatchTimer.swift */; };
+		85ECFFC71DEBB7870058CBA4 /* TimeCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECFFC61DEBB7870058CBA4 /* TimeCount.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		852AE6541DDACCFA00FEAA82 /* StartRunningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartRunningViewController.swift; path = ViewControllers/StartRunningViewController.swift; sourceTree = "<group>"; };
 		8544D8AF1DEA8BAD0019D011 /* DuringRunningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DuringRunningViewController.swift; path = ViewControllers/DuringRunningViewController.swift; sourceTree = "<group>"; };
 		8544D8B11DEA93F20019D011 /* FinishRunningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FinishRunningViewController.swift; path = ViewControllers/FinishRunningViewController.swift; sourceTree = "<group>"; };
+		85ECFFC41DEBA8960058CBA4 /* DispatchTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DispatchTimer.swift; path = Models/DispatchTimer.swift; sourceTree = "<group>"; };
+		85ECFFC61DEBB7870058CBA4 /* TimeCount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeCount.swift; path = Services/TimeCount.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 		852AE62F1DDABFCF00FEAA82 /* FunRun */ = {
 			isa = PBXGroup;
 			children = (
+				85ECFFC31DEBA84C0058CBA4 /* Services */,
 				852AE6511DDAC04200FEAA82 /* Models */,
 				852AE6501DDAC03600FEAA82 /* ViewControllers */,
 				852AE6301DDABFCF00FEAA82 /* AppDelegate.swift */,
@@ -117,8 +122,17 @@
 		852AE6511DDAC04200FEAA82 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				85ECFFC41DEBA8960058CBA4 /* DispatchTimer.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		85ECFFC31DEBA84C0058CBA4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				85ECFFC61DEBB7870058CBA4 /* TimeCount.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +241,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				852AE6531DDAC11300FEAA82 /* TabViewController.swift in Sources */,
+				85ECFFC71DEBB7870058CBA4 /* TimeCount.swift in Sources */,
+				85ECFFC51DEBA8960058CBA4 /* DispatchTimer.swift in Sources */,
 				852AE6311DDABFCF00FEAA82 /* AppDelegate.swift in Sources */,
 				852AE6551DDACCFA00FEAA82 /* StartRunningViewController.swift in Sources */,
 				8544D8B21DEA93F20019D011 /* FinishRunningViewController.swift in Sources */,

@@ -17,11 +17,19 @@ class DuringRunningViewController: UIViewController {
     @IBOutlet weak var speedLogView: UIView!
     @IBOutlet weak var distanceCountView: UIView!
     
-    
     @IBOutlet weak var pauseBtn: UIButton!
     @IBOutlet weak var stopBtn: UIButton!
     
-    var accumulatedTime: Double = 0.0
+    @IBOutlet weak var timeCountLabel: UILabel!
+    @IBOutlet weak var avgPaceLabel: UILabel!
+    @IBOutlet weak var caloriesLabel: UILabel!
+    @IBOutlet weak var distanceCountLabel: UILabel!
+    
+    
+    var timer: DispatchTimer?
+    
+    var paused: Bool = false
+    var accumulatedTime: UInt32 = 0
     var accumulatedDistance: Double = 0.0
     var currentSpeed: Double = 0.0
     
@@ -29,7 +37,7 @@ class DuringRunningViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.hidesBottomBarWhenPushed = true
+        // self.hidesBottomBarWhenPushed = true
         
         // Setup subview styles
         self.timeCountView.layer.borderWidth = 1.0
@@ -51,12 +59,25 @@ class DuringRunningViewController: UIViewController {
         self.pauseBtn.addTarget(self, action: #selector(pauseRunning), for: UIControlEvents.touchUpInside)
         // self.stopBtn.addTarget(self, action: #selector(stopRunning), for: UIControlEvents.touchUpInside)
         
+        
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Setup timer
+        if self.timer == nil {
+            self.timer = DispatchTimer(repeatInterval: 1.0, block: { (DispatchTimer) in
+                self.accumulatedTime += 1
+                self.timeCountLabel.text = TimeCount.convertIntToTime(seconds: self.accumulatedTime)
+            })
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
 
     /* MARK: - Navigation */
@@ -66,16 +87,27 @@ class DuringRunningViewController: UIViewController {
         if segue.identifier == "DuringToFinish" {
             let FinishRunningVC = segue.destination as! FinishRunningViewController
             // DuringRunningVC = DuringRunningViewController()
-            FinishRunningVC.totalTime = 1.0
+            FinishRunningVC.totalTime = self.accumulatedTime
+            self.timer?.cancel()
+            self.timer = nil
         }
     }
-
+    
     
     
     /* MARK: - Button function */
     func pauseRunning() {
-        print("-- pressed pause button")
-        
+        if self.paused {
+            print("-- pressed resume button")
+            self.timer?.resume()
+            self.pauseBtn.setTitle("PAUSE", for: UIControlState.normal)
+            self.paused = false
+        } else {
+            print("-- pressed pause button")
+            self.timer?.suspend()
+            self.pauseBtn.setTitle("RESUME", for: UIControlState.normal)
+            self.paused = true
+        }
     }
     
     /*

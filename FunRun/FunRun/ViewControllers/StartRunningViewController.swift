@@ -25,7 +25,7 @@ class StartRunningViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.hidesBottomBarWhenPushed = true
+        // self.hidesBottomBarWhenPushed = true
         
         // Setup the avatarImage
         let side = self.avatarImage.frame.width
@@ -51,7 +51,7 @@ class StartRunningViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.tabBarController?.tabBar.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,7 +67,7 @@ class StartRunningViewController: UIViewController, CLLocationManagerDelegate {
         if segue.identifier == "StartToRunning" {
             let DuringRunningVC = segue.destination as! DuringRunningViewController
             // DuringRunningVC = DuringRunningViewController()
-            DuringRunningVC.accumulatedTime = 1.0
+            DuringRunningVC.accumulatedTime = 0
         }
     }
     

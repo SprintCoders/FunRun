@@ -12,14 +12,21 @@ import CoreLocation
 
 class FinishRunningViewController: UIViewController, CLLocationManagerDelegate {
 
+    @IBOutlet weak var runDayLabel: UILabel!
+    
     @IBOutlet weak var distanceViewbox: UIView!
     @IBOutlet weak var durationViewBox: UIView!
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var durationLabel: UILabel!
     
     @IBOutlet weak var mapView: MKMapView!
     
     @IBOutlet weak var avgPaceViewBox: UIView!
     @IBOutlet weak var bestSpeedViewBox: UIView!
     @IBOutlet weak var CaloriesViewBox: UIView!
+    @IBOutlet weak var avgPaceLabel: UILabel!
+    @IBOutlet weak var bestSpeedLabel: UILabel!
+    @IBOutlet weak var caloriesLabel: UILabel!
     
     @IBOutlet weak var face1: UIImageView!
     @IBOutlet weak var face2: UIImageView!
@@ -32,7 +39,7 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var deleteBtn: UIButton!
     
-    var totalTime: Double = 0.0
+    var totalTime: UInt32 = 0
     var totalDistance: Double = 0.0
     var chosenFace: UIImageView?
     
@@ -82,15 +89,28 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate {
         self.saveBtn.clipsToBounds = true
         let saveBtnClr = self.saveBtn.currentTitleColor
         self.saveBtn.layer.borderColor = saveBtnClr.cgColor
+        self.saveBtn.addTarget(self, action: #selector(saveButtonPressed), for: UIControlEvents.touchUpInside)
         self.deleteBtn.layer.borderWidth = 2.0
         self.deleteBtn.layer.cornerRadius = 5.0
         self.deleteBtn.clipsToBounds = true
         let deleteBtnClr = self.deleteBtn.currentTitleColor
         self.deleteBtn.layer.borderColor = deleteBtnClr.cgColor
+        self.deleteBtn.addTarget(self, action: #selector(deleteButtonPressed), for: UIControlEvents.touchUpInside)
         
         // Setup variables
         self.chosenFace = nil
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.setLocalizedDateFormatFromTemplate("EEEE")
+        self.runDayLabel.text = dateFormatter.string(from: Date()).appending(" Run")
+        // let today = Calendar.current.component(.weekday, from: Date())
+        // self.runDayLabel.text = ""
+        self.durationLabel.text = TimeCount.convertIntToTime(seconds: self.totalTime)
     }
 
     override func didReceiveMemoryWarning() {
@@ -118,6 +138,14 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate {
         }
         faceImgView.alpha = 1.0
         self.chosenFace = faceImgView
+    }
+    
+    func saveButtonPressed() {
+        _ = self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func deleteButtonPressed() {
+        _ = self.navigationController?.popToRootViewController(animated: true)
     }
 
 }
