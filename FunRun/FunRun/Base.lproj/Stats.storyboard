@@ -33,20 +33,20 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Z4-32-ewk" userLabel="Profile View">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="156"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hideki_profile" translatesAutoresizingMaskIntoConstraints="NO" id="574-2r-4KJ">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="574-2r-4KJ">
                                                                 <rect key="frame" x="157" y="24" width="60" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="60" id="S0W-1c-bxx"/>
                                                                     <constraint firstAttribute="height" constant="60" id="lJU-XH-2lH"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hideki Itakura" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ImG-qr-4bV">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ImG-qr-4bV">
                                                                 <rect key="frame" x="16" y="92" width="343" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Run full marathon in 4 hours!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4EF-Tc-vAp">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Motivation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4EF-Tc-vAp">
                                                                 <rect key="frame" x="16" y="116.5" width="343" height="18"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -170,6 +170,9 @@
                                                                     <segment title="Current Year"/>
                                                                     <segment title="Lifetime"/>
                                                                 </segments>
+                                                                <connections>
+                                                                    <action selector="selectHighlightDuration:" destination="9GQ-aX-dON" eventType="valueChanged" id="t22-Ev-DOq"/>
+                                                                </connections>
                                                             </segmentedControl>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -214,7 +217,7 @@
                                                                 <rect key="frame" x="8" y="36.5" width="359" height="112"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86b-u2-PAx" userLabel="contentView" customClass="ActivityChartView" customModule="FunRun" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="-0.5" width="772" height="112"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="772" height="112"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="112" id="AUu-kg-hrd"/>
@@ -769,11 +772,18 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="2214"/>
                     <connections>
+                        <outlet property="activityChart" destination="86b-u2-PAx" id="IxB-Dw-5MD"/>
                         <outlet property="caloriesBarChartView" destination="9ur-gM-ugK" id="NIZ-MU-cIO"/>
-                        <outlet property="dailyActivitiesView" destination="86b-u2-PAx" id="7ce-5f-h6D"/>
                         <outlet property="distanceBarChartView" destination="fpS-hA-rsI" id="nMX-9z-K7I"/>
                         <outlet property="durationBarChartView" destination="ceo-w3-sbS" id="pkZ-2R-5aP"/>
+                        <outlet property="highlightTermSegment" destination="zqh-py-he8" id="WcG-qw-C74"/>
                         <outlet property="profileImageView" destination="574-2r-4KJ" id="3hA-g4-xuO"/>
+                        <outlet property="profileMotivation" destination="4EF-Tc-vAp" id="bJo-j7-BvV"/>
+                        <outlet property="profileName" destination="ImG-qr-4bV" id="ZIT-g9-zby"/>
+                        <outlet property="totalActivities" destination="jV7-2F-6d8" id="PtU-EU-F1N"/>
+                        <outlet property="totalCalories" destination="1Y8-b9-rzj" id="ucU-80-Z0L"/>
+                        <outlet property="totalClimb" destination="f7m-uW-CAx" id="M4S-3D-LnX"/>
+                        <outlet property="totalDistance" destination="AU8-AW-Elt" id="m7o-Ee-fPe"/>
                         <segue destination="Caf-BP-aax" kind="show" identifier="chartSegue" id="jDG-QC-jbo"/>
                     </connections>
                 </viewController>
@@ -860,6 +870,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="hideki_profile" width="547" height="545"/>
+        <image name="user" width="32" height="32"/>
     </resources>
 </document>

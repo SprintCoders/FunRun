@@ -10,6 +10,8 @@ import UIKit
 
 class ActivityChartView: UIView {
 
+    var values:[Int]? = nil
+    
     static let colors:[UIColor]! = [
         UIColor(red: 234/255, green: 234/255, blue: 234/255, alpha: 1), // EAEAEA - gray
         UIColor(red: 205/255, green: 229/255, blue: 106/255, alpha: 1), // CDE56D - light green
@@ -19,15 +21,20 @@ class ActivityChartView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        initialize()
+        updateUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        initialize()
+        updateUI()
     }
     
-    func initialize(){
+    func updateUI(){
+        // remove all sub views
+        for view in self.subviews {
+            view.removeFromSuperview()
+        }
+        
         let cal = Calendar.current
         
         // day of the week
@@ -48,13 +55,17 @@ class ActivityChartView: UIView {
         for delta in -365...0{ // from a year ago to today
             let date:Date! = cal.date(byAdding: .day, value: delta, to: Date())
             let day: Int = cal.component(.weekday, from: date) // day
-            if day == 1 {
+            if day == 1 && delta != -365 {
                 week += 1
             }
             let x = 30 + week * 14
             let y = day * 14
             let view = UIView(frame: CGRect(x: x, y: y, width: 12, height: 12))
-            view.backgroundColor = ActivityChartView.colors[day % 5]
+            if values != nil {
+                view.backgroundColor = ActivityChartView.colors[(values?[abs(delta)])!]
+            }else{
+                view.backgroundColor = ActivityChartView.colors[0]
+            }
             self.addSubview(view)
             
             // if 1st day of month, display month label
@@ -68,11 +79,5 @@ class ActivityChartView: UIView {
                 self.addSubview(label)
             }
         }
-        
-//        // width: 30+ 14*week
-//        // height: 14 * 8
-//        let width: Int = 30 + 14 * week
-//        let height: Int = 14 * 8
-//        self.frame = CGRect(x:self.frame.origin.x, y:self.frame.origin.y, width:CGFloat(width), height:CGFloat(height))
     }
 }

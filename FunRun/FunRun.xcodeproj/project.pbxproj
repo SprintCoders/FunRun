@@ -14,9 +14,14 @@
 		852AE6461DDABFCF00FEAA82 /* FunRunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852AE6451DDABFCF00FEAA82 /* FunRunTests.swift */; };
 		852AE6531DDAC11300FEAA82 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852AE6521DDAC11300FEAA82 /* TabViewController.swift */; };
 		852AE6551DDACCFA00FEAA82 /* StartRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852AE6541DDACCFA00FEAA82 /* StartRunningViewController.swift */; };
+		B8051F4F1DEAF4E400B4B938 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8051F4E1DEAF4E400B4B938 /* CSwiftV.swift */; };
+		B8051F531DEB937C00B4B938 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8051F521DEB937C00B4B938 /* Profile.swift */; };
+		B8051F551DEBFDDA00B4B938 /* Date+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8051F541DEBFDDA00B4B938 /* Date+Extra.swift */; };
 		B80DFD7D1DE820D6004CA633 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80DFD7C1DE820D6004CA633 /* ChartViewController.swift */; };
 		B83064BA1DE27B6300FD3BC0 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B83064B41DE27AA700FD3BC0 /* Charts.framework */; };
 		B83064BB1DE27B6300FD3BC0 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B83064B41DE27AA700FD3BC0 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B85907931DEAE2CC006CE549 /* cardioActivities.csv in Resources */ = {isa = PBXBuildFile; fileRef = B85907911DEAE2CC006CE549 /* cardioActivities.csv */; };
+		B85907941DEAE2CC006CE549 /* ActivitiesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85907921DEAE2CC006CE549 /* ActivitiesData.swift */; };
 		B85F6A551DE25E3B000F2A3A /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F6A541DE25E3B000F2A3A /* StatsViewController.swift */; };
 		B89EC13C1DE22B940076CBEE /* Stats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B89EC13A1DE22B940076CBEE /* Stats.storyboard */; };
 		B8B48DBD1DEA6C57007EAAAD /* ActivityChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B48DBC1DEA6C57007EAAAD /* ActivityChartView.swift */; };
@@ -86,8 +91,13 @@
 		852AE6471DDABFCF00FEAA82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		852AE6521DDAC11300FEAA82 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabViewController.swift; path = ViewControllers/TabViewController.swift; sourceTree = "<group>"; };
 		852AE6541DDACCFA00FEAA82 /* StartRunningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartRunningViewController.swift; path = ViewControllers/StartRunningViewController.swift; sourceTree = "<group>"; };
+		B8051F4E1DEAF4E400B4B938 /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSwiftV.swift; sourceTree = "<group>"; };
+		B8051F521DEB937C00B4B938 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		B8051F541DEBFDDA00B4B938 /* Date+Extra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extra.swift"; sourceTree = "<group>"; };
 		B80DFD7C1DE820D6004CA633 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		B83064AD1DE27AA700FD3BC0 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../test/Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
+		B85907911DEAE2CC006CE549 /* cardioActivities.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = cardioActivities.csv; path = "Test Data/cardioActivities.csv"; sourceTree = "<group>"; };
+		B85907921DEAE2CC006CE549 /* ActivitiesData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesData.swift; sourceTree = "<group>"; };
 		B85F6A541DE25E3B000F2A3A /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		B89EC13B1DE22B940076CBEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Stats.storyboard; sourceTree = "<group>"; };
 		B8B48DBC1DEA6C57007EAAAD /* ActivityChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityChartView.swift; path = ViewControllers/ActivityChartView.swift; sourceTree = "<group>"; };
@@ -134,6 +144,7 @@
 		852AE62F1DDABFCF00FEAA82 /* FunRun */ = {
 			isa = PBXGroup;
 			children = (
+				B859078E1DEAE2A2006CE549 /* Data */,
 				852AE6511DDAC04200FEAA82 /* Models */,
 				852AE6501DDAC03600FEAA82 /* ViewControllers */,
 				852AE6301DDABFCF00FEAA82 /* AppDelegate.swift */,
@@ -182,6 +193,18 @@
 				B83064B81DE27AA700FD3BC0 /* ChartsTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B859078E1DEAE2A2006CE549 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B85907921DEAE2CC006CE549 /* ActivitiesData.swift */,
+				B8051F4E1DEAF4E400B4B938 /* CSwiftV.swift */,
+				B85907911DEAE2CC006CE549 /* cardioActivities.csv */,
+				B8051F521DEB937C00B4B938 /* Profile.swift */,
+				B8051F541DEBFDDA00B4B938 /* Date+Extra.swift */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +324,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B85907931DEAE2CC006CE549 /* cardioActivities.csv in Resources */,
 				852AE63B1DDABFCF00FEAA82 /* LaunchScreen.storyboard in Resources */,
 				852AE6381DDABFCF00FEAA82 /* Assets.xcassets in Resources */,
 				B89EC13C1DE22B940076CBEE /* Stats.storyboard in Resources */,
@@ -324,9 +348,13 @@
 			files = (
 				852AE6531DDAC11300FEAA82 /* TabViewController.swift in Sources */,
 				852AE6311DDABFCF00FEAA82 /* AppDelegate.swift in Sources */,
+				B8051F531DEB937C00B4B938 /* Profile.swift in Sources */,
 				B85F6A551DE25E3B000F2A3A /* StatsViewController.swift in Sources */,
 				852AE6551DDACCFA00FEAA82 /* StartRunningViewController.swift in Sources */,
 				B8B48DBD1DEA6C57007EAAAD /* ActivityChartView.swift in Sources */,
+				B85907941DEAE2CC006CE549 /* ActivitiesData.swift in Sources */,
+				B8051F4F1DEAF4E400B4B938 /* CSwiftV.swift in Sources */,
+				B8051F551DEBFDDA00B4B938 /* Date+Extra.swift in Sources */,
 				B80DFD7D1DE820D6004CA633 /* ChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
