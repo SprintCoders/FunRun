@@ -10,6 +10,9 @@ import UIKit
 
 class ScheduleCell: UITableViewCell {
 
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

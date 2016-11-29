@@ -14,9 +14,32 @@
 		A13D3B6D1DE1853500AF4BE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13D3B6B1DE1853500AF4BE7 /* LaunchScreen.storyboard */; };
 		A13D3B781DE1853500AF4BE7 /* FunRunCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13D3B771DE1853500AF4BE7 /* FunRunCodeTests.swift */; };
 		A13D3B831DE1853500AF4BE7 /* FunRunCodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13D3B821DE1853500AF4BE7 /* FunRunCodeUITests.swift */; };
+		A13D3B911DEB856F00AF4BE7 /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13D3B901DEB856F00AF4BE7 /* ScheduleCell.swift */; };
+		A13D3B931DEBF5BE00AF4BE7 /* NewGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13D3B921DEBF5BE00AF4BE7 /* NewGoalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A1018C981DED373A00A53B73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1018C921DED373900A53B73 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F241D8110E600722320;
+			remoteInfo = Charts;
+		};
+		A1018C9A1DED373A00A53B73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1018C921DED373900A53B73 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06B120D51D811E6200D14B02;
+			remoteInfo = ChartsRealm;
+		};
+		A1018C9C1DED373A00A53B73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1018C921DED373900A53B73 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F2E1D8110E600722320;
+			remoteInfo = ChartsTests;
+		};
 		A13D3B741DE1853500AF4BE7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A13D3B571DE1853400AF4BE7 /* Project object */;
@@ -34,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A1018C921DED373900A53B73 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		A13D3B5F1DE1853500AF4BE7 /* FunRunCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunRunCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13D3B621DE1853500AF4BE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A13D3B641DE1853500AF4BE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +71,8 @@
 		A13D3B7E1DE1853500AF4BE7 /* FunRunCodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FunRunCodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13D3B821DE1853500AF4BE7 /* FunRunCodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunRunCodeUITests.swift; sourceTree = "<group>"; };
 		A13D3B841DE1853500AF4BE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A13D3B901DEB856F00AF4BE7 /* ScheduleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
+		A13D3B921DEBF5BE00AF4BE7 /* NewGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGoalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +100,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A1018C931DED373900A53B73 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1018C991DED373A00A53B73 /* Charts.framework */,
+				A1018C9B1DED373A00A53B73 /* ChartsRealm.framework */,
+				A1018C9D1DED373A00A53B73 /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		A13D3B561DE1853400AF4BE7 = {
 			isa = PBXGroup;
 			children = (
@@ -97,12 +133,15 @@
 		A13D3B611DE1853500AF4BE7 /* FunRunCode */ = {
 			isa = PBXGroup;
 			children = (
+				A1018C921DED373900A53B73 /* Charts.xcodeproj */,
 				A13D3B621DE1853500AF4BE7 /* AppDelegate.swift */,
 				A13D3B641DE1853500AF4BE7 /* ViewController.swift */,
 				A13D3B661DE1853500AF4BE7 /* Main.storyboard */,
 				A13D3B691DE1853500AF4BE7 /* Assets.xcassets */,
 				A13D3B6B1DE1853500AF4BE7 /* LaunchScreen.storyboard */,
 				A13D3B6E1DE1853500AF4BE7 /* Info.plist */,
+				A13D3B901DEB856F00AF4BE7 /* ScheduleCell.swift */,
+				A13D3B921DEBF5BE00AF4BE7 /* NewGoalViewController.swift */,
 			);
 			path = FunRunCode;
 			sourceTree = "<group>";
@@ -218,6 +257,12 @@
 			mainGroup = A13D3B561DE1853400AF4BE7;
 			productRefGroup = A13D3B601DE1853500AF4BE7 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A1018C931DED373900A53B73 /* Products */;
+					ProjectRef = A1018C921DED373900A53B73 /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A13D3B5E1DE1853400AF4BE7 /* FunRunCode */,
@@ -226,6 +271,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A1018C991DED373A00A53B73 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = A1018C981DED373A00A53B73 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A1018C9B1DED373A00A53B73 /* ChartsRealm.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ChartsRealm.framework;
+			remoteRef = A1018C9A1DED373A00A53B73 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A1018C9D1DED373A00A53B73 /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = A1018C9C1DED373A00A53B73 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A13D3B5D1DE1853400AF4BE7 /* Resources */ = {
@@ -260,6 +329,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A13D3B651DE1853500AF4BE7 /* ViewController.swift in Sources */,
+				A13D3B911DEB856F00AF4BE7 /* ScheduleCell.swift in Sources */,
+				A13D3B931DEBF5BE00AF4BE7 /* NewGoalViewController.swift in Sources */,
 				A13D3B631DE1853500AF4BE7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,6 +574,7 @@
 				A13D3B891DE1853500AF4BE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A13D3B8A1DE1853500AF4BE7 /* Build configuration list for PBXNativeTarget "FunRunCodeTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +583,7 @@
 				A13D3B8C1DE1853500AF4BE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A13D3B8D1DE1853500AF4BE7 /* Build configuration list for PBXNativeTarget "FunRunCodeUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +592,7 @@
 				A13D3B8F1DE1853500AF4BE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
