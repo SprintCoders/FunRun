@@ -113,20 +113,12 @@
 		852AE62F1DDABFCF00FEAA82 /* FunRun */ = {
 			isa = PBXGroup;
 			children = (
-				B8DC28171DED3A0A00BC38BA /* NewGoalViewController.swift */,
-				B8DC28181DED3A0A00BC38BA /* ScheduleCell.swift */,
-				B8DC28191DED3A0A00BC38BA /* GoalViewController.swift */,
-				B8DC28031DED35D100BC38BA /* ActivitiesData.swift */,
-				B8DC28061DED35D100BC38BA /* ChartViewController.swift */,
-				B8DC28071DED35D100BC38BA /* CSwiftV.swift */,
-				B8DC28081DED35D100BC38BA /* Date+Extra.swift */,
-				B8DC28091DED35D100BC38BA /* Profile.swift */,
-				B8DC280A1DED35D100BC38BA /* StatsViewController.swift */,
-				B8DC280B1DED35D100BC38BA /* cardioActivities.csv */,
-				B8DC280C1DED35D100BC38BA /* ActivityChartView.swift */,
+				B8DC28211DED3C9F00BC38BA /* Utils */,
+				B8DC28201DED3C8900BC38BA /* Data */,
 				85ECFFC31DEBA84C0058CBA4 /* Services */,
 				852AE6511DDAC04200FEAA82 /* Models */,
 				852AE6501DDAC03600FEAA82 /* ViewControllers */,
+				B8DC28221DED3CBF00BC38BA /* Views */,
 				852AE6301DDABFCF00FEAA82 /* AppDelegate.swift */,
 				852AE6341DDABFCF00FEAA82 /* Main.storyboard */,
 				B8DC28041DED35D100BC38BA /* Stats.storyboard */,
@@ -150,6 +142,11 @@
 		852AE6501DDAC03600FEAA82 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B8DC280A1DED35D100BC38BA /* StatsViewController.swift */,
+				B8DC28061DED35D100BC38BA /* ChartViewController.swift */,
+				B8DC28191DED3A0A00BC38BA /* GoalViewController.swift */,
+				B8DC28181DED3A0A00BC38BA /* ScheduleCell.swift */,
+				B8DC28171DED3A0A00BC38BA /* NewGoalViewController.swift */,
 				852AE6521DDAC11300FEAA82 /* TabViewController.swift */,
 				852AE6541DDACCFA00FEAA82 /* StartRunningViewController.swift */,
 				8544D8AF1DEA8BAD0019D011 /* DuringRunningViewController.swift */,
@@ -172,6 +169,33 @@
 				85ECFFC61DEBB7870058CBA4 /* TimeCount.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		B8DC28201DED3C8900BC38BA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B8DC28091DED35D100BC38BA /* Profile.swift */,
+				B8DC280B1DED35D100BC38BA /* cardioActivities.csv */,
+				B8DC28031DED35D100BC38BA /* ActivitiesData.swift */,
+				B8DC28071DED35D100BC38BA /* CSwiftV.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		B8DC28211DED3C9F00BC38BA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B8DC28081DED35D100BC38BA /* Date+Extra.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		B8DC28221DED3CBF00BC38BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B8DC280C1DED35D100BC38BA /* ActivityChartView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
