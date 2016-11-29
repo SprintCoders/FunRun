@@ -10,28 +10,49 @@ import UIKit
 
 class TabViewController: UITabBarController {
     
+    var statsNavCtr: UIViewController!
+    var runningNavCtr: UIViewController!
+    var activityNavCtr: UIViewController!
+    var goalNavCtr: UIViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // self.selectedIndex = 0
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         // Stats
         let statsStoryBoard: UIStoryboard = UIStoryboard(name: "Stats", bundle: nil)
-        let statsViewController:UIViewController = statsStoryBoard.instantiateViewController(withIdentifier: "StatsNavigationController") as UIViewController
-        statsViewController.tabBarItem.title = "Statistics"
-        statsViewController.tabBarItem.image = UIImage(named: "statistics_tab")
+        statsNavCtr = statsStoryBoard.instantiateViewController(withIdentifier: "StatsNavigationController") as UIViewController
+        statsNavCtr.tabBarItem.title = "Statistics"
+        statsNavCtr.tabBarItem.image = UIImage(named: "statistics_tab")
+        
+        // Running
+        let runningStoryBoard: UIStoryboard = UIStoryboard(name: "Running", bundle: nil)
+        runningNavCtr = runningStoryBoard.instantiateViewController(withIdentifier: "RunningNavigationController") as UIViewController
+        runningNavCtr.tabBarItem.title = "Running"
+        runningNavCtr.tabBarItem.image = UIImage(named: "running_tab")
+        
+        // Activity
+        let activityStoryBoard: UIStoryboard = UIStoryboard(name: "Activity", bundle: nil)
+        activityNavCtr = activityStoryBoard.instantiateViewController(withIdentifier: "ActivityNavigationController") as UIViewController
+        activityNavCtr.tabBarItem.title = "Activities"
+        activityNavCtr.tabBarItem.image = UIImage(named: "activity_tab")
         
         // Goal
         let goalStoryBoard: UIStoryboard = UIStoryboard(name: "Goal", bundle: nil)
-        let goalViewController:UIViewController = goalStoryBoard.instantiateViewController(withIdentifier: "GoalNavigationController") as UIViewController
-        goalViewController.tabBarItem.title = "Goal"
-        goalViewController.tabBarItem.image = UIImage(named: "goal_tab")
+        goalNavCtr = goalStoryBoard.instantiateViewController(withIdentifier: "GoalNavigationController") as UIViewController
+        goalNavCtr.tabBarItem.title = "Goal"
+        goalNavCtr.tabBarItem.image = UIImage(named: "goal_tab")
         
         
         // add view controllers into viewControllers
-        var controllers = self.viewControllers
-        controllers?.insert(statsViewController, at: 0)
-        controllers?.insert(goalViewController, at: 3)
+        let controllers: [UIViewController]? = [statsNavCtr, runningNavCtr, activityNavCtr, goalNavCtr]
         self.viewControllers = controllers
-        
-        
+        self.selectedIndex = 0
     }
 }
