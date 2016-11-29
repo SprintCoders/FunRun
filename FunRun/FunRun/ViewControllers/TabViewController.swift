@@ -13,13 +13,25 @@ class TabViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Stats", bundle: nil)
-        let viewController:UIViewController = storyBoard.instantiateViewController(withIdentifier: "StatsNavigationController") as UIViewController
-        viewController.tabBarItem.title = "Statistics"
-        viewController.tabBarItem.image = UIImage(named: "statistics_tab")
+        // Stats
+        let statsStoryBoard: UIStoryboard = UIStoryboard(name: "Stats", bundle: nil)
+        let statsViewController:UIViewController = statsStoryBoard.instantiateViewController(withIdentifier: "StatsNavigationController") as UIViewController
+        statsViewController.tabBarItem.title = "Statistics"
+        statsViewController.tabBarItem.image = UIImage(named: "statistics_tab")
         
+        // Goal
+        let goalStoryBoard: UIStoryboard = UIStoryboard(name: "Goal", bundle: nil)
+        let goalViewController:UIViewController = goalStoryBoard.instantiateViewController(withIdentifier: "GoalNavigationController") as UIViewController
+        goalViewController.tabBarItem.title = "Goal"
+        goalViewController.tabBarItem.image = UIImage(named: "goal_tab")
+        
+        
+        // add view controllers into viewControllers
         var controllers = self.viewControllers
-        controllers?.insert(viewController, at: 0)
+        controllers?.insert(statsViewController, at: 0)
+        controllers?.insert(goalViewController, at: 3)
         self.viewControllers = controllers
+        
+        
     }
 }

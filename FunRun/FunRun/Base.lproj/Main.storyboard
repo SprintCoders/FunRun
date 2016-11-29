@@ -799,25 +799,6 @@
             </objects>
             <point key="canvasLocation" x="1865" y="1296"/>
         </scene>
-        <!--Goal-->
-        <scene sceneID="eUq-Sd-44g">
-            <objects>
-                <viewController id="mJo-i4-ocB" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="XXC-aS-hoW"/>
-                        <viewControllerLayoutGuide type="bottom" id="psZ-vl-6rK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="rbE-uI-qZx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Goal" image="goal_tab" id="oPD-4b-CbA"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="T2a-yG-imr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="745" y="1296"/>
-        </scene>
         <!--Tab View Controller-->
         <scene sceneID="TXh-6S-cB5">
             <objects>
@@ -830,7 +811,6 @@
                     <connections>
                         <segue destination="rsx-tJ-SDU" kind="relationship" relationship="viewControllers" id="u1Z-nb-FeH"/>
                         <segue destination="fwT-bg-K2B" kind="relationship" relationship="viewControllers" id="edM-Yz-gCR"/>
-                        <segue destination="mJo-i4-ocB" kind="relationship" relationship="viewControllers" id="GO9-EQ-ecC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zZ-a6-tG1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -859,7 +839,6 @@
     </scenes>
     <resources>
         <image name="activity_tab" width="25" height="25"/>
-        <image name="goal_tab" width="25" height="25"/>
         <image name="kissing_mouth" width="36" height="36"/>
         <image name="loudly_crying" width="36" height="36"/>
         <image name="running_tab" width="25" height="25"/>
