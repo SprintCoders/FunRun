@@ -18,6 +18,21 @@
 		8544D8B21DEA93F20019D011 /* FinishRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544D8B11DEA93F20019D011 /* FinishRunningViewController.swift */; };
 		85ECFFC51DEBA8960058CBA4 /* DispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECFFC41DEBA8960058CBA4 /* DispatchTimer.swift */; };
 		85ECFFC71DEBB7870058CBA4 /* TimeCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECFFC61DEBB7870058CBA4 /* TimeCount.swift */; };
+		B8702C001DED467400FEB4E8 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8702BFB1DED466C00FEB4E8 /* Charts.framework */; };
+		B8702C011DED467400FEB4E8 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B8702BFB1DED466C00FEB4E8 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B8DC280D1DED35D100BC38BA /* ActivitiesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC28031DED35D100BC38BA /* ActivitiesData.swift */; };
+		B8DC280E1DED35D100BC38BA /* Stats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8DC28041DED35D100BC38BA /* Stats.storyboard */; };
+		B8DC280F1DED35D100BC38BA /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC28061DED35D100BC38BA /* ChartViewController.swift */; };
+		B8DC28101DED35D100BC38BA /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC28071DED35D100BC38BA /* CSwiftV.swift */; };
+		B8DC28111DED35D100BC38BA /* Date+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC28081DED35D100BC38BA /* Date+Extra.swift */; };
+		B8DC28121DED35D100BC38BA /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC28091DED35D100BC38BA /* Profile.swift */; };
+		B8DC28131DED35D100BC38BA /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC280A1DED35D100BC38BA /* StatsViewController.swift */; };
+		B8DC28141DED35D100BC38BA /* cardioActivities.csv in Resources */ = {isa = PBXBuildFile; fileRef = B8DC280B1DED35D100BC38BA /* cardioActivities.csv */; };
+		B8DC28151DED35D100BC38BA /* ActivityChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC280C1DED35D100BC38BA /* ActivityChartView.swift */; };
+		B8DC281A1DED3A0A00BC38BA /* NewGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC28171DED3A0A00BC38BA /* NewGoalViewController.swift */; };
+		B8DC281B1DED3A0A00BC38BA /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC28181DED3A0A00BC38BA /* ScheduleCell.swift */; };
+		B8DC281C1DED3A0A00BC38BA /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC28191DED3A0A00BC38BA /* GoalViewController.swift */; };
+		B8DC281E1DED3A3800BC38BA /* Goal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8DC281D1DED3A3800BC38BA /* Goal.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +43,49 @@
 			remoteGlobalIDString = 852AE62C1DDABFCF00FEAA82;
 			remoteInfo = FunRun;
 		};
+		B8702BFA1DED466C00FEB4E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B8702BF41DED466C00FEB4E8 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F241D8110E600722320;
+			remoteInfo = Charts;
+		};
+		B8702BFC1DED466C00FEB4E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B8702BF41DED466C00FEB4E8 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06B120D51D811E6200D14B02;
+			remoteInfo = ChartsRealm;
+		};
+		B8702BFE1DED466C00FEB4E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B8702BF41DED466C00FEB4E8 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F2E1D8110E600722320;
+			remoteInfo = ChartsTests;
+		};
+		B8702C021DED467400FEB4E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B8702BF41DED466C00FEB4E8 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06165F231D8110E600722320;
+			remoteInfo = Charts;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B8702C041DED467400FEB4E8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B8702C011DED467400FEB4E8 /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		852AE62D1DDABFCF00FEAA82 /* FunRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +103,20 @@
 		8544D8B11DEA93F20019D011 /* FinishRunningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FinishRunningViewController.swift; path = ViewControllers/FinishRunningViewController.swift; sourceTree = "<group>"; };
 		85ECFFC41DEBA8960058CBA4 /* DispatchTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DispatchTimer.swift; path = Models/DispatchTimer.swift; sourceTree = "<group>"; };
 		85ECFFC61DEBB7870058CBA4 /* TimeCount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeCount.swift; path = Services/TimeCount.swift; sourceTree = "<group>"; };
+		B8702BF41DED466C00FEB4E8 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = vendor/Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		B8DC28031DED35D100BC38BA /* ActivitiesData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesData.swift; sourceTree = "<group>"; };
+		B8DC28051DED35D100BC38BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Stats.storyboard; sourceTree = "<group>"; };
+		B8DC28061DED35D100BC38BA /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		B8DC28071DED35D100BC38BA /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSwiftV.swift; sourceTree = "<group>"; };
+		B8DC28081DED35D100BC38BA /* Date+Extra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extra.swift"; sourceTree = "<group>"; };
+		B8DC28091DED35D100BC38BA /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		B8DC280A1DED35D100BC38BA /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		B8DC280B1DED35D100BC38BA /* cardioActivities.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = cardioActivities.csv; path = "Test Data/cardioActivities.csv"; sourceTree = "<group>"; };
+		B8DC280C1DED35D100BC38BA /* ActivityChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityChartView.swift; path = ViewControllers/ActivityChartView.swift; sourceTree = "<group>"; };
+		B8DC28171DED3A0A00BC38BA /* NewGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGoalViewController.swift; sourceTree = "<group>"; };
+		B8DC28181DED3A0A00BC38BA /* ScheduleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
+		B8DC28191DED3A0A00BC38BA /* GoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
+		B8DC281D1DED3A3800BC38BA /* Goal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Goal.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8702C001DED467400FEB4E8 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +141,7 @@
 		852AE6241DDABFCE00FEAA82 = {
 			isa = PBXGroup;
 			children = (
+				B8702BF41DED466C00FEB4E8 /* Charts.xcodeproj */,
 				852AE62F1DDABFCF00FEAA82 /* FunRun */,
 				852AE6441DDABFCF00FEAA82 /* FunRunTests */,
 				852AE62E1DDABFCF00FEAA82 /* Products */,
@@ -87,14 +160,19 @@
 		852AE62F1DDABFCF00FEAA82 /* FunRun */ = {
 			isa = PBXGroup;
 			children = (
+				B8DC28211DED3C9F00BC38BA /* Utils */,
+				B8DC28201DED3C8900BC38BA /* Data */,
 				85ECFFC31DEBA84C0058CBA4 /* Services */,
 				852AE6511DDAC04200FEAA82 /* Models */,
 				852AE6501DDAC03600FEAA82 /* ViewControllers */,
+				B8DC28221DED3CBF00BC38BA /* Views */,
 				852AE6301DDABFCF00FEAA82 /* AppDelegate.swift */,
 				852AE6341DDABFCF00FEAA82 /* Main.storyboard */,
+				B8DC28041DED35D100BC38BA /* Stats.storyboard */,
 				852AE6371DDABFCF00FEAA82 /* Assets.xcassets */,
 				852AE6391DDABFCF00FEAA82 /* LaunchScreen.storyboard */,
 				852AE63C1DDABFCF00FEAA82 /* Info.plist */,
+				B8DC281D1DED3A3800BC38BA /* Goal.storyboard */,
 			);
 			path = FunRun;
 			sourceTree = "<group>";
@@ -111,6 +189,11 @@
 		852AE6501DDAC03600FEAA82 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B8DC280A1DED35D100BC38BA /* StatsViewController.swift */,
+				B8DC28061DED35D100BC38BA /* ChartViewController.swift */,
+				B8DC28191DED3A0A00BC38BA /* GoalViewController.swift */,
+				B8DC28181DED3A0A00BC38BA /* ScheduleCell.swift */,
+				B8DC28171DED3A0A00BC38BA /* NewGoalViewController.swift */,
 				852AE6521DDAC11300FEAA82 /* TabViewController.swift */,
 				852AE6541DDACCFA00FEAA82 /* StartRunningViewController.swift */,
 				8544D8AF1DEA8BAD0019D011 /* DuringRunningViewController.swift */,
@@ -135,6 +218,43 @@
 			name = Services;
 			sourceTree = "<group>";
 		};
+		B8702BF51DED466C00FEB4E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B8702BFB1DED466C00FEB4E8 /* Charts.framework */,
+				B8702BFD1DED466C00FEB4E8 /* ChartsRealm.framework */,
+				B8702BFF1DED466C00FEB4E8 /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B8DC28201DED3C8900BC38BA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B8DC28091DED35D100BC38BA /* Profile.swift */,
+				B8DC280B1DED35D100BC38BA /* cardioActivities.csv */,
+				B8DC28031DED35D100BC38BA /* ActivitiesData.swift */,
+				B8DC28071DED35D100BC38BA /* CSwiftV.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		B8DC28211DED3C9F00BC38BA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B8DC28081DED35D100BC38BA /* Date+Extra.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		B8DC28221DED3CBF00BC38BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B8DC280C1DED35D100BC38BA /* ActivityChartView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,10 +265,12 @@
 				852AE6291DDABFCF00FEAA82 /* Sources */,
 				852AE62A1DDABFCF00FEAA82 /* Frameworks */,
 				852AE62B1DDABFCF00FEAA82 /* Resources */,
+				B8702C041DED467400FEB4E8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B8702C031DED467400FEB4E8 /* PBXTargetDependency */,
 			);
 			name = FunRun;
 			productName = FunRun;
@@ -207,6 +329,12 @@
 			mainGroup = 852AE6241DDABFCE00FEAA82;
 			productRefGroup = 852AE62E1DDABFCF00FEAA82 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B8702BF51DED466C00FEB4E8 /* Products */;
+					ProjectRef = B8702BF41DED466C00FEB4E8 /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				852AE62C1DDABFCF00FEAA82 /* FunRun */,
@@ -215,13 +343,40 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		B8702BFB1DED466C00FEB4E8 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = B8702BFA1DED466C00FEB4E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B8702BFD1DED466C00FEB4E8 /* ChartsRealm.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ChartsRealm.framework;
+			remoteRef = B8702BFC1DED466C00FEB4E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B8702BFF1DED466C00FEB4E8 /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = B8702BFE1DED466C00FEB4E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		852AE62B1DDABFCF00FEAA82 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8DC28141DED35D100BC38BA /* cardioActivities.csv in Resources */,
 				852AE63B1DDABFCF00FEAA82 /* LaunchScreen.storyboard in Resources */,
 				852AE6381DDABFCF00FEAA82 /* Assets.xcassets in Resources */,
+				B8DC281E1DED3A3800BC38BA /* Goal.storyboard in Resources */,
+				B8DC280E1DED35D100BC38BA /* Stats.storyboard in Resources */,
 				852AE6361DDABFCF00FEAA82 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,12 +395,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8DC28101DED35D100BC38BA /* CSwiftV.swift in Sources */,
+				B8DC28121DED35D100BC38BA /* Profile.swift in Sources */,
 				852AE6531DDAC11300FEAA82 /* TabViewController.swift in Sources */,
 				85ECFFC71DEBB7870058CBA4 /* TimeCount.swift in Sources */,
 				85ECFFC51DEBA8960058CBA4 /* DispatchTimer.swift in Sources */,
 				852AE6311DDABFCF00FEAA82 /* AppDelegate.swift in Sources */,
 				852AE6551DDACCFA00FEAA82 /* StartRunningViewController.swift in Sources */,
+				B8DC280F1DED35D100BC38BA /* ChartViewController.swift in Sources */,
+				B8DC28131DED35D100BC38BA /* StatsViewController.swift in Sources */,
+				B8DC281C1DED3A0A00BC38BA /* GoalViewController.swift in Sources */,
+				B8DC281A1DED3A0A00BC38BA /* NewGoalViewController.swift in Sources */,
+				B8DC281B1DED3A0A00BC38BA /* ScheduleCell.swift in Sources */,
 				8544D8B21DEA93F20019D011 /* FinishRunningViewController.swift in Sources */,
+				B8DC28151DED35D100BC38BA /* ActivityChartView.swift in Sources */,
+				B8DC280D1DED35D100BC38BA /* ActivitiesData.swift in Sources */,
+				B8DC28111DED35D100BC38BA /* Date+Extra.swift in Sources */,
 				8544D8B01DEA8BAD0019D011 /* DuringRunningViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,6 +431,11 @@
 			target = 852AE62C1DDABFCF00FEAA82 /* FunRun */;
 			targetProxy = 852AE6421DDABFCF00FEAA82 /* PBXContainerItemProxy */;
 		};
+		B8702C031DED467400FEB4E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = B8702C021DED467400FEB4E8 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -283,6 +453,14 @@
 				852AE63A1DDABFCF00FEAA82 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B8DC28041DED35D100BC38BA /* Stats.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B8DC28051DED35D100BC38BA /* Base */,
+			);
+			name = Stats.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -384,8 +562,13 @@
 		852AE64B1DDABFCF00FEAA82 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XYNA997C9P;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FunRun/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -398,8 +581,13 @@
 		852AE64C1DDABFCF00FEAA82 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XYNA997C9P;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FunRun/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

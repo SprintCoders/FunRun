@@ -8,33 +8,30 @@
 
 import UIKit
 
-class TabViewController: UIViewController {
-
-    @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var tabBarView: UIView!
-    
-    
+class TabViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // Stats
+        let statsStoryBoard: UIStoryboard = UIStoryboard(name: "Stats", bundle: nil)
+        let statsViewController:UIViewController = statsStoryBoard.instantiateViewController(withIdentifier: "StatsNavigationController") as UIViewController
+        statsViewController.tabBarItem.title = "Statistics"
+        statsViewController.tabBarItem.image = UIImage(named: "statistics_tab")
+        
+        // Goal
+        let goalStoryBoard: UIStoryboard = UIStoryboard(name: "Goal", bundle: nil)
+        let goalViewController:UIViewController = goalStoryBoard.instantiateViewController(withIdentifier: "GoalNavigationController") as UIViewController
+        goalViewController.tabBarItem.title = "Goal"
+        goalViewController.tabBarItem.image = UIImage(named: "goal_tab")
+        
+        
+        // add view controllers into viewControllers
+        var controllers = self.viewControllers
+        controllers?.insert(statsViewController, at: 0)
+        controllers?.insert(goalViewController, at: 3)
+        self.viewControllers = controllers
+        
+        
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

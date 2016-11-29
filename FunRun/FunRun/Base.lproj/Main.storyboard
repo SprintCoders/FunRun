@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Pr6-Cg-BHT">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Pr6-Cg-BHT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -799,58 +799,18 @@
             </objects>
             <point key="canvasLocation" x="1865" y="1296"/>
         </scene>
-        <!--Goal-->
-        <scene sceneID="eUq-Sd-44g">
-            <objects>
-                <viewController id="mJo-i4-ocB" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="XXC-aS-hoW"/>
-                        <viewControllerLayoutGuide type="bottom" id="psZ-vl-6rK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="rbE-uI-qZx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Goal" image="goal_tab" id="oPD-4b-CbA"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="T2a-yG-imr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="745" y="1296"/>
-        </scene>
-        <!--Statistics-->
-        <scene sceneID="bgz-pa-MbU">
-            <objects>
-                <viewController id="QFo-Qk-ioj" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bsG-DQ-BJ5"/>
-                        <viewControllerLayoutGuide type="bottom" id="nmh-Y1-bCL"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ehd-LL-OrI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Statistics" image="statistics_tab" id="5qM-yo-UnC"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="M9D-aw-caM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1865" y="-1221"/>
-        </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab View Controller-->
         <scene sceneID="TXh-6S-cB5">
             <objects>
-                <tabBarController id="Pr6-Cg-BHT" sceneMemberID="viewController">
+                <tabBarController id="Pr6-Cg-BHT" customClass="TabViewController" customModule="FunRun" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="WyM-Su-B1y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="QFo-Qk-ioj" kind="relationship" relationship="viewControllers" id="7hZ-tg-aNL"/>
                         <segue destination="rsx-tJ-SDU" kind="relationship" relationship="viewControllers" id="u1Z-nb-FeH"/>
                         <segue destination="fwT-bg-K2B" kind="relationship" relationship="viewControllers" id="edM-Yz-gCR"/>
-                        <segue destination="mJo-i4-ocB" kind="relationship" relationship="viewControllers" id="GO9-EQ-ecC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zZ-a6-tG1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -879,13 +839,11 @@
     </scenes>
     <resources>
         <image name="activity_tab" width="25" height="25"/>
-        <image name="goal_tab" width="25" height="25"/>
         <image name="kissing_mouth" width="36" height="36"/>
         <image name="loudly_crying" width="36" height="36"/>
         <image name="running_tab" width="25" height="25"/>
         <image name="smile_eye_open_mouth" width="36" height="36"/>
         <image name="smirking_face" width="36" height="36"/>
-        <image name="statistics_tab" width="25" height="25"/>
         <image name="tears_of_joy" width="36" height="36"/>
         <image name="unknown_avatar" width="148" height="148"/>
     </resources>
