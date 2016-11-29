@@ -18,6 +18,15 @@
 		8544D8B21DEA93F20019D011 /* FinishRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544D8B11DEA93F20019D011 /* FinishRunningViewController.swift */; };
 		85ECFFC51DEBA8960058CBA4 /* DispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECFFC41DEBA8960058CBA4 /* DispatchTimer.swift */; };
 		85ECFFC71DEBB7870058CBA4 /* TimeCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECFFC61DEBB7870058CBA4 /* TimeCount.swift */; };
+		B8DC280D1DED35D100BC38BA /* ActivitiesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC28031DED35D100BC38BA /* ActivitiesData.swift */; };
+		B8DC280E1DED35D100BC38BA /* Stats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8DC28041DED35D100BC38BA /* Stats.storyboard */; };
+		B8DC280F1DED35D100BC38BA /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC28061DED35D100BC38BA /* ChartViewController.swift */; };
+		B8DC28101DED35D100BC38BA /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC28071DED35D100BC38BA /* CSwiftV.swift */; };
+		B8DC28111DED35D100BC38BA /* Date+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC28081DED35D100BC38BA /* Date+Extra.swift */; };
+		B8DC28121DED35D100BC38BA /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC28091DED35D100BC38BA /* Profile.swift */; };
+		B8DC28131DED35D100BC38BA /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC280A1DED35D100BC38BA /* StatsViewController.swift */; };
+		B8DC28141DED35D100BC38BA /* cardioActivities.csv in Resources */ = {isa = PBXBuildFile; fileRef = B8DC280B1DED35D100BC38BA /* cardioActivities.csv */; };
+		B8DC28151DED35D100BC38BA /* ActivityChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC280C1DED35D100BC38BA /* ActivityChartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +55,15 @@
 		8544D8B11DEA93F20019D011 /* FinishRunningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FinishRunningViewController.swift; path = ViewControllers/FinishRunningViewController.swift; sourceTree = "<group>"; };
 		85ECFFC41DEBA8960058CBA4 /* DispatchTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DispatchTimer.swift; path = Models/DispatchTimer.swift; sourceTree = "<group>"; };
 		85ECFFC61DEBB7870058CBA4 /* TimeCount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeCount.swift; path = Services/TimeCount.swift; sourceTree = "<group>"; };
+		B8DC28031DED35D100BC38BA /* ActivitiesData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesData.swift; sourceTree = "<group>"; };
+		B8DC28051DED35D100BC38BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Stats.storyboard; sourceTree = "<group>"; };
+		B8DC28061DED35D100BC38BA /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		B8DC28071DED35D100BC38BA /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSwiftV.swift; sourceTree = "<group>"; };
+		B8DC28081DED35D100BC38BA /* Date+Extra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extra.swift"; sourceTree = "<group>"; };
+		B8DC28091DED35D100BC38BA /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		B8DC280A1DED35D100BC38BA /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		B8DC280B1DED35D100BC38BA /* cardioActivities.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = cardioActivities.csv; path = "Test Data/cardioActivities.csv"; sourceTree = "<group>"; };
+		B8DC280C1DED35D100BC38BA /* ActivityChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityChartView.swift; path = ViewControllers/ActivityChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +105,15 @@
 		852AE62F1DDABFCF00FEAA82 /* FunRun */ = {
 			isa = PBXGroup;
 			children = (
+				B8DC28031DED35D100BC38BA /* ActivitiesData.swift */,
+				B8DC28041DED35D100BC38BA /* Stats.storyboard */,
+				B8DC28061DED35D100BC38BA /* ChartViewController.swift */,
+				B8DC28071DED35D100BC38BA /* CSwiftV.swift */,
+				B8DC28081DED35D100BC38BA /* Date+Extra.swift */,
+				B8DC28091DED35D100BC38BA /* Profile.swift */,
+				B8DC280A1DED35D100BC38BA /* StatsViewController.swift */,
+				B8DC280B1DED35D100BC38BA /* cardioActivities.csv */,
+				B8DC280C1DED35D100BC38BA /* ActivityChartView.swift */,
 				85ECFFC31DEBA84C0058CBA4 /* Services */,
 				852AE6511DDAC04200FEAA82 /* Models */,
 				852AE6501DDAC03600FEAA82 /* ViewControllers */,
@@ -220,8 +247,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8DC28141DED35D100BC38BA /* cardioActivities.csv in Resources */,
 				852AE63B1DDABFCF00FEAA82 /* LaunchScreen.storyboard in Resources */,
 				852AE6381DDABFCF00FEAA82 /* Assets.xcassets in Resources */,
+				B8DC280E1DED35D100BC38BA /* Stats.storyboard in Resources */,
 				852AE6361DDABFCF00FEAA82 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,12 +269,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8DC28101DED35D100BC38BA /* CSwiftV.swift in Sources */,
+				B8DC28121DED35D100BC38BA /* Profile.swift in Sources */,
 				852AE6531DDAC11300FEAA82 /* TabViewController.swift in Sources */,
 				85ECFFC71DEBB7870058CBA4 /* TimeCount.swift in Sources */,
 				85ECFFC51DEBA8960058CBA4 /* DispatchTimer.swift in Sources */,
 				852AE6311DDABFCF00FEAA82 /* AppDelegate.swift in Sources */,
 				852AE6551DDACCFA00FEAA82 /* StartRunningViewController.swift in Sources */,
+				B8DC280F1DED35D100BC38BA /* ChartViewController.swift in Sources */,
+				B8DC28131DED35D100BC38BA /* StatsViewController.swift in Sources */,
 				8544D8B21DEA93F20019D011 /* FinishRunningViewController.swift in Sources */,
+				B8DC28151DED35D100BC38BA /* ActivityChartView.swift in Sources */,
+				B8DC280D1DED35D100BC38BA /* ActivitiesData.swift in Sources */,
+				B8DC28111DED35D100BC38BA /* Date+Extra.swift in Sources */,
 				8544D8B01DEA8BAD0019D011 /* DuringRunningViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +319,14 @@
 				852AE63A1DDABFCF00FEAA82 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B8DC28041DED35D100BC38BA /* Stats.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B8DC28051DED35D100BC38BA /* Base */,
+			);
+			name = Stats.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

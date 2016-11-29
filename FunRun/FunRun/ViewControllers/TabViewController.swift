@@ -8,33 +8,18 @@
 
 import UIKit
 
-class TabViewController: UIViewController {
-
-    @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var tabBarView: UIView!
-    
-    
+class TabViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Stats", bundle: nil)
+        let viewController:UIViewController = storyBoard.instantiateViewController(withIdentifier: "StatsNavigationController") as UIViewController
+        viewController.tabBarItem.title = "Statistics"
+        viewController.tabBarItem.image = UIImage(named: "statistics_tab")
+        
+        var controllers = self.viewControllers
+        controllers?.insert(viewController, at: 0)
+        self.viewControllers = controllers
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
