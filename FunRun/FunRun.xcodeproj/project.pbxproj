@@ -33,6 +33,7 @@
 		85ECFFC51DEBA8960058CBA4 /* DispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECFFC41DEBA8960058CBA4 /* DispatchTimer.swift */; };
 		B8702C001DED467400FEB4E8 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8702BFB1DED466C00FEB4E8 /* Charts.framework */; };
 		B8702C011DED467400FEB4E8 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B8702BFB1DED466C00FEB4E8 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B8AED9081DEFDC7300AD167C /* UIScrollView+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AED9071DEFDC7300AD167C /* UIScrollView+Extra.swift */; };
 		B8DC280E1DED35D100BC38BA /* Stats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8DC28041DED35D100BC38BA /* Stats.storyboard */; };
 		B8DC28151DED35D100BC38BA /* ActivityChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC280C1DED35D100BC38BA /* ActivityChartView.swift */; };
 /* End PBXBuildFile section */
@@ -119,6 +120,7 @@
 		85C6D5261DED7A3A0063BD07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Activity.storyboard; sourceTree = "<group>"; };
 		85ECFFC41DEBA8960058CBA4 /* DispatchTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DispatchTimer.swift; path = Models/DispatchTimer.swift; sourceTree = "<group>"; };
 		B8702BF41DED466C00FEB4E8 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = vendor/Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		B8AED9071DEFDC7300AD167C /* UIScrollView+Extra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIScrollView+Extra.swift"; path = "Utils/UIScrollView+Extra.swift"; sourceTree = "<group>"; };
 		B8DC28051DED35D100BC38BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Stats.storyboard; sourceTree = "<group>"; };
 		B8DC280C1DED35D100BC38BA /* ActivityChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityChartView.swift; path = ViewControllers/ActivityChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -281,6 +283,7 @@
 			children = (
 				85C6D50E1DED75030063BD07 /* Date+Extra.swift */,
 				85C6D50F1DED75030063BD07 /* TimeCount.swift */,
+				B8AED9071DEFDC7300AD167C /* UIScrollView+Extra.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 			files = (
 				85C6D51B1DED758F0063BD07 /* GoalViewController.swift in Sources */,
 				85C6D50B1DED74950063BD07 /* Profile.swift in Sources */,
+				B8AED9081DEFDC7300AD167C /* UIScrollView+Extra.swift in Sources */,
 				852AE6531DDAC11300FEAA82 /* TabViewController.swift in Sources */,
 				85C6D5161DED756F0063BD07 /* NewGoalViewController.swift in Sources */,
 				85ECFFC51DEBA8960058CBA4 /* DispatchTimer.swift in Sources */,

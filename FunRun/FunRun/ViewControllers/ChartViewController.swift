@@ -27,8 +27,14 @@ class ChartViewController: UIViewController {
         let distancePerMonth = [84.4, 53.2, 50.2, 93.4, 127.4, 149.7, 188.0, 36.7, 89.6, 55.5, 0.0, 0.0]
         setChart(barChartView:barChartView, dataPoints: months, values: distancePerMonth, label:"Monthly distance (mile)")
         
-        
-
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
     }
 
     func setChart(barChartView:BarChartView!, dataPoints:[String], values:[Double], label:String!){
