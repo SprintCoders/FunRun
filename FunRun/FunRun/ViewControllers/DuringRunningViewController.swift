@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DuringRunningViewController: UIViewController {
+class DuringRunningViewController: UIViewController, RunTrackerDelegate {
 
     
     @IBOutlet weak var buttonView: UIView!
@@ -38,6 +38,7 @@ class DuringRunningViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         // self.hidesBottomBarWhenPushed = true
+        RunTracker.shared.runTrackerDelegate = self
         
         // Setup subview styles
         self.timeCountView.layer.borderWidth = 1.0
@@ -59,7 +60,16 @@ class DuringRunningViewController: UIViewController {
         self.pauseBtn.addTarget(self, action: #selector(pauseRunning), for: UIControlEvents.touchUpInside)
         // self.stopBtn.addTarget(self, action: #selector(stopRunning), for: UIControlEvents.touchUpInside)
         
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if self.paused {
+            self.tabBarController?.tabBar.isHidden = false
+            
+        } else {
+            self.tabBarController?.tabBar.isHidden = true
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -79,7 +89,7 @@ class DuringRunningViewController: UIViewController {
     }
     
     
-
+    
     /* MARK: - Navigation */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
@@ -90,9 +100,18 @@ class DuringRunningViewController: UIViewController {
             FinishRunningVC.totalTime = self.accumulatedTime
             self.timer?.cancel()
             self.timer = nil
+            RunTracker.shared.runningStatus = RunningStatus.finished
         }
     }
     
+    
+    /* MARK: - RunTrackerDelegate functions */
+    func RunTrackerUpdate(newDistance distance: Double, newAvgPace avgPace: Double, newSpeed speed: Double) {
+        self.accumulatedDistance = distance
+        self.distanceCountLabel.text = String(format: "%.2f", arguments: [distance])
+        self.avgPaceLabel.text = String(format: "%.2f min/mil", arguments: [avgPace])
+        self.currentSpeed = speed
+    }
     
     
     /* MARK: - Button function */
@@ -102,11 +121,15 @@ class DuringRunningViewController: UIViewController {
             self.timer?.resume()
             self.pauseBtn.setTitle("PAUSE", for: UIControlState.normal)
             self.paused = false
+            RunTracker.shared.runningStatus = RunningStatus.started
+            self.tabBarController?.tabBar.isHidden = true
         } else {
             print("-- pressed pause button")
             self.timer?.suspend()
             self.pauseBtn.setTitle("RESUME", for: UIControlState.normal)
             self.paused = true
+            RunTracker.shared.runningStatus = RunningStatus.paused
+            self.tabBarController?.tabBar.isHidden = false
         }
     }
     

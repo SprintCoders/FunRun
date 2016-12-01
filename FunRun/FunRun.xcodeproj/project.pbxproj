@@ -16,6 +16,8 @@
 		852AE6551DDACCFA00FEAA82 /* StartRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852AE6541DDACCFA00FEAA82 /* StartRunningViewController.swift */; };
 		8544D8B01DEA8BAD0019D011 /* DuringRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544D8AF1DEA8BAD0019D011 /* DuringRunningViewController.swift */; };
 		8544D8B21DEA93F20019D011 /* FinishRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544D8B11DEA93F20019D011 /* FinishRunningViewController.swift */; };
+		856949F81DEFB70E008543D3 /* LocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856949F71DEFB70E008543D3 /* LocationTracker.swift */; };
+		856949FA1DEFD3DB008543D3 /* RunTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856949F91DEFD3DB008543D3 /* RunTracker.swift */; };
 		85C6D5091DED74950063BD07 /* ActivitiesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D5061DED74950063BD07 /* ActivitiesData.swift */; };
 		85C6D50A1DED74950063BD07 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D5071DED74950063BD07 /* CSwiftV.swift */; };
 		85C6D50B1DED74950063BD07 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D5081DED74950063BD07 /* Profile.swift */; };
@@ -103,6 +105,8 @@
 		852AE6541DDACCFA00FEAA82 /* StartRunningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartRunningViewController.swift; path = ViewControllers/StartRunningViewController.swift; sourceTree = "<group>"; };
 		8544D8AF1DEA8BAD0019D011 /* DuringRunningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DuringRunningViewController.swift; path = ViewControllers/DuringRunningViewController.swift; sourceTree = "<group>"; };
 		8544D8B11DEA93F20019D011 /* FinishRunningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FinishRunningViewController.swift; path = ViewControllers/FinishRunningViewController.swift; sourceTree = "<group>"; };
+		856949F71DEFB70E008543D3 /* LocationTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationTracker.swift; path = Models/LocationTracker.swift; sourceTree = "<group>"; };
+		856949F91DEFD3DB008543D3 /* RunTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RunTracker.swift; path = Services/RunTracker.swift; sourceTree = "<group>"; };
 		85C6D5061DED74950063BD07 /* ActivitiesData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivitiesData.swift; path = Data/ActivitiesData.swift; sourceTree = "<group>"; };
 		85C6D5071DED74950063BD07 /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSwiftV.swift; path = Data/CSwiftV.swift; sourceTree = "<group>"; };
 		85C6D5081DED74950063BD07 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = Data/Profile.swift; sourceTree = "<group>"; };
@@ -207,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				85ECFFC41DEBA8960058CBA4 /* DispatchTimer.swift */,
+				856949F71DEFB70E008543D3 /* LocationTracker.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 		85ECFFC31DEBA84C0058CBA4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				856949F91DEFD3DB008543D3 /* RunTracker.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -339,6 +345,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = XYNA997C9P;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					852AE6401DDABFCF00FEAA82 = {
 						CreatedOnToolsVersion = 8.1;
@@ -427,6 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				856949FA1DEFD3DB008543D3 /* RunTracker.swift in Sources */,
 				85C6D51B1DED758F0063BD07 /* GoalViewController.swift in Sources */,
 				85C6D50B1DED74950063BD07 /* Profile.swift in Sources */,
 				852AE6531DDAC11300FEAA82 /* TabViewController.swift in Sources */,
@@ -434,6 +446,7 @@
 				85ECFFC51DEBA8960058CBA4 /* DispatchTimer.swift in Sources */,
 				852AE6311DDABFCF00FEAA82 /* AppDelegate.swift in Sources */,
 				85C6D51A1DED758F0063BD07 /* ChartViewController.swift in Sources */,
+				856949F81DEFB70E008543D3 /* LocationTracker.swift in Sources */,
 				85C6D5171DED756F0063BD07 /* ScheduleCell.swift in Sources */,
 				852AE6551DDACCFA00FEAA82 /* StartRunningViewController.swift in Sources */,
 				85C6D5101DED75030063BD07 /* Date+Extra.swift in Sources */,

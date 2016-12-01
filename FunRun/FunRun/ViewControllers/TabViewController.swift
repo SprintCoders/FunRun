@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TabViewController: UITabBarController {
+class TabViewController: UITabBarController, UITabBarControllerDelegate {
     
     var statsNavCtr: UIViewController!
     var runningNavCtr: UIViewController!
@@ -54,5 +54,25 @@ class TabViewController: UITabBarController {
         let controllers: [UIViewController]? = [statsNavCtr, runningNavCtr, activityNavCtr, goalNavCtr]
         self.viewControllers = controllers
         self.selectedIndex = 0
+        self.delegate = self
     }
+    
+    
+    
+    /* MARK: - UITabBarControllerDelegate functions */
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        switch self.selectedIndex {
+        case 0:
+            return viewController != self.statsNavCtr
+        case 1:
+            return viewController != self.runningNavCtr
+        case 2:
+            return viewController != self.activityNavCtr
+        case 3:
+            return viewController != self.goalNavCtr
+        default:
+            return true
+        }
+    }
+    
 }
