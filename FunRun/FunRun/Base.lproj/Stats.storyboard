@@ -213,37 +213,23 @@
                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2Y-Hj-dCV">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86b-u2-PAx" userLabel="contentView" customClass="ActivityChartView" customModule="FunRun" customModuleProvider="target">
                                                                 <rect key="frame" x="8" y="36.5" width="359" height="112"/>
-                                                                <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86b-u2-PAx" userLabel="contentView" customClass="ActivityChartView" customModule="FunRun" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="772" height="112"/>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="112" id="AUu-kg-hrd"/>
-                                                                            <constraint firstAttribute="width" constant="772" id="gVu-20-Iak"/>
-                                                                        </constraints>
-                                                                    </view>
-                                                                </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="trailing" secondItem="86b-u2-PAx" secondAttribute="trailing" id="3kO-Yp-SLi"/>
-                                                                    <constraint firstItem="86b-u2-PAx" firstAttribute="top" secondItem="Y2Y-Hj-dCV" secondAttribute="top" id="SJd-9W-MzB"/>
-                                                                    <constraint firstAttribute="height" constant="112" id="ffy-Iq-WcT"/>
-                                                                    <constraint firstItem="86b-u2-PAx" firstAttribute="leading" secondItem="Y2Y-Hj-dCV" secondAttribute="leading" id="hI6-xb-XsT"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="86b-u2-PAx" secondAttribute="bottom" id="jcE-LQ-Xg2"/>
+                                                                    <constraint firstAttribute="height" constant="112" id="AUu-kg-hrd"/>
                                                                 </constraints>
-                                                            </scrollView>
+                                                            </view>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="86b-u2-PAx" secondAttribute="trailing" constant="8" id="1Au-r4-1M6"/>
                                                             <constraint firstItem="ajK-Z2-Ss9" firstAttribute="top" secondItem="aLL-ET-nRw" secondAttribute="top" constant="8" id="3h7-qC-dzl"/>
+                                                            <constraint firstItem="86b-u2-PAx" firstAttribute="top" secondItem="ajK-Z2-Ss9" secondAttribute="bottom" constant="8" id="4Au-of-WV8"/>
                                                             <constraint firstAttribute="height" constant="157" id="BhT-dh-Mlj"/>
                                                             <constraint firstItem="ajK-Z2-Ss9" firstAttribute="leading" secondItem="aLL-ET-nRw" secondAttribute="leading" constant="8" id="Dgp-GR-xZH"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Y2Y-Hj-dCV" secondAttribute="trailing" constant="8" id="FIR-B7-kXe"/>
-                                                            <constraint firstItem="Y2Y-Hj-dCV" firstAttribute="top" secondItem="ajK-Z2-Ss9" secondAttribute="bottom" constant="8" id="Jbl-E7-qkG"/>
                                                             <constraint firstAttribute="trailing" secondItem="ajK-Z2-Ss9" secondAttribute="trailing" constant="8" id="W6a-Hh-mif"/>
-                                                            <constraint firstItem="Y2Y-Hj-dCV" firstAttribute="leading" secondItem="aLL-ET-nRw" secondAttribute="leading" constant="8" id="skl-sM-RDY"/>
+                                                            <constraint firstItem="86b-u2-PAx" firstAttribute="leading" secondItem="aLL-ET-nRw" secondAttribute="leading" constant="8" id="wbD-ee-h2y"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L44-ye-ZYD" userLabel="border">
@@ -264,7 +250,7 @@
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fpS-hA-rsI" userLabel="Distance Bar Chart" customClass="BarChartView" customModule="Charts">
                                                                 <rect key="frame" x="8" y="72.5" width="359" height="269.5"/>
-                                                                <color key="backgroundColor" red="1" green="0.98949343469999995" blue="0.86478935580000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <gestureRecognizers/>
                                                                 <connections>
                                                                     <outletCollection property="gestureRecognizers" destination="WWd-yc-jXF" appends="YES" id="esk-Z0-b9V"/>

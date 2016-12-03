@@ -18,6 +18,7 @@
 		8544D8B21DEA93F20019D011 /* FinishRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544D8B11DEA93F20019D011 /* FinishRunningViewController.swift */; };
 		856949F81DEFB70E008543D3 /* LocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856949F71DEFB70E008543D3 /* LocationTracker.swift */; };
 		856949FA1DEFD3DB008543D3 /* RunTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856949F91DEFD3DB008543D3 /* RunTracker.swift */; };
+		857328671DF2C4880065826D /* UIScrollView+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857328661DF2C4880065826D /* UIScrollView+Extra.swift */; };
 		85C6D5091DED74950063BD07 /* ActivitiesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D5061DED74950063BD07 /* ActivitiesData.swift */; };
 		85C6D50A1DED74950063BD07 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D5071DED74950063BD07 /* CSwiftV.swift */; };
 		85C6D50B1DED74950063BD07 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D5081DED74950063BD07 /* Profile.swift */; };
@@ -107,6 +108,7 @@
 		8544D8B11DEA93F20019D011 /* FinishRunningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FinishRunningViewController.swift; path = ViewControllers/FinishRunningViewController.swift; sourceTree = "<group>"; };
 		856949F71DEFB70E008543D3 /* LocationTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationTracker.swift; path = Models/LocationTracker.swift; sourceTree = "<group>"; };
 		856949F91DEFD3DB008543D3 /* RunTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RunTracker.swift; path = Services/RunTracker.swift; sourceTree = "<group>"; };
+		857328661DF2C4880065826D /* UIScrollView+Extra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIScrollView+Extra.swift"; path = "Utils/UIScrollView+Extra.swift"; sourceTree = "<group>"; };
 		85C6D5061DED74950063BD07 /* ActivitiesData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivitiesData.swift; path = Data/ActivitiesData.swift; sourceTree = "<group>"; };
 		85C6D5071DED74950063BD07 /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSwiftV.swift; path = Data/CSwiftV.swift; sourceTree = "<group>"; };
 		85C6D5081DED74950063BD07 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = Data/Profile.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 		B8DC28211DED3C9F00BC38BA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				857328661DF2C4880065826D /* UIScrollView+Extra.swift */,
 				85C6D50E1DED75030063BD07 /* Date+Extra.swift */,
 				85C6D50F1DED75030063BD07 /* TimeCount.swift */,
 			);
@@ -448,6 +451,7 @@
 				85C6D51A1DED758F0063BD07 /* ChartViewController.swift in Sources */,
 				856949F81DEFB70E008543D3 /* LocationTracker.swift in Sources */,
 				85C6D5171DED756F0063BD07 /* ScheduleCell.swift in Sources */,
+				857328671DF2C4880065826D /* UIScrollView+Extra.swift in Sources */,
 				852AE6551DDACCFA00FEAA82 /* StartRunningViewController.swift in Sources */,
 				85C6D5101DED75030063BD07 /* Date+Extra.swift in Sources */,
 				85C6D5111DED75030063BD07 /* TimeCount.swift in Sources */,
