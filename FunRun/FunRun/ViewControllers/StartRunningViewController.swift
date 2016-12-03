@@ -67,7 +67,11 @@ class StartRunningViewController: UIViewController, CLLocationManagerDelegate {
         if segue.identifier == "StartToRunning" {
             let DuringRunningVC = segue.destination as! DuringRunningViewController
             // DuringRunningVC = DuringRunningViewController()
+            DuringRunningVC.paused = false
             DuringRunningVC.accumulatedTime = 0
+            DuringRunningVC.accumulatedDistance = 0.0
+            DuringRunningVC.currentSpeed = 0.0
+            RunTracker.shared.reset()
             RunTracker.shared.runningStatus = RunningStatus.started
         }
     }

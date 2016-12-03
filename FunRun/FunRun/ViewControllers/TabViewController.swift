@@ -34,7 +34,7 @@ class TabViewController: UITabBarController, UITabBarControllerDelegate {
         // Running
         let runningStoryBoard: UIStoryboard = UIStoryboard(name: "Running", bundle: nil)
         runningNavCtr = runningStoryBoard.instantiateViewController(withIdentifier: "RunningNavigationController") as UIViewController
-        runningNavCtr.tabBarItem.title = "Running"
+        runningNavCtr.tabBarItem.title = "Run"
         runningNavCtr.tabBarItem.image = UIImage(named: "running_tab")
         
         // Activity
@@ -55,6 +55,19 @@ class TabViewController: UITabBarController, UITabBarControllerDelegate {
         self.viewControllers = controllers
         self.selectedIndex = 0
         self.delegate = self
+        
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: RunTracker.startedARunningNotification), object: nil, queue: OperationQueue.main) { (notification) -> Void in
+            // self.runningNavCtr.tabBarItem.image = UIImage(named: "running_tab2")
+            self.runningNavCtr.tabBarItem = UITabBarItem(title: "Running", image: UIImage(named: "running_tab2")!, tag: 1)
+            self.setNeedsStatusBarAppearanceUpdate()
+        }
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: RunTracker.finishedARunningNotification), object: nil, queue: OperationQueue.main) { (notification) -> Void in
+            // self.runningNavCtr.tabBarItem.image = UIImage(named: "running_tab")
+            self.runningNavCtr.tabBarItem = UITabBarItem(title: "Run", image: UIImage(named: "running_tab")!, tag: 1)
+            self.setNeedsStatusBarAppearanceUpdate()
+        }
+        
     }
     
     

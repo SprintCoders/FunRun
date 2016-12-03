@@ -22,13 +22,23 @@ enum RunningStatus {
 class RunTracker: NSObject, CLLocationManagerDelegate {
     
     public static let shared: RunTracker = RunTracker()
+    static let startedARunningNotification = "ARunHasStarted"
+    static let finishedARunningNotification = "ARunHasFinished"
     
     var locationManager: CLLocationManager!
     weak var runTrackerDelegate: RunTrackerDelegate?
-    var runningStatus: RunningStatus!
+    var runningStatus: RunningStatus! {
+        didSet {
+            if runningStatus == RunningStatus.started {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: RunTracker.startedARunningNotification), object: nil)
+            } else if runningStatus == RunningStatus.finished {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: RunTracker.finishedARunningNotification), object: nil)
+            }
+        }
+    }
     
     var locations: [CLLocation]?
-    var distanceSum: Double = 0.0
+    var distanceSum: Double = 0.0 // in meters
     var timeSum: UInt32 = 0
     
     
@@ -57,7 +67,7 @@ class RunTracker: NSObject, CLLocationManagerDelegate {
         if self.runningStatus == RunningStatus.started {
             var tempLength: Double = 0.0
             for alocation in locations {
-                if alocation.horizontalAccuracy < 20 {
+                if alocation.horizontalAccuracy < 10 {
                     // update the record
                     let lastLocation = self.locations?.last
                     if lastLocation != nil {
@@ -73,5 +83,11 @@ class RunTracker: NSObject, CLLocationManagerDelegate {
         }
     }
     
+    
+    func reset() {
+        locations?.removeAll()
+        distanceSum = 0.0
+        timeSum = 0
+    }
     
 }

@@ -16,6 +16,7 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
     @IBOutlet weak var simpleStatsView: UIView!
     @IBOutlet weak var speedLogView: UIView!
     @IBOutlet weak var distanceCountView: UIView!
+    @IBOutlet weak var distanceCountViewBottomConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var pauseBtn: UIButton!
     @IBOutlet weak var stopBtn: UIButton!
@@ -24,13 +25,14 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
     @IBOutlet weak var avgPaceLabel: UILabel!
     @IBOutlet weak var caloriesLabel: UILabel!
     @IBOutlet weak var distanceCountLabel: UILabel!
+    @IBOutlet weak var distanceUnitLabel: UILabel!
     
     
     var timer: DispatchTimer?
     
     var paused: Bool = false
-    var accumulatedTime: UInt32 = 0
-    var accumulatedDistance: Double = 0.0
+    var accumulatedTime: UInt32 = 0 // in seconds
+    var accumulatedDistance: Double = 0.0 // in meters
     var currentSpeed: Double = 0.0
     
     override func viewDidLoad() {
@@ -47,6 +49,7 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
         self.distanceCountView.layer.borderWidth = 1.0
         
         // Setup buttons
+        /*
         self.pauseBtn.layer.borderWidth = 2.0
         self.pauseBtn.layer.cornerRadius = 5.0
         let pauseBtnClr = self.pauseBtn.currentTitleColor
@@ -57,6 +60,7 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
         let stopBtnClr = self.stopBtn.currentTitleColor
         self.stopBtn.layer.borderColor = stopBtnClr.cgColor
         self.stopBtn.clipsToBounds = true
+        */
         self.pauseBtn.addTarget(self, action: #selector(pauseRunning), for: UIControlEvents.touchUpInside)
         // self.stopBtn.addTarget(self, action: #selector(stopRunning), for: UIControlEvents.touchUpInside)
         
@@ -64,12 +68,17 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        /*
         if self.paused {
             self.tabBarController?.tabBar.isHidden = false
+            //self.distanceCountViewBottomConstraint.constant = (tabBarController?.tabBar.frame.height)!
             
         } else {
             self.tabBarController?.tabBar.isHidden = true
         }
+        */
+        self.distanceCountViewBottomConstraint.constant = 0.0
+        self.view.layoutIfNeeded()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -108,7 +117,13 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
     /* MARK: - RunTrackerDelegate functions */
     func RunTrackerUpdate(newDistance distance: Double, newAvgPace avgPace: Double, newSpeed speed: Double) {
         self.accumulatedDistance = distance
-        self.distanceCountLabel.text = String(format: "%.2f", arguments: [distance])
+        if distance/1609.344 < 0.01 {
+            self.distanceCountLabel.text = String(format: "%.0f", arguments: [distance/0.3048])
+            self.distanceUnitLabel.text = "feet"
+        } else {
+            self.distanceCountLabel.text = String(format: "%.2f", arguments: [distance/1609.344])
+            self.distanceUnitLabel.text = "miles"
+        }
         self.avgPaceLabel.text = String(format: "%.2f min/mil", arguments: [avgPace])
         self.currentSpeed = speed
     }
@@ -122,15 +137,19 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
             self.pauseBtn.setTitle("PAUSE", for: UIControlState.normal)
             self.paused = false
             RunTracker.shared.runningStatus = RunningStatus.started
-            self.tabBarController?.tabBar.isHidden = true
+            // self.tabBarController?.tabBar.isHidden = true
+            // self.distanceCountViewBottomConstraint.constant = 0.0
         } else {
             print("-- pressed pause button")
             self.timer?.suspend()
             self.pauseBtn.setTitle("RESUME", for: UIControlState.normal)
             self.paused = true
             RunTracker.shared.runningStatus = RunningStatus.paused
-            self.tabBarController?.tabBar.isHidden = false
+            // self.tabBarController?.tabBar.isHidden = false
+            // self.distanceCountViewBottomConstraint.constant = (tabBarController?.tabBar.frame.height)!
         }
+        // self.distanceCountViewBottomConstraint.constant = 0.0
+        // self.view.layoutIfNeeded()
     }
     
     /*
