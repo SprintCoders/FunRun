@@ -25,7 +25,7 @@ extension Date {
         return Calendar.current.date(byAdding: .month, value: -3, to: today)!
     }
     
-    // return the date of a year ago
+    // return date of a year ago
     static var yearAgo:Date {
         return Calendar.current.date(byAdding: .year, value: -1, to: today)!
     }

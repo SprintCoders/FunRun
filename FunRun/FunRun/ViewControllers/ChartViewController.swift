@@ -36,7 +36,7 @@ class ChartViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
     }
-
+    
     func setChart(barChartView:BarChartView!, dataPoints:[String], values:[Double], label:String!){
         barChartView.noDataText = "You need to provide data for the chart."
         

@@ -34,7 +34,7 @@ class StatsViewController: UIViewController {
     // activities
     @IBOutlet weak var activityChart: ActivityChartView!
     //@IBOutlet weak var activityScrollView: UIScrollView!
-
+    
     // graphs
     @IBOutlet weak var distanceBarChartView: BarChartView!
     @IBOutlet weak var durationBarChartView: BarChartView!
@@ -48,8 +48,11 @@ class StatsViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         //activityScrollView.scrollToRight(animated: true)
+        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -65,7 +68,6 @@ class StatsViewController: UIViewController {
         activityChart.updateUI()
         //activityScrollView.setContentOffset(<#T##contentOffset: CGPoint##CGPoint#>, animated: true)
         //activityScrollView.scrollToRight(animated: true)
-        
         
         // Do any additional setup after loading the view.
         

@@ -230,6 +230,7 @@ class ActivitiesData {
         }
     }
     
+    
     // MARK: - Activities
     func distancePerMonth() -> [[String: Double]] {
         var array:[[String: Double]] = []

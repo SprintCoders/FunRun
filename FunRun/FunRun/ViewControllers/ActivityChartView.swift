@@ -9,7 +9,7 @@
 import UIKit
 
 class ActivityChartView: UIView {
-
+    
     var values:[Int]? = nil
     
     static let colors:[UIColor]! = [

@@ -10,8 +10,6 @@ import Foundation
 
 class TimeCount: NSObject {
     
-    
-    
     class func convertIntToTime(seconds: UInt32) -> String {
         var res = ""
         if seconds/3600 > 0 {
