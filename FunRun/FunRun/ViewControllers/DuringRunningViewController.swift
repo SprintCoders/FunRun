@@ -88,6 +88,7 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
         if self.timer == nil {
             self.timer = DispatchTimer(repeatInterval: 1.0, block: { (DispatchTimer) in
                 self.accumulatedTime += 1
+                RunTracker.shared.timeSum = self.accumulatedTime
                 self.timeCountLabel.text = TimeCount.convertIntToTime(seconds: self.accumulatedTime)
             })
         }
@@ -115,7 +116,7 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
     
     
     /* MARK: - RunTrackerDelegate functions */
-    func RunTrackerUpdate(newDistance distance: Double, newAvgPace avgPace: Double, newSpeed speed: Double) {
+    func RunTrackerUpdate(newDistance distance: Double, newAvgPace avgPace: UInt, newSpeed speed: Double) {
         self.accumulatedDistance = distance
         if distance/1609.344 < 0.01 {
             self.distanceCountLabel.text = String(format: "%.0f", arguments: [distance/0.3048])
@@ -124,7 +125,10 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
             self.distanceCountLabel.text = String(format: "%.2f", arguments: [distance/1609.344])
             self.distanceUnitLabel.text = "miles"
         }
-        self.avgPaceLabel.text = String(format: "%.2f min/mil", arguments: [avgPace])
+        let paceHour: UInt = UInt(avgPace) / 3600
+        let paceMin: UInt = (UInt(avgPace) % 3600) / 60
+        let paceSec: UInt = UInt(avgPace) % 60
+        self.avgPaceLabel.text = String(format: "%d:%d:%d per mil", arguments: [paceHour, paceMin, paceSec])
         self.currentSpeed = speed
     }
     

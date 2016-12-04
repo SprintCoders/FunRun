@@ -11,7 +11,7 @@ import Foundation
 import CoreLocation
 
 @objc protocol RunTrackerDelegate: class {
-    @objc optional func RunTrackerUpdate(newDistance distance: Double, newAvgPace avgPace: Double, newSpeed speed: Double)
+    @objc optional func RunTrackerUpdate(newDistance distance: Double, newAvgPace avgPace: UInt, newSpeed speed: Double)
     @objc optional func RunTrackerUpdate(newLocation location: CLLocation?)
 }
 
@@ -77,7 +77,15 @@ class RunTracker: NSObject, CLLocationManagerDelegate {
                 }
             }
             self.distanceSum += tempLength
-            self.runTrackerDelegate?.RunTrackerUpdate?(newDistance: self.distanceSum, newAvgPace: 0.0, newSpeed: 0.0)
+            var avgPaceInSeconds: Double = 0.0
+            var avgSpeed: Double = 0.0
+            if self.distanceSum > 0 {
+                avgPaceInSeconds = (Double(self.timeSum) / self.distanceSum) * 1609.344
+            }
+            if avgPaceInSeconds > 0 {
+                avgSpeed = 3600.0 / avgPaceInSeconds
+            }
+            self.runTrackerDelegate?.RunTrackerUpdate?(newDistance: self.distanceSum, newAvgPace: UInt(avgPaceInSeconds), newSpeed: avgSpeed)
         } else if self.runningStatus == RunningStatus.notStart {
             self.runTrackerDelegate?.RunTrackerUpdate?(newLocation: locations.last)
         }
