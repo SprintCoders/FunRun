@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TabViewController: UITabBarController {
+class TabViewController: UITabBarController, UITabBarControllerDelegate {
     
     var statsNavCtr: UIViewController!
     var runningNavCtr: UIViewController!
@@ -34,7 +34,7 @@ class TabViewController: UITabBarController {
         // Running
         let runningStoryBoard: UIStoryboard = UIStoryboard(name: "Running", bundle: nil)
         runningNavCtr = runningStoryBoard.instantiateViewController(withIdentifier: "RunningNavigationController") as UIViewController
-        runningNavCtr.tabBarItem.title = "Running"
+        runningNavCtr.tabBarItem.title = "Run"
         runningNavCtr.tabBarItem.image = UIImage(named: "running_tab")
         
         // Activity
@@ -54,5 +54,38 @@ class TabViewController: UITabBarController {
         let controllers: [UIViewController]? = [statsNavCtr, runningNavCtr, activityNavCtr, goalNavCtr]
         self.viewControllers = controllers
         self.selectedIndex = 0
+        self.delegate = self
+        
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: RunTracker.startedARunningNotification), object: nil, queue: OperationQueue.main) { (notification) -> Void in
+            // self.runningNavCtr.tabBarItem.image = UIImage(named: "running_tab2")
+            self.runningNavCtr.tabBarItem = UITabBarItem(title: "Running", image: UIImage(named: "running_tab2")!, tag: 1)
+            self.setNeedsStatusBarAppearanceUpdate()
+        }
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: RunTracker.finishedARunningNotification), object: nil, queue: OperationQueue.main) { (notification) -> Void in
+            // self.runningNavCtr.tabBarItem.image = UIImage(named: "running_tab")
+            self.runningNavCtr.tabBarItem = UITabBarItem(title: "Run", image: UIImage(named: "running_tab")!, tag: 1)
+            self.setNeedsStatusBarAppearanceUpdate()
+        }
+        
     }
+    
+    
+    
+    /* MARK: - UITabBarControllerDelegate functions */
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        switch self.selectedIndex {
+        case 0:
+            return viewController != self.statsNavCtr
+        case 1:
+            return viewController != self.runningNavCtr
+        case 2:
+            return viewController != self.activityNavCtr
+        case 3:
+            return viewController != self.goalNavCtr
+        default:
+            return true
+        }
+    }
+    
 }

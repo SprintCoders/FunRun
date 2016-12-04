@@ -17,12 +17,6 @@ class ActivitiesData {
     let filename = "cardioActivities.csv"
     var csv:CSwiftV!
     
- //   let cal:Calendar!
-//    let today:Date!
-//    let monthAgo:Date
-//    let threeMonthAgo:Date
-//    let firstDayOfYear:Date
-    
     let formatter:DateFormatter!
 
     init() {
@@ -52,6 +46,8 @@ class ActivitiesData {
         return formatter.date(from: strDate)!
     }
     
+    // MARK: Hightlight
+    
     // lifetime
     var totalCount:Int {
         return csv.rows.count
@@ -76,8 +72,6 @@ class ActivitiesData {
         }
         return total
     }
-    
-
     
     // current year
     var currentYearCount:Int {
@@ -189,6 +183,8 @@ class ActivitiesData {
         return total
     }
     
+    // MARK: - Activities
+    
     // 0 mi   -> 0
     // 2.5 mi -> 1
     // 5 mi   -> 2
@@ -232,5 +228,16 @@ class ActivitiesData {
         default:
             return 4
         }
+    }
+    
+    
+    // MARK: - Activities
+    func distancePerMonth() -> [[String: Double]] {
+        var array:[[String: Double]] = []
+        for row in csv.rows {
+            let date = getDate(from: row)
+            let distance = getDistance(from: row)
+        }
+        return array
     }
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 class ActivityChartView: UIView {
-
+    
     var values:[Int]? = nil
     
     static let colors:[UIColor]! = [
@@ -28,6 +28,8 @@ class ActivityChartView: UIView {
         super.init(coder: aDecoder)
         updateUI()
     }
+    
+    //overide func view
     
     func updateUI(){
         // remove all sub views
@@ -51,6 +53,8 @@ class ActivityChartView: UIView {
         }
         
         // activities
+        let baseView = UIView(frame: CGRect(x: 0, y: 0, width: 800, height: 14 * 8))
+        //baseView.backgroundColor = UIColor.orange
         var week: Int = 0 // week
         for delta in -365...0{ // from a year ago to today
             let date:Date! = cal.date(byAdding: .day, value: delta, to: Date())
@@ -58,7 +62,7 @@ class ActivityChartView: UIView {
             if day == 1 && delta != -365 {
                 week += 1
             }
-            let x = 30 + week * 14
+            let x = week * 14
             let y = day * 14
             let view = UIView(frame: CGRect(x: x, y: y, width: 12, height: 12))
             if values != nil {
@@ -66,7 +70,7 @@ class ActivityChartView: UIView {
             }else{
                 view.backgroundColor = ActivityChartView.colors[0]
             }
-            self.addSubview(view)
+            baseView.addSubview(view)
             
             // if 1st day of month, display month label
             if cal.component(.day, from: date) == 1 {
@@ -76,8 +80,20 @@ class ActivityChartView: UIView {
                 label.textAlignment = .center
                 label.text = cal.shortMonthSymbols[month-1]
                 label.font = label.font.withSize(10)
-                self.addSubview(label)
+                baseView.addSubview(label)
             }
         }
+        // adujst baseView size
+        var newFrame = baseView.frame;
+        newFrame.size.width = CGFloat((week + 1) * 14);
+        baseView.frame = newFrame
+        
+        // scroll view
+        let scrollView = UIScrollView(frame: CGRect(x: 30, y: 0, width: bounds.width - 30, height: 14 * 8))
+        scrollView.contentSize = baseView.bounds.size
+        scrollView.addSubview(baseView)
+        self.addSubview(scrollView)
+        
+        scrollView.scrollToRight(animated: true)
     }
 }

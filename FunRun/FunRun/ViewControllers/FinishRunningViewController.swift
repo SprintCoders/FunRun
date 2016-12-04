@@ -105,6 +105,8 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        self.tabBarController?.tabBar.isHidden = false
+        
         let dateFormatter = DateFormatter()
         dateFormatter.setLocalizedDateFormatFromTemplate("EEEE")
         self.runDayLabel.text = dateFormatter.string(from: Date()).appending(" Run")
@@ -142,10 +144,12 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate {
     
     func saveButtonPressed() {
         _ = self.navigationController?.popToRootViewController(animated: true)
+        RunTracker.shared.runningStatus = RunningStatus.notStart
     }
     
     func deleteButtonPressed() {
         _ = self.navigationController?.popToRootViewController(animated: true)
+        RunTracker.shared.runningStatus = RunningStatus.notStart
     }
 
 }
