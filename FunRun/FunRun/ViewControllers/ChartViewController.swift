@@ -12,8 +12,6 @@ class ChartViewController: UIViewController {
 
     @IBOutlet weak var barChartView: BarChartView!
     
-    
-
     var months:[String]!
     
     override func viewDidLoad() {
@@ -33,6 +31,7 @@ class ChartViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
     }
@@ -46,17 +45,16 @@ class ChartViewController: UIViewController {
             dataEntries.append(dataEntry)
         }
         let chartDataSet = BarChartDataSet(values: dataEntries, label: label)
-        chartDataSet.colors = ChartColorTemplates.vordiplom()
+        chartDataSet.colors = [UIColor(red: 118.0/255, green: 204.0/255, blue: 57.0/255, alpha: 1.0)]
         let chartData = BarChartData(dataSet: chartDataSet)
+        for set in chartData.dataSets {
+            set.drawValuesEnabled = false
+        }
         barChartView.data = chartData
         barChartView.xAxis.valueFormatter = self
         barChartView.chartDescription?.text = ""
         barChartView.xAxis.labelPosition = .bottom
-        //barChartView.backgroundColor = UIColor(red: 189/255, green:195/255,blue:199/255,alpha: 1)
         barChartView.animate(xAxisDuration: 0.0, yAxisDuration: 2.0, easingOption: .easeInBounce)
-        
-        //let ll = ChartLimitLine(limit: 10.0, label: "Target")
-        //barChartView.rightAxis.addLimitLine(ll)
     }
 }
 extension ChartViewController : IAxisValueFormatter, ChartViewDelegate {

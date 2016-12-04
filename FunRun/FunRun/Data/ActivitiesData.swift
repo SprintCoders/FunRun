@@ -39,11 +39,32 @@ class ActivitiesData {
     func getDate(from: [String]) -> Date {
         return parse(strDate: from[Column.date.rawValue])
     }
+    
+    func getValue(from:[String], column:Column) -> Double {
+        return Double(from[column.rawValue])!
+    }
+    
     func getDistance(from: [String]) -> Double {
         return Double(from[Column.distance.rawValue])!
     }
+    func getDuration(from: [String]) -> Double {
+        return Double(from[Column.duration.rawValue])!
+    }
+    func getCaloriesBurned(from: [String]) -> Double {
+        return Double(from[Column.caloriesBurned.rawValue])!
+    }
+    
     func parse(strDate:String) -> Date {
         return formatter.date(from: strDate)!
+    }
+    
+    // MARK: common
+    var firstActivityDate:Date {
+        return getDate(from: csv.rows.last!)
+    }
+    
+    var lastActivityDate:Date {
+        return getDate(from: csv.rows.first!)
     }
     
     // MARK: Hightlight
@@ -232,12 +253,79 @@ class ActivitiesData {
     
     
     // MARK: - Activities
-    func distancePerMonth() -> [[String: Double]] {
-        var array:[[String: Double]] = []
-        for row in csv.rows {
+    
+    enum DataType:Int {
+        case distance = 0, duration, caloriesBurned
+    }
+    
+    func dataType2Column(type:DataType) -> Column {
+        switch type{
+        case .distance:
+            return Column.distance
+        case .duration:
+            return Column.duration
+        case .caloriesBurned:
+            return Column.caloriesBurned
+        }
+    }
+    
+    // distance per day for last one year
+    func dataPerDay(type: DataType) -> [(String, Double)] {
+        var dict:[String:Double] = [:]
+        let start = Date.today.threeMonthsAgo
+        for i in stride(from: csv.rows.count - 1, to: 0, by: -1) {
+            let row = csv.rows[i]
             let date = getDate(from: row)
-            let distance = getDistance(from: row)
+            if date >= start {
+                dict[date.strDay] = getValue(from: row, column: dataType2Column(type: type))
+            }
+        }
+        var array:[(String, Double)] = []
+        var date = start
+        while date < Date.today {
+            let strDate = date.strDay
+            if let value = dict[strDate] {
+                array.append((strDate, value))
+            }else{
+                array.append((strDate, 0.0))
+            }
+            date = date.nextDay
         }
         return array
     }
+    
+    // data per week
+    func dataPerWeek(type: DataType) -> [(String, Double)] {
+        let array:[(String, Double)] = []
+        return array
+    }
+    
+    // data per month for last 12 monthes
+    func dataPerMonth(type: DataType) -> [(String, Double)] {
+        var valuePerMonth:[String:Double] = [:]
+        for row in csv.rows {
+            let date = getDate(from: row)
+            let value = getValue(from: row, column: dataType2Column(type: type))
+            let mon = date.strYearAndMonth
+            if let val = valuePerMonth[mon] {
+                valuePerMonth[mon] = val + value
+            }else{
+                valuePerMonth[mon] = value
+            }
+        }
+        
+        var array:[(String, Double)] = []
+        var date = Date.today
+        for _ in 0..<12 {
+            let mon = date.strYearAndMonth
+            if let distance = valuePerMonth[mon] {
+                array.append((mon, distance))
+            }else{
+                array.append((mon, 0.0))
+            }
+            date = date.monthAgo
+        }
+        return array.reversed()
+    }
+
 }
