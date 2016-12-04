@@ -19,6 +19,8 @@
 		856949F81DEFB70E008543D3 /* LocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856949F71DEFB70E008543D3 /* LocationTracker.swift */; };
 		856949FA1DEFD3DB008543D3 /* RunTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856949F91DEFD3DB008543D3 /* RunTracker.swift */; };
 		857328671DF2C4880065826D /* UIScrollView+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857328661DF2C4880065826D /* UIScrollView+Extra.swift */; };
+		8573286F1DF39B1C0065826D /* MakeNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8573286E1DF39B1C0065826D /* MakeNoteViewController.swift */; };
+		857328731DF3E8EB0065826D /* MakeNoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857328721DF3E8EB0065826D /* MakeNoteTableViewCell.swift */; };
 		85C6D5091DED74950063BD07 /* ActivitiesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D5061DED74950063BD07 /* ActivitiesData.swift */; };
 		85C6D50A1DED74950063BD07 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D5071DED74950063BD07 /* CSwiftV.swift */; };
 		85C6D50B1DED74950063BD07 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D5081DED74950063BD07 /* Profile.swift */; };
@@ -109,6 +111,8 @@
 		856949F71DEFB70E008543D3 /* LocationTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationTracker.swift; path = Models/LocationTracker.swift; sourceTree = "<group>"; };
 		856949F91DEFD3DB008543D3 /* RunTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RunTracker.swift; path = Services/RunTracker.swift; sourceTree = "<group>"; };
 		857328661DF2C4880065826D /* UIScrollView+Extra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIScrollView+Extra.swift"; path = "Utils/UIScrollView+Extra.swift"; sourceTree = "<group>"; };
+		8573286E1DF39B1C0065826D /* MakeNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MakeNoteViewController.swift; path = ViewControllers/MakeNoteViewController.swift; sourceTree = "<group>"; };
+		857328721DF3E8EB0065826D /* MakeNoteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MakeNoteTableViewCell.swift; path = ViewControllers/MakeNoteTableViewCell.swift; sourceTree = "<group>"; };
 		85C6D5061DED74950063BD07 /* ActivitiesData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivitiesData.swift; path = Data/ActivitiesData.swift; sourceTree = "<group>"; };
 		85C6D5071DED74950063BD07 /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSwiftV.swift; path = Data/CSwiftV.swift; sourceTree = "<group>"; };
 		85C6D5081DED74950063BD07 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = Data/Profile.swift; sourceTree = "<group>"; };
@@ -224,6 +228,8 @@
 				852AE6541DDACCFA00FEAA82 /* StartRunningViewController.swift */,
 				8544D8AF1DEA8BAD0019D011 /* DuringRunningViewController.swift */,
 				8544D8B11DEA93F20019D011 /* FinishRunningViewController.swift */,
+				8573286E1DF39B1C0065826D /* MakeNoteViewController.swift */,
+				857328721DF3E8EB0065826D /* MakeNoteTableViewCell.swift */,
 			);
 			name = RunningViews;
 			sourceTree = "<group>";
@@ -443,6 +449,7 @@
 			files = (
 				856949FA1DEFD3DB008543D3 /* RunTracker.swift in Sources */,
 				85C6D51B1DED758F0063BD07 /* GoalViewController.swift in Sources */,
+				8573286F1DF39B1C0065826D /* MakeNoteViewController.swift in Sources */,
 				85C6D50B1DED74950063BD07 /* Profile.swift in Sources */,
 				852AE6531DDAC11300FEAA82 /* TabViewController.swift in Sources */,
 				85C6D5161DED756F0063BD07 /* NewGoalViewController.swift in Sources */,
@@ -459,6 +466,7 @@
 				8544D8B21DEA93F20019D011 /* FinishRunningViewController.swift in Sources */,
 				B8DC28151DED35D100BC38BA /* ActivityChartView.swift in Sources */,
 				85C6D5091DED74950063BD07 /* ActivitiesData.swift in Sources */,
+				857328731DF3E8EB0065826D /* MakeNoteTableViewCell.swift in Sources */,
 				85C6D50A1DED74950063BD07 /* CSwiftV.swift in Sources */,
 				8544D8B01DEA8BAD0019D011 /* DuringRunningViewController.swift in Sources */,
 			);
