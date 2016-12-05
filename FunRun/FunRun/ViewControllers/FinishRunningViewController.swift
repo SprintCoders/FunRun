@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import CoreData
 
 class FinishRunningViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, MakeNoteViewControllerDelegate {
 
@@ -103,17 +104,17 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate, 
         self.scheduleViewBox.layer.borderColor = UIColor.black.cgColor
         
         // Setup buttons
-        self.saveBtn.layer.borderWidth = 2.0
-        self.saveBtn.layer.cornerRadius = 5.0
+        // self.saveBtn.layer.borderWidth = 2.0
+        self.saveBtn.layer.cornerRadius = 10.0
         self.saveBtn.clipsToBounds = true
-        let saveBtnClr = self.saveBtn.currentTitleColor
-        self.saveBtn.layer.borderColor = saveBtnClr.cgColor
+        // let saveBtnClr = self.saveBtn.currentTitleColor
+        // self.saveBtn.layer.borderColor = saveBtnClr.cgColor
         self.saveBtn.addTarget(self, action: #selector(saveButtonPressed), for: UIControlEvents.touchUpInside)
-        self.deleteBtn.layer.borderWidth = 2.0
-        self.deleteBtn.layer.cornerRadius = 5.0
+        // self.deleteBtn.layer.borderWidth = 2.0
+        self.deleteBtn.layer.cornerRadius = 10.0
         self.deleteBtn.clipsToBounds = true
-        let deleteBtnClr = self.deleteBtn.currentTitleColor
-        self.deleteBtn.layer.borderColor = deleteBtnClr.cgColor
+        // let deleteBtnClr = self.deleteBtn.currentTitleColor
+        // self.deleteBtn.layer.borderColor = deleteBtnClr.cgColor
         self.deleteBtn.addTarget(self, action: #selector(deleteButtonPressed), for: UIControlEvents.touchUpInside)
         
         // Setup variables
@@ -173,7 +174,7 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate, 
             let colorPolyline = overlay as! MulticolorPolylineSegment
             let polylineRenderer = MKPolylineRenderer(polyline: colorPolyline)
             polylineRenderer.strokeColor = colorPolyline.color
-            polylineRenderer.lineWidth = 3.0
+            polylineRenderer.lineWidth = 8.0
             return polylineRenderer
         }
         return MKOverlayPathRenderer(overlay: overlay)
@@ -203,8 +204,15 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate, 
     }
     
     func deleteButtonPressed() {
-        _ = self.navigationController?.popToRootViewController(animated: true)
-        RunTracker.shared.runningStatus = RunningStatus.notStart
+        let deleteAlert = UIAlertController(title: "Delete this run?", message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
+        let confirmAction = UIAlertAction(title: "Delete", style: UIAlertActionStyle.destructive) {(UIAlertAction) in
+            RunTracker.shared.runningStatus = RunningStatus.notStart
+            _ = self.navigationController?.popToRootViewController(animated: true)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
+        deleteAlert.addAction(confirmAction)
+        deleteAlert.addAction(cancelAction)
+        self.present(deleteAlert, animated: true, completion: nil)
     }
 
     @IBAction func tapViewToMakeNote(_ sender: UITapGestureRecognizer) {
@@ -275,6 +283,71 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate, 
             // self.routeMapView.addOverlays([self.getPolyline()])
             self.routeMapView.addOverlays(self.getColoredPolyline())
         }
+    }
+    
+    /*
+    @IBOutlet var lineFields:[UITextField]!
+    fileprivate let lineEntityName = "Line"
+    fileprivate let lineNumberKey = "lineNumber"
+    fileprivate let lineTextKey = "lineText"
+    */
+    func saveRunDataToCoreData() {
+        /*
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.managedObjectContext
+        var error:NSError? = nil
+        for i in 0 ..< lineFields.count {
+            let textField = lineFields[i]
+            
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: lineEntityName)
+            let pred = NSPredicate(format: "%K = %d", lineNumberKey, i)
+            request.predicate = pred
+            
+            let objects = context?.executeFetchRequest(request, error: &error)
+            if let objectList = objects {
+                var theLine:NSManagedObject! = nil
+                if objectList.count > 0 {
+                    theLine = objectList[0] as! NSManagedObject
+                } else {
+                    theLine = NSEntityDescription.insertNewObject(forEntityName: lineEntityName, into: context!)
+                }
+                
+                theLine.setValue(i, forKey: lineNumberKey)
+                theLine.setValue(textField.text, forKey: lineTextKey)
+            } else {
+                println("There was an error")
+                // Do whatever error handling is appropriate
+            }
+        }
+        appDelegate.saveContext()
+        */
+    }
+    
+    func retrieveRunDataFromCoreData() {
+        /*
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.managedObjectContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: lineEntityName)
+        
+        var error: NSError? = nil
+        let objects = context?.executeFetchRequest(request, error: &error)
+        if let objectList = objects {
+            for oneObject in objectList {
+                let lineNum = oneObject.valueForKey(lineNumberKey)!.integerValue
+                let lineText = oneObject.valueForKey(lineTextKey) as! String
+                let textField = lineFields[lineNum]
+                textField.text = lineText
+            }
+        } else {
+            println("There was an error")
+            // Do whatever error handling is appropriate
+        }
+        */
+    }
+    
+    func dataFilePath() -> String {
+        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        return paths[0].appending("data.sqlite")
     }
         
 }

@@ -23,6 +23,7 @@
 		857328731DF3E8EB0065826D /* MakeNoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857328721DF3E8EB0065826D /* MakeNoteTableViewCell.swift */; };
 		857328781DF4E97D0065826D /* MulticolorPolylineSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857328771DF4E97D0065826D /* MulticolorPolylineSegment.swift */; };
 		8573287C1DF4EBB00065826D /* ColorGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8573287B1DF4EBB00065826D /* ColorGradient.swift */; };
+		85B6EA791DF568DB0050A0C3 /* RunActivity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 85B6EA771DF568DB0050A0C3 /* RunActivity.xcdatamodeld */; };
 		85C6D5091DED74950063BD07 /* ActivitiesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D5061DED74950063BD07 /* ActivitiesData.swift */; };
 		85C6D50A1DED74950063BD07 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D5071DED74950063BD07 /* CSwiftV.swift */; };
 		85C6D50B1DED74950063BD07 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D5081DED74950063BD07 /* Profile.swift */; };
@@ -117,6 +118,8 @@
 		857328721DF3E8EB0065826D /* MakeNoteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MakeNoteTableViewCell.swift; path = ViewControllers/MakeNoteTableViewCell.swift; sourceTree = "<group>"; };
 		857328771DF4E97D0065826D /* MulticolorPolylineSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MulticolorPolylineSegment.swift; path = Models/MulticolorPolylineSegment.swift; sourceTree = "<group>"; };
 		8573287B1DF4EBB00065826D /* ColorGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorGradient.swift; sourceTree = "<group>"; };
+		85B6EA711DF565530050A0C3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		85B6EA781DF568DB0050A0C3 /* RunActivity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RunActivity.xcdatamodel; sourceTree = "<group>"; };
 		85C6D5061DED74950063BD07 /* ActivitiesData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivitiesData.swift; path = Data/ActivitiesData.swift; sourceTree = "<group>"; };
 		85C6D5071DED74950063BD07 /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSwiftV.swift; path = Data/CSwiftV.swift; sourceTree = "<group>"; };
 		85C6D5081DED74950063BD07 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = Data/Profile.swift; sourceTree = "<group>"; };
@@ -163,6 +166,7 @@
 				852AE62F1DDABFCF00FEAA82 /* FunRun */,
 				852AE6441DDABFCF00FEAA82 /* FunRunTests */,
 				852AE62E1DDABFCF00FEAA82 /* Products */,
+				85B6EA701DF565520050A0C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -225,6 +229,14 @@
 				857328771DF4E97D0065826D /* MulticolorPolylineSegment.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		85B6EA701DF565520050A0C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				85B6EA711DF565530050A0C3 /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		85C6D5221DED794A0063BD07 /* RunningViews */ = {
@@ -291,6 +303,7 @@
 				85C6D5061DED74950063BD07 /* ActivitiesData.swift */,
 				85C6D5071DED74950063BD07 /* CSwiftV.swift */,
 				85C6D5081DED74950063BD07 /* Profile.swift */,
+				85B6EA771DF568DB0050A0C3 /* RunActivity.xcdatamodeld */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -465,6 +478,7 @@
 				85C6D51A1DED758F0063BD07 /* ChartViewController.swift in Sources */,
 				856949F81DEFB70E008543D3 /* LocationTracker.swift in Sources */,
 				85C6D5171DED756F0063BD07 /* ScheduleCell.swift in Sources */,
+				85B6EA791DF568DB0050A0C3 /* RunActivity.xcdatamodeld in Sources */,
 				857328671DF2C4880065826D /* UIScrollView+Extra.swift in Sources */,
 				852AE6551DDACCFA00FEAA82 /* StartRunningViewController.swift in Sources */,
 				85C6D5101DED75030063BD07 /* Date+Extra.swift in Sources */,
@@ -749,6 +763,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		85B6EA771DF568DB0050A0C3 /* RunActivity.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				85B6EA781DF568DB0050A0C3 /* RunActivity.xcdatamodel */,
+			);
+			currentVersion = 85B6EA781DF568DB0050A0C3 /* RunActivity.xcdatamodel */;
+			name = RunActivity.xcdatamodeld;
+			path = Data/RunActivity.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 852AE6251DDABFCE00FEAA82 /* Project object */;
 }

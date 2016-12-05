@@ -31,8 +31,18 @@ class RunTracker: NSObject, CLLocationManagerDelegate {
         didSet {
             if runningStatus == RunningStatus.started {
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: RunTracker.startedARunningNotification), object: nil)
+                if self.locationManager != nil {
+                    self.locationManager.allowsBackgroundLocationUpdates = true
+                }
+            }else if runningStatus == RunningStatus.paused {
+                if self.locationManager != nil {
+                    self.locationManager.allowsBackgroundLocationUpdates = false
+                }
             } else if runningStatus == RunningStatus.finished {
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: RunTracker.finishedARunningNotification), object: nil)
+                if self.locationManager != nil {
+                    self.locationManager.allowsBackgroundLocationUpdates = false
+                }
             }
         }
     }
@@ -51,6 +61,7 @@ class RunTracker: NSObject, CLLocationManagerDelegate {
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.allowsBackgroundLocationUpdates = false
         
         // Setup variables
         self.runningStatus = RunningStatus.notStart
