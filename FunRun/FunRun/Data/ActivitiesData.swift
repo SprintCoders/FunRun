@@ -33,23 +33,51 @@ class ActivitiesData {
         
         // date formatter
         formatter = DateFormatter()
+        formatter.timeZone = TimeZone(identifier: "UTC")
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    }
+    
+    var count:Int {
+        return csv.rows.count
+    }
+    
+    func getActivity(index:Int) -> Activity {
+       return getActivity(from: csv.rows[index])
+    }
+    
+    func getActivity(from:[String]) -> Activity {
+        let activity = Activity()
+        activity.date = getDate(from:from)
+        activity.type = from[Column.type.rawValue]
+        activity.routeName = from[Column.routeName.rawValue]
+        activity.distance = getDistance(from: from)
+        activity.duration = getDuration(from: from)
+        activity.avgPace = from[Column.averagePace.rawValue]
+        activity.avgSpeed = getDouble(from:from, column:Column.averagSpeed)
+        activity.caloriesBurned = getCaloriesBurned(from: from)
+        activity.climb = getDouble(from:from, column:Column.climb)
+        activity.avgHeartRate = from[Column.averageHeartRate.rawValue]
+        activity.notes = from[Column.notes.rawValue]
+        activity.gpxFile = from[Column.gpxFile.rawValue]
+        return activity
     }
     
     func getDate(from: [String]) -> Date {
         return parse(strDate: from[Column.date.rawValue])
     }
     
-    func getValue(from:[String], column:Column) -> Double {
+    func getDouble(from:[String], column:Column) -> Double {
         return Double(from[column.rawValue])!
     }
     
     func getDistance(from: [String]) -> Double {
         return Double(from[Column.distance.rawValue])!
     }
-    func getDuration(from: [String]) -> Double {
-        return Double(from[Column.duration.rawValue])!
+    
+    func getDuration(from: [String]) -> String {
+        return from[Column.duration.rawValue]
     }
+    
     func getCaloriesBurned(from: [String]) -> Double {
         return Double(from[Column.caloriesBurned.rawValue])!
     }
@@ -277,7 +305,7 @@ class ActivitiesData {
             let row = csv.rows[i]
             let date = getDate(from: row)
             if date >= start {
-                dict[date.strDay] = getValue(from: row, column: dataType2Column(type: type))
+                dict[date.strDay] = getDouble(from: row, column: dataType2Column(type: type))
             }
         }
         var array:[(String, Double)] = []
@@ -305,7 +333,7 @@ class ActivitiesData {
         var valuePerMonth:[String:Double] = [:]
         for row in csv.rows {
             let date = getDate(from: row)
-            let value = getValue(from: row, column: dataType2Column(type: type))
+            let value = getDouble(from: row, column: dataType2Column(type: type))
             let mon = date.strYearAndMonth
             if let val = valuePerMonth[mon] {
                 valuePerMonth[mon] = val + value

@@ -90,6 +90,10 @@ extension Date {
         return dateFormatterPrint.string(from: self)
     }
     
+    var strWeekDay:String{
+        return Calendar.current.weekdaySymbols[Calendar.current.component(.weekday, from: self)-1]
+    }
+    
     // MARK: Methods
     func isDameDay(date:Date) -> Bool {
         return self.day == date.day
