@@ -33,7 +33,11 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
     var paused: Bool = false
     var accumulatedTime: UInt32 = 0 // in seconds
     var accumulatedDistance: Double = 0.0 // in meters
+    var avgPace: String = "0:00:00" // "0:00:00"
     var currentSpeed: Double = 0.0
+    var bestSpeed: Double = 0.0
+    var worstSpeed: Double = DBL_MAX
+    var calories: UInt32 = 0 // in calories
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,8 +110,12 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
         // Pass the selected object to the new view controller.
         if segue.identifier == "DuringToFinish" {
             let FinishRunningVC = segue.destination as! FinishRunningViewController
-            // DuringRunningVC = DuringRunningViewController()
+            FinishRunningVC.totalDistance = self.accumulatedDistance
             FinishRunningVC.totalTime = self.accumulatedTime
+            FinishRunningVC.avgPace = self.avgPace
+            FinishRunningVC.bestSpeed = self.bestSpeed
+            FinishRunningVC.worstSpeed = self.worstSpeed
+            FinishRunningVC.calories = self.calories
             self.timer?.cancel()
             self.timer = nil
             RunTracker.shared.runningStatus = RunningStatus.finished
@@ -116,7 +124,7 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
     
     
     /* MARK: - RunTrackerDelegate functions */
-    func RunTrackerUpdate(newDistance distance: Double, newAvgPace avgPace: UInt, newSpeed speed: Double) {
+    func RunTrackerUpdate(newDistance distance: Double, newAvgPace avgPace: UInt, newSpeed speed: Double, newTotalCal calories: Double) {
         self.accumulatedDistance = distance
         if distance/1609.344 < 0.01 {
             self.distanceCountLabel.text = String(format: "%.0f", arguments: [distance/0.3048])
@@ -128,8 +136,17 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
         let paceHour: UInt = UInt(avgPace) / 3600
         let paceMin: UInt = (UInt(avgPace) % 3600) / 60
         let paceSec: UInt = UInt(avgPace) % 60
-        self.avgPaceLabel.text = String(format: "%d:%d:%d per mil", arguments: [paceHour, paceMin, paceSec])
+        self.avgPace = String(format: "%d:%d:%d", arguments: [paceHour, paceMin, paceSec])
+        self.avgPaceLabel.text = self.avgPace.appending(" per mil")
         self.currentSpeed = speed
+        if speed > self.bestSpeed {
+            self.bestSpeed = speed
+        }
+        if speed < self.worstSpeed {
+            self.worstSpeed = speed
+        }
+        self.calories = UInt32(calories)
+        self.caloriesLabel.text = "\(self.calories) Cal"
     }
     
     
