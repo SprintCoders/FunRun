@@ -162,7 +162,7 @@
                                                                     <constraint firstAttribute="height" constant="50" id="cs9-Td-i7S"/>
                                                                 </constraints>
                                                             </view>
-                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zqh-py-he8">
+                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="zqh-py-he8">
                                                                 <rect key="frame" x="16" y="16" width="343" height="30"/>
                                                                 <segments>
                                                                     <segment title="Last 30 days"/>
@@ -260,10 +260,12 @@
                                                                 <rect key="frame" x="8" y="36.5" width="359" height="29"/>
                                                                 <segments>
                                                                     <segment title="Daily"/>
-                                                                    <segment title="Weekly"/>
+                                                                    <segment title="Weekly" enabled="NO"/>
                                                                     <segment title="Monthly"/>
-                                                                    <segment title="Yearly"/>
                                                                 </segments>
+                                                                <connections>
+                                                                    <action selector="selectDistanceDuration:" destination="9GQ-aX-dON" eventType="valueChanged" id="Ga4-xu-07g"/>
+                                                                </connections>
                                                             </segmentedControl>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -299,16 +301,18 @@
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ceo-w3-sbS" userLabel="Duration Bar Chart" customClass="BarChartView" customModule="Charts">
                                                                 <rect key="frame" x="8" y="72.5" width="359" height="269.5"/>
-                                                                <color key="backgroundColor" red="1" green="0.98949343469999995" blue="0.86478935580000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             </view>
-                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IHW-4Z-dho">
+                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="IHW-4Z-dho">
                                                                 <rect key="frame" x="8" y="36.5" width="359" height="29"/>
                                                                 <segments>
-                                                                    <segment title="Daily"/>
-                                                                    <segment title="Weekly"/>
+                                                                    <segment title="Daily" enabled="NO"/>
+                                                                    <segment title="Weekly" enabled="NO"/>
                                                                     <segment title="Monthly"/>
-                                                                    <segment title="Yearly"/>
                                                                 </segments>
+                                                                <connections>
+                                                                    <action selector="selectDurationDuration:" destination="9GQ-aX-dON" eventType="valueChanged" id="2t2-W8-1QP"/>
+                                                                </connections>
                                                             </segmentedControl>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -345,16 +349,18 @@
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ur-gM-ugK" userLabel="Calories Bar Chart" customClass="BarChartView" customModule="Charts">
                                                                 <rect key="frame" x="8" y="72.5" width="359" height="269.5"/>
-                                                                <color key="backgroundColor" red="1" green="0.98949343469999995" blue="0.86478935580000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             </view>
                                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aat-K6-5mQ">
                                                                 <rect key="frame" x="8" y="36.5" width="359" height="29"/>
                                                                 <segments>
                                                                     <segment title="Daily"/>
-                                                                    <segment title="Weekly"/>
+                                                                    <segment title="Weekly" enabled="NO"/>
                                                                     <segment title="Monthly"/>
-                                                                    <segment title="Yearly"/>
                                                                 </segments>
+                                                                <connections>
+                                                                    <action selector="selectCaloriesBurnedDuration:" destination="9GQ-aX-dON" eventType="valueChanged" id="Alx-lS-HmF"/>
+                                                                </connections>
                                                             </segmentedControl>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -398,8 +404,8 @@
                                                                 </constraints>
                                                                 <segments>
                                                                     <segment title="Best Activity"/>
-                                                                    <segment title="Best Week"/>
-                                                                    <segment title="Best Month"/>
+                                                                    <segment title="Best Week" enabled="NO"/>
+                                                                    <segment title="Best Month" enabled="NO"/>
                                                                 </segments>
                                                             </segmentedControl>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zjK-AM-nxe">
@@ -800,18 +806,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Hdo-ok-if2">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="Hdo-ok-if2">
                                 <rect key="frame" x="8" y="117" width="359" height="29"/>
                                 <segments>
-                                    <segment title="Daily"/>
-                                    <segment title="Weekly"/>
+                                    <segment title="Daily" enabled="NO"/>
+                                    <segment title="Weekly" enabled="NO"/>
                                     <segment title="Monthly"/>
-                                    <segment title="Yearly"/>
                                 </segments>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FNf-1f-h0I" customClass="BarChartView" customModule="Charts">
                                 <rect key="frame" x="8" y="161" width="359" height="2037"/>
-                                <color key="backgroundColor" red="1" green="0.98949343469999995" blue="0.86478935580000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -844,6 +849,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oiq-8x-XvR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

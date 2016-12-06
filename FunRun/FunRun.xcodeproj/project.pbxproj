@@ -20,6 +20,8 @@
 		856949F81DEFB70E008543D3 /* LocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856949F71DEFB70E008543D3 /* LocationTracker.swift */; };
 		856949FA1DEFD3DB008543D3 /* RunTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856949F91DEFD3DB008543D3 /* RunTracker.swift */; };
 		857328671DF2C4880065826D /* UIScrollView+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857328661DF2C4880065826D /* UIScrollView+Extra.swift */; };
+		8573286F1DF39B1C0065826D /* MakeNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8573286E1DF39B1C0065826D /* MakeNoteViewController.swift */; };
+		857328731DF3E8EB0065826D /* MakeNoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857328721DF3E8EB0065826D /* MakeNoteTableViewCell.swift */; };
 		85C6D5091DED74950063BD07 /* ActivitiesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D5061DED74950063BD07 /* ActivitiesData.swift */; };
 		85C6D50A1DED74950063BD07 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D5071DED74950063BD07 /* CSwiftV.swift */; };
 		85C6D50B1DED74950063BD07 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D5081DED74950063BD07 /* Profile.swift */; };
@@ -36,6 +38,9 @@
 		85C6D5271DED7A3A0063BD07 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C6D5251DED7A3A0063BD07 /* Activity.storyboard */; };
 		85ECFFC51DEBA8960058CBA4 /* DispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECFFC41DEBA8960058CBA4 /* DispatchTimer.swift */; };
 		A1D3A3411DF54EBB00A3F221 /* NewScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D3A3401DF54EBB00A3F221 /* NewScheduleViewController.swift */; };
+		B84985251DF4F3FD00863C7C /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84985241DF4F3FD00863C7C /* ActivitiesViewController.swift */; };
+		B849852A1DF563C100863C7C /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84985291DF563C100863C7C /* ActivityCell.swift */; };
+		B849852E1DF5648A00863C7C /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849852D1DF5648A00863C7C /* Activity.swift */; };
 		B8702C001DED467400FEB4E8 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8702BFB1DED466C00FEB4E8 /* Charts.framework */; };
 		B8702C011DED467400FEB4E8 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B8702BFB1DED466C00FEB4E8 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B8DC280E1DED35D100BC38BA /* Stats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8DC28041DED35D100BC38BA /* Stats.storyboard */; };
@@ -112,6 +117,8 @@
 		856949F71DEFB70E008543D3 /* LocationTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationTracker.swift; path = Models/LocationTracker.swift; sourceTree = "<group>"; };
 		856949F91DEFD3DB008543D3 /* RunTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RunTracker.swift; path = Services/RunTracker.swift; sourceTree = "<group>"; };
 		857328661DF2C4880065826D /* UIScrollView+Extra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIScrollView+Extra.swift"; path = "Utils/UIScrollView+Extra.swift"; sourceTree = "<group>"; };
+		8573286E1DF39B1C0065826D /* MakeNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MakeNoteViewController.swift; path = ViewControllers/MakeNoteViewController.swift; sourceTree = "<group>"; };
+		857328721DF3E8EB0065826D /* MakeNoteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MakeNoteTableViewCell.swift; path = ViewControllers/MakeNoteTableViewCell.swift; sourceTree = "<group>"; };
 		85C6D5061DED74950063BD07 /* ActivitiesData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivitiesData.swift; path = Data/ActivitiesData.swift; sourceTree = "<group>"; };
 		85C6D5071DED74950063BD07 /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSwiftV.swift; path = Data/CSwiftV.swift; sourceTree = "<group>"; };
 		85C6D5081DED74950063BD07 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = Data/Profile.swift; sourceTree = "<group>"; };
@@ -130,6 +137,9 @@
 		8B9703FFEABF8065C4EAD10A /* Pods-FunRun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunRun.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunRun/Pods-FunRun.release.xcconfig"; sourceTree = "<group>"; };
 		A1D3A3401DF54EBB00A3F221 /* NewScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewScheduleViewController.swift; sourceTree = "<group>"; };
 		A1D3A3441DF5515800A3F221 /* FunRun-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FunRun-Bridging-Header.h"; sourceTree = "<group>"; };
+		B84985241DF4F3FD00863C7C /* ActivitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivitiesViewController.swift; path = ViewControllers/ActivitiesViewController.swift; sourceTree = "<group>"; };
+		B84985291DF563C100863C7C /* ActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityCell.swift; path = ViewControllers/ActivityCell.swift; sourceTree = "<group>"; };
+		B849852D1DF5648A00863C7C /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Activity.swift; path = Data/Activity.swift; sourceTree = "<group>"; };
 		B8702BF41DED466C00FEB4E8 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = vendor/Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		B8DC28051DED35D100BC38BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Stats.storyboard; sourceTree = "<group>"; };
 		B8DC280C1DED35D100BC38BA /* ActivityChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityChartView.swift; path = ViewControllers/ActivityChartView.swift; sourceTree = "<group>"; };
@@ -252,6 +262,8 @@
 				852AE6541DDACCFA00FEAA82 /* StartRunningViewController.swift */,
 				8544D8AF1DEA8BAD0019D011 /* DuringRunningViewController.swift */,
 				8544D8B11DEA93F20019D011 /* FinishRunningViewController.swift */,
+				8573286E1DF39B1C0065826D /* MakeNoteViewController.swift */,
+				857328721DF3E8EB0065826D /* MakeNoteTableViewCell.swift */,
 			);
 			name = RunningViews;
 			sourceTree = "<group>";
@@ -280,6 +292,8 @@
 		85C6D5281DED7B2E0063BD07 /* ActivityViews */ = {
 			isa = PBXGroup;
 			children = (
+				B84985241DF4F3FD00863C7C /* ActivitiesViewController.swift */,
+				B84985291DF563C100863C7C /* ActivityCell.swift */,
 			);
 			name = ActivityViews;
 			sourceTree = "<group>";
@@ -309,6 +323,7 @@
 				85C6D5061DED74950063BD07 /* ActivitiesData.swift */,
 				85C6D5071DED74950063BD07 /* CSwiftV.swift */,
 				85C6D5081DED74950063BD07 /* Profile.swift */,
+				B849852D1DF5648A00863C7C /* Activity.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -521,14 +536,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B84985251DF4F3FD00863C7C /* ActivitiesViewController.swift in Sources */,
 				856949FA1DEFD3DB008543D3 /* RunTracker.swift in Sources */,
 				85C6D51B1DED758F0063BD07 /* GoalViewController.swift in Sources */,
+				8573286F1DF39B1C0065826D /* MakeNoteViewController.swift in Sources */,
 				85C6D50B1DED74950063BD07 /* Profile.swift in Sources */,
+				B849852E1DF5648A00863C7C /* Activity.swift in Sources */,
 				852AE6531DDAC11300FEAA82 /* TabViewController.swift in Sources */,
 				85C6D5161DED756F0063BD07 /* NewGoalViewController.swift in Sources */,
 				85ECFFC51DEBA8960058CBA4 /* DispatchTimer.swift in Sources */,
 				852AE6311DDABFCF00FEAA82 /* AppDelegate.swift in Sources */,
 				85C6D51A1DED758F0063BD07 /* ChartViewController.swift in Sources */,
+				B849852A1DF563C100863C7C /* ActivityCell.swift in Sources */,
 				856949F81DEFB70E008543D3 /* LocationTracker.swift in Sources */,
 				A1D3A3411DF54EBB00A3F221 /* NewScheduleViewController.swift in Sources */,
 				85C6D5171DED756F0063BD07 /* ScheduleCell.swift in Sources */,
@@ -540,6 +559,7 @@
 				8544D8B21DEA93F20019D011 /* FinishRunningViewController.swift in Sources */,
 				B8DC28151DED35D100BC38BA /* ActivityChartView.swift in Sources */,
 				85C6D5091DED74950063BD07 /* ActivitiesData.swift in Sources */,
+				857328731DF3E8EB0065826D /* MakeNoteTableViewCell.swift in Sources */,
 				85C6D50A1DED74950063BD07 /* CSwiftV.swift in Sources */,
 				8544D8B01DEA8BAD0019D011 /* DuringRunningViewController.swift in Sources */,
 			);

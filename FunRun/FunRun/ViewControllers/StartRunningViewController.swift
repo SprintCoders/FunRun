@@ -32,6 +32,7 @@ class StartRunningViewController: UIViewController, CLLocationManagerDelegate {
         self.avatarImage.layer.cornerRadius = side/2.0
         self.avatarImage.clipsToBounds = true
         
+        /*
         // Setup the startButton
         self.startButton.layer.borderWidth = 5.0
         let startTextColor = self.startButton.currentTitleColor
@@ -39,6 +40,7 @@ class StartRunningViewController: UIViewController, CLLocationManagerDelegate {
         self.startButton.layer.cornerRadius = 5.0
         self.startButton.clipsToBounds = true
         // self.startButton.addTarget(self, action: #selector(startRunning), for: UIControlEvents.touchUpInside)
+        */
         
         // Setup the MapView
         self.locationManager = CLLocationManager()

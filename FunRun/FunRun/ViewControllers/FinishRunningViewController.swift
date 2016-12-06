@@ -10,9 +10,11 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class FinishRunningViewController: UIViewController, CLLocationManagerDelegate {
+class FinishRunningViewController: UIViewController, CLLocationManagerDelegate, MakeNoteViewControllerDelegate {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var runDayLabel: UILabel!
+    @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var distanceViewbox: UIView!
     @IBOutlet weak var durationViewBox: UIView!
@@ -28,13 +30,17 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var bestSpeedLabel: UILabel!
     @IBOutlet weak var caloriesLabel: UILabel!
     
+    @IBOutlet weak var faceViewBox: UIView!
     @IBOutlet weak var face1: UIImageView!
     @IBOutlet weak var face2: UIImageView!
     @IBOutlet weak var face3: UIImageView!
     @IBOutlet weak var face4: UIImageView!
     @IBOutlet weak var face5: UIImageView!
     
-    @IBOutlet weak var noteField: UITextView!
+    @IBOutlet weak var notesViewBox: UIView!
+    @IBOutlet weak var notesLabel: UILabel!
+    
+    @IBOutlet weak var scheduleViewBox: UIView!
     
     @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var deleteBtn: UIButton!
@@ -42,17 +48,20 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate {
     var totalTime: UInt32 = 0
     var totalDistance: Double = 0.0
     var chosenFace: UIImageView?
+    var tabBarHeight: CGFloat = 0.0
+    var notes: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.scrollView.clipsToBounds = true
         self.distanceViewbox.layer.borderWidth = 1.0
         self.distanceViewbox.layer.borderColor = UIColor.black.cgColor
         self.durationViewBox.layer.borderWidth = 1.0
         self.durationViewBox.layer.borderColor = UIColor.black.cgColor
         
-        // Setup Emoji face images
+        // Setup Emoji face images and their container view
         let tapFace1 = UITapGestureRecognizer(target: self, action: #selector(tapEmojiFace(gesture:)))
         self.face1.addGestureRecognizer(tapFace1)
         self.face1.tag = 1
@@ -68,6 +77,8 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate {
         let tapFace5 = UITapGestureRecognizer(target: self, action: #selector(tapEmojiFace(gesture:)))
         self.face5.addGestureRecognizer(tapFace5)
         self.face5.tag = 5
+        self.faceViewBox.layer.borderWidth = 1.0
+        self.faceViewBox.layer.borderColor = UIColor.black.cgColor
         
         // Setup detail view boxes
         self.avgPaceViewBox.layer.borderWidth = 1.0
@@ -77,11 +88,11 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate {
         self.CaloriesViewBox.layer.borderWidth = 1.0
         self.CaloriesViewBox.layer.borderColor = UIColor.black.cgColor
         
-        // Setup textView
-        self.noteField.layer.borderWidth = 2.0
-        self.noteField.layer.borderColor = UIColor.lightGray.cgColor
-        self.noteField.layer.cornerRadius = 2.0
-        self.noteField.clipsToBounds = true
+        // Setup other view boxes
+        self.notesViewBox.layer.borderWidth = 1.0
+        self.notesViewBox.layer.borderColor = UIColor.black.cgColor
+        self.scheduleViewBox.layer.borderWidth = 1.0
+        self.scheduleViewBox.layer.borderColor = UIColor.black.cgColor
         
         // Setup buttons
         self.saveBtn.layer.borderWidth = 2.0
@@ -99,38 +110,51 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate {
         
         // Setup variables
         self.chosenFace = nil
+        self.tabBarHeight = (self.tabBarController?.tabBar.frame.height)!
+        
+        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Review", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.tabBarController?.tabBar.isHidden = false
-        
+        self.navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = false        
         let dateFormatter = DateFormatter()
         dateFormatter.setLocalizedDateFormatFromTemplate("EEEE")
         self.runDayLabel.text = dateFormatter.string(from: Date()).appending(" Run")
         // let today = Calendar.current.component(.weekday, from: Date())
         // self.runDayLabel.text = ""
         self.durationLabel.text = TimeCount.convertIntToTime(seconds: self.totalTime)
+        self.notesLabel.text = self.notes
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    /* MARK: - Navigation */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "FinishToNote" {
+            print("-- go to make note")
+            let makeNoteVC = segue.destination as! MakeNoteViewController
+            makeNoteVC.noteDelegate = self
+            makeNoteVC.notes = self.notes
+        }
     }
-    */
     
+    
+    /* MARK: - MakeNoteViewControllerDelegate function */
+    func makeNoteViewController(finishWithNote note: String) {
+        self.notes = note
+        self.notesLabel.text = self.notes
+    }
     
     /* MARK: - helper functions */
     func tapEmojiFace(gesture: UITapGestureRecognizer) {
@@ -152,4 +176,10 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate {
         RunTracker.shared.runningStatus = RunningStatus.notStart
     }
 
+    @IBAction func tapViewToMakeNote(_ sender: UITapGestureRecognizer) {
+        self.performSegue(withIdentifier: "FinishToNote", sender: nil)
+    }
+    
+    
+        
 }
