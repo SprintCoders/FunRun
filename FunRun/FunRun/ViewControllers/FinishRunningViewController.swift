@@ -43,6 +43,11 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate, 
     @IBOutlet weak var notesLabel: UILabel!
     
     @IBOutlet weak var scheduleViewBox: UIView!
+    @IBOutlet weak var scheduleDayChooseSegCtr: UISegmentedControl!
+    @IBOutlet weak var scheduleDistanceChooseSegCtr: UISegmentedControl!
+    
+    
+    
     
     @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var deleteBtn: UIButton!
@@ -103,6 +108,18 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate, 
         self.notesViewBox.layer.borderColor = UIColor.black.cgColor
         self.scheduleViewBox.layer.borderWidth = 1.0
         self.scheduleViewBox.layer.borderColor = UIColor.black.cgColor
+        
+        // Setup schedule segment controller
+        self.scheduleDayChooseSegCtr.selectedSegmentIndex = 0
+        self.scheduleDayChooseSegCtr.layer.cornerRadius = 10.0
+        self.scheduleDayChooseSegCtr.layer.borderWidth = 1.0
+        self.scheduleDayChooseSegCtr.layer.borderColor = self.scheduleDayChooseSegCtr.backgroundColor?.cgColor
+        self.scheduleDayChooseSegCtr.layer.masksToBounds = true
+        self.scheduleDistanceChooseSegCtr.selectedSegmentIndex = 0
+        self.scheduleDistanceChooseSegCtr.layer.cornerRadius = 10.0
+        self.scheduleDistanceChooseSegCtr.layer.borderWidth = 1.0
+        self.scheduleDistanceChooseSegCtr.layer.borderColor = self.scheduleDistanceChooseSegCtr.backgroundColor?.cgColor
+        self.scheduleDistanceChooseSegCtr.layer.masksToBounds = true
         
         // Setup buttons
         // self.saveBtn.layer.borderWidth = 2.0

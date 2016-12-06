@@ -35,6 +35,7 @@
                             </imageView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="U9f-WF-Yv4">
                                 <rect key="frame" x="108" y="164" width="158" height="29"/>
+                                <color key="backgroundColor" red="0.36862745099999999" green="0.63137254899999995" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="158" id="5ks-48-fAt"/>
                                     <constraint firstAttribute="height" constant="28" id="IhC-tV-Had"/>
@@ -43,7 +44,7 @@
                                     <segment title="Exercise"/>
                                     <segment title="Race"/>
                                 </segments>
-                                <color key="tintColor" red="0.36862745099999999" green="0.63137254899999995" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZl-ht-Plw">
                                 <rect key="frame" x="124" y="564" width="126" height="43"/>
@@ -713,7 +714,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bCB-GU-rip">
-                                        <rect key="frame" x="4" y="621.5" width="367" height="139"/>
+                                        <rect key="frame" x="4" y="621.5" width="367" height="109"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next run?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbD-XA-LgF">
                                                 <rect key="frame" x="8" y="8.5" width="74" height="21"/>
@@ -721,16 +722,43 @@
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="xtp-2k-jpR">
+                                                <rect key="frame" x="8" y="37" width="351" height="29"/>
+                                                <color key="backgroundColor" red="0.36862745099999999" green="0.63137254899999995" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <segments>
+                                                    <segment title="Tomorrow"/>
+                                                    <segment title="In 2 days"/>
+                                                    <segment title="In 3 days"/>
+                                                    <segment title="Not Sure"/>
+                                                </segments>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </segmentedControl>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="Boj-yh-tBu">
+                                                <rect key="frame" x="8" y="73" width="351" height="29"/>
+                                                <color key="backgroundColor" red="0.36862745099999999" green="0.63137254899999995" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <segments>
+                                                    <segment title="3 miles"/>
+                                                    <segment title="5 miles"/>
+                                                    <segment title="Undecided"/>
+                                                </segments>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </segmentedControl>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="139" id="NXU-ml-WMN"/>
+                                            <constraint firstAttribute="height" constant="109" id="NXU-ml-WMN"/>
+                                            <constraint firstAttribute="trailing" secondItem="xtp-2k-jpR" secondAttribute="trailing" constant="8" id="QhO-eu-HEe"/>
                                             <constraint firstItem="tbD-XA-LgF" firstAttribute="top" secondItem="bCB-GU-rip" secondAttribute="top" constant="8" id="TcO-Qh-yY0"/>
+                                            <constraint firstItem="xtp-2k-jpR" firstAttribute="top" secondItem="tbD-XA-LgF" secondAttribute="bottom" constant="8" id="WSE-ox-Eup"/>
+                                            <constraint firstItem="Boj-yh-tBu" firstAttribute="top" secondItem="xtp-2k-jpR" secondAttribute="bottom" constant="8" id="ePA-Yg-H4B"/>
                                             <constraint firstItem="tbD-XA-LgF" firstAttribute="leading" secondItem="bCB-GU-rip" secondAttribute="leading" constant="8" id="f0V-gh-RAs"/>
+                                            <constraint firstItem="xtp-2k-jpR" firstAttribute="leading" secondItem="bCB-GU-rip" secondAttribute="leading" constant="8" id="fEl-6T-vUN"/>
+                                            <constraint firstItem="Boj-yh-tBu" firstAttribute="leading" secondItem="bCB-GU-rip" secondAttribute="leading" constant="8" id="sCT-Wg-5l9"/>
+                                            <constraint firstAttribute="trailing" secondItem="Boj-yh-tBu" secondAttribute="trailing" constant="8" id="x77-Wr-U5E"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OTX-JG-ko4">
-                                        <rect key="frame" x="0.0" y="764.5" width="375" height="49"/>
+                                        <rect key="frame" x="0.0" y="734.5" width="375" height="49"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMr-4N-AEa">
                                                 <rect key="frame" x="8" y="10.5" width="118" height="29"/>
@@ -741,7 +769,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
-                                                <state key="normal" title="SAVE">
+                                                <state key="normal" title="Save">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
@@ -754,7 +782,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
-                                                <state key="normal" title="DELETE">
+                                                <state key="normal" title="Delete">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
@@ -843,6 +871,8 @@
                         <outlet property="routeMapView" destination="67J-Ri-eYs" id="evP-54-XXJ"/>
                         <outlet property="runDayLabel" destination="ezE-fb-HB2" id="VQ0-82-4Ac"/>
                         <outlet property="saveBtn" destination="oMr-4N-AEa" id="a2z-k9-1Ce"/>
+                        <outlet property="scheduleDayChooseSegCtr" destination="xtp-2k-jpR" id="bxm-cs-fVb"/>
+                        <outlet property="scheduleDistanceChooseSegCtr" destination="Boj-yh-tBu" id="h9E-ab-yS1"/>
                         <outlet property="scheduleViewBox" destination="bCB-GU-rip" id="T5S-90-nW1"/>
                         <outlet property="scrollView" destination="CbE-8D-dxE" id="nf4-VK-HFj"/>
                         <outlet property="scrollViewBottomConstraint" destination="Ppj-7t-ahO" id="xAl-BF-Eck"/>

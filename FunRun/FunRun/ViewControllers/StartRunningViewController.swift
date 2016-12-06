@@ -32,6 +32,13 @@ class StartRunningViewController: UIViewController, CLLocationManagerDelegate {
         self.avatarImage.layer.cornerRadius = side/2.0
         self.avatarImage.clipsToBounds = true
         
+        // Setup the segmented Controller
+        self.typeSelector.selectedSegmentIndex = 0
+        self.typeSelector.layer.cornerRadius = 10.0
+        self.typeSelector.layer.borderWidth = 1.0
+        self.typeSelector.layer.borderColor = self.typeSelector.backgroundColor?.cgColor
+        self.typeSelector.layer.masksToBounds = true
+        
         /*
         // Setup the startButton
         self.startButton.layer.borderWidth = 5.0
