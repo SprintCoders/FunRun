@@ -65,6 +65,15 @@ class GoalViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let colors = ChartColorTemplates.vordiplom()
         
         setChart(dataPoints: progressStringArray, values: progressArray, colors: colors)
+        goalPieChart.animate(xAxisDuration: 3)
+        
+        newGoalButton.layer.cornerRadius = 10
+        newGoalButton.layer.borderWidth = 1
+        newGoalButton.layer.borderColor = UIColor.white.cgColor
+        
+        newScheduleButton.layer.cornerRadius = 10
+        newScheduleButton.layer.borderWidth = 1
+        newScheduleButton.layer.borderColor = UIColor.white.cgColor
         
     }
 
@@ -73,9 +82,26 @@ class GoalViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Dispose of any resources that can be recreated.
     }
 
-    func updateProgressView(){
-        //goalProgress.progress = 0.8
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        for parent in navigationController!.view.subviews {
+            for child in parent.subviews {
+                for view in child.subviews {
+                    if view is UIImageView && view.frame.height == 0.5 {
+                        view.alpha = 0
+                    }
+                }
+            }
+        }
+        
+        let nav = self.navigationController?.navigationBar
+        nav?.barStyle = UIBarStyle.black
+        nav?.tintColor = UIColor.white
+        nav?.barTintColor = UIColor.init(colorLiteralRed: 94/255, green: 161/255, blue: 120/255, alpha: 1)
+        nav?.tintColor = UIColor.white
     }
+    
     
     func setChart(dataPoints: [String], values: [Double], colors: [UIColor]) {
         
@@ -124,5 +150,16 @@ class GoalViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         return cell
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+//        if segue.identifier == "newGoal" {
+//            let nav = segue.destination as! UINavigationController
+//            let newGoalVC = nav.topViewController as! NewGoalViewController
+//        }
+//        if segue.identifier == "newSchedule" {
+//            
+//        }
+//    }
+    
 }
 

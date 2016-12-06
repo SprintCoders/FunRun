@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6DD3541C05D7AB64D9FCAEAC /* Pods_FunRun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C04FE0C6F7153B9CDEF25E7 /* Pods_FunRun.framework */; };
 		852AE6311DDABFCF00FEAA82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852AE6301DDABFCF00FEAA82 /* AppDelegate.swift */; };
 		852AE6361DDABFCF00FEAA82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 852AE6341DDABFCF00FEAA82 /* Main.storyboard */; };
 		852AE6381DDABFCF00FEAA82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 852AE6371DDABFCF00FEAA82 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 		85C6D5211DED76650063BD07 /* Running.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C6D51F1DED76650063BD07 /* Running.storyboard */; };
 		85C6D5271DED7A3A0063BD07 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C6D5251DED7A3A0063BD07 /* Activity.storyboard */; };
 		85ECFFC51DEBA8960058CBA4 /* DispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECFFC41DEBA8960058CBA4 /* DispatchTimer.swift */; };
+		A1D3A3411DF54EBB00A3F221 /* NewScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D3A3401DF54EBB00A3F221 /* NewScheduleViewController.swift */; };
 		B8702C001DED467400FEB4E8 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8702BFB1DED466C00FEB4E8 /* Charts.framework */; };
 		B8702C011DED467400FEB4E8 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B8702BFB1DED466C00FEB4E8 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B8DC280E1DED35D100BC38BA /* Stats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8DC28041DED35D100BC38BA /* Stats.storyboard */; };
@@ -93,6 +95,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1C04FE0C6F7153B9CDEF25E7 /* Pods_FunRun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FunRun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		852AE62D1DDABFCF00FEAA82 /* FunRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		852AE6301DDABFCF00FEAA82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		852AE6351DDABFCF00FEAA82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -124,9 +127,13 @@
 		85C6D5201DED76650063BD07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Running.storyboard; sourceTree = "<group>"; };
 		85C6D5261DED7A3A0063BD07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Activity.storyboard; sourceTree = "<group>"; };
 		85ECFFC41DEBA8960058CBA4 /* DispatchTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DispatchTimer.swift; path = Models/DispatchTimer.swift; sourceTree = "<group>"; };
+		8B9703FFEABF8065C4EAD10A /* Pods-FunRun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunRun.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunRun/Pods-FunRun.release.xcconfig"; sourceTree = "<group>"; };
+		A1D3A3401DF54EBB00A3F221 /* NewScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewScheduleViewController.swift; sourceTree = "<group>"; };
+		A1D3A3441DF5515800A3F221 /* FunRun-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FunRun-Bridging-Header.h"; sourceTree = "<group>"; };
 		B8702BF41DED466C00FEB4E8 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = vendor/Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		B8DC28051DED35D100BC38BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Stats.storyboard; sourceTree = "<group>"; };
 		B8DC280C1DED35D100BC38BA /* ActivityChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityChartView.swift; path = ViewControllers/ActivityChartView.swift; sourceTree = "<group>"; };
+		DC0CD313F19F77232DDE4E95 /* Pods-FunRun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunRun.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunRun/Pods-FunRun.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8702C001DED467400FEB4E8 /* Charts.framework in Frameworks */,
+				6DD3541C05D7AB64D9FCAEAC /* Pods_FunRun.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +156,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		638449EC46FC4A3A666EF9B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C04FE0C6F7153B9CDEF25E7 /* Pods_FunRun.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6DB6722D980C985AFEBA243E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DC0CD313F19F77232DDE4E95 /* Pods-FunRun.debug.xcconfig */,
+				8B9703FFEABF8065C4EAD10A /* Pods-FunRun.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		852AE6241DDABFCE00FEAA82 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +180,8 @@
 				852AE62F1DDABFCF00FEAA82 /* FunRun */,
 				852AE6441DDABFCF00FEAA82 /* FunRunTests */,
 				852AE62E1DDABFCF00FEAA82 /* Products */,
+				6DB6722D980C985AFEBA243E /* Pods */,
+				638449EC46FC4A3A666EF9B0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -184,6 +211,7 @@
 				852AE6371DDABFCF00FEAA82 /* Assets.xcassets */,
 				852AE6391DDABFCF00FEAA82 /* LaunchScreen.storyboard */,
 				852AE63C1DDABFCF00FEAA82 /* Info.plist */,
+				A1D3A3441DF5515800A3F221 /* FunRun-Bridging-Header.h */,
 			);
 			path = FunRun;
 			sourceTree = "<group>";
@@ -244,6 +272,7 @@
 				85C6D5191DED758F0063BD07 /* GoalViewController.swift */,
 				85C6D5141DED756F0063BD07 /* NewGoalViewController.swift */,
 				85C6D5151DED756F0063BD07 /* ScheduleCell.swift */,
+				A1D3A3401DF54EBB00A3F221 /* NewScheduleViewController.swift */,
 			);
 			name = GoalViews;
 			sourceTree = "<group>";
@@ -301,10 +330,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 852AE64A1DDABFCF00FEAA82 /* Build configuration list for PBXNativeTarget "FunRun" */;
 			buildPhases = (
+				B739AE32FFA8E5D807C815A2 /* [CP] Check Pods Manifest.lock */,
 				852AE6291DDABFCF00FEAA82 /* Sources */,
 				852AE62A1DDABFCF00FEAA82 /* Frameworks */,
 				852AE62B1DDABFCF00FEAA82 /* Resources */,
 				B8702C041DED467400FEB4E8 /* Embed Frameworks */,
+				E01EDB99D2033AE5554D4943 /* [CP] Embed Pods Frameworks */,
+				50FF574CAD5E0028C52FDDFD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -346,7 +378,7 @@
 				TargetAttributes = {
 					852AE62C1DDABFCF00FEAA82 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = XYNA997C9P;
+						DevelopmentTeam = UBWJ53ZM94;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -436,6 +468,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		50FF574CAD5E0028C52FDDFD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FunRun/Pods-FunRun-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B739AE32FFA8E5D807C815A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E01EDB99D2033AE5554D4943 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FunRun/Pods-FunRun-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		852AE6291DDABFCF00FEAA82 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -450,6 +530,7 @@
 				852AE6311DDABFCF00FEAA82 /* AppDelegate.swift in Sources */,
 				85C6D51A1DED758F0063BD07 /* ChartViewController.swift in Sources */,
 				856949F81DEFB70E008543D3 /* LocationTracker.swift in Sources */,
+				A1D3A3411DF54EBB00A3F221 /* NewScheduleViewController.swift in Sources */,
 				85C6D5171DED756F0063BD07 /* ScheduleCell.swift in Sources */,
 				857328671DF2C4880065826D /* UIScrollView+Extra.swift in Sources */,
 				852AE6551DDACCFA00FEAA82 /* StartRunningViewController.swift in Sources */,
@@ -585,6 +666,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "FunRun/FunRun-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -628,6 +710,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "FunRun/FunRun-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -636,10 +719,11 @@
 		};
 		852AE64B1DDABFCF00FEAA82 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC0CD313F19F77232DDE4E95 /* Pods-FunRun.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XYNA997C9P;
+				DEVELOPMENT_TEAM = UBWJ53ZM94;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -655,10 +739,11 @@
 		};
 		852AE64C1DDABFCF00FEAA82 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B9703FFEABF8065C4EAD10A /* Pods-FunRun.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XYNA997C9P;
+				DEVELOPMENT_TEAM = UBWJ53ZM94;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
