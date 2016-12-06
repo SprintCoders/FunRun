@@ -26,6 +26,7 @@
 		85B6EAC21DF675C50050A0C3 /* FunRun.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 85B6EAC01DF675C50050A0C3 /* FunRun.xcdatamodeld */; };
 		85B6EAC41DF675EE0050A0C3 /* MulticolorPolylineSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B6EAC31DF675EE0050A0C3 /* MulticolorPolylineSegment.swift */; };
 		85B6EAC61DF677450050A0C3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B6EAC51DF677450050A0C3 /* CoreData.framework */; };
+		85B6EACA1DF67B800050A0C3 /* RouteOnMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B6EAC91DF67B800050A0C3 /* RouteOnMap.swift */; };
 		85C6D5091DED74950063BD07 /* ActivitiesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D5061DED74950063BD07 /* ActivitiesData.swift */; };
 		85C6D50A1DED74950063BD07 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D5071DED74950063BD07 /* CSwiftV.swift */; };
 		85C6D50B1DED74950063BD07 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D5081DED74950063BD07 /* Profile.swift */; };
@@ -127,6 +128,7 @@
 		85B6EAC11DF675C50050A0C3 /* FunRun.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FunRun.xcdatamodel; sourceTree = "<group>"; };
 		85B6EAC31DF675EE0050A0C3 /* MulticolorPolylineSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MulticolorPolylineSegment.swift; path = Models/MulticolorPolylineSegment.swift; sourceTree = "<group>"; };
 		85B6EAC51DF677450050A0C3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		85B6EAC91DF67B800050A0C3 /* RouteOnMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteOnMap.swift; path = Utils/RouteOnMap.swift; sourceTree = "<group>"; };
 		85C6D5061DED74950063BD07 /* ActivitiesData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivitiesData.swift; path = Data/ActivitiesData.swift; sourceTree = "<group>"; };
 		85C6D5071DED74950063BD07 /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSwiftV.swift; path = Data/CSwiftV.swift; sourceTree = "<group>"; };
 		85C6D5081DED74950063BD07 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = Data/Profile.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 				857328661DF2C4880065826D /* UIScrollView+Extra.swift */,
 				85C6D50E1DED75030063BD07 /* Date+Extra.swift */,
 				85C6D50F1DED75030063BD07 /* TimeCount.swift */,
+				85B6EAC91DF67B800050A0C3 /* RouteOnMap.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				857328671DF2C4880065826D /* UIScrollView+Extra.swift in Sources */,
 				852AE6551DDACCFA00FEAA82 /* StartRunningViewController.swift in Sources */,
 				85C6D5101DED75030063BD07 /* Date+Extra.swift in Sources */,
+				85B6EACA1DF67B800050A0C3 /* RouteOnMap.swift in Sources */,
 				85C6D5111DED75030063BD07 /* TimeCount.swift in Sources */,
 				85C6D5131DED75530063BD07 /* StatsViewController.swift in Sources */,
 				8544D8B21DEA93F20019D011 /* FinishRunningViewController.swift in Sources */,

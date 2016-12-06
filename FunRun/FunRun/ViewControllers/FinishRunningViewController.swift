@@ -222,69 +222,16 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate, 
         self.performSegue(withIdentifier: "FinishToNote", sender: nil)
     }
     
-    func getMapRegion() -> MKCoordinateRegion {
-        let locationSet = RunTracker.shared.locations
-        var minLatitude: Double = (locationSet?.first?.coordinate.latitude)!
-        var minLongitude: Double = (locationSet?.first?.coordinate.longitude)!
-        var maxLatitude: Double = minLatitude
-        var maxLongitude: Double = minLongitude
-        for gpsXY in locationSet! {
-            if gpsXY.coordinate.latitude < minLatitude {
-                minLatitude = gpsXY.coordinate.latitude
-            }
-            if gpsXY.coordinate.latitude > maxLatitude {
-                maxLatitude = gpsXY.coordinate.latitude
-            }
-            if gpsXY.coordinate.longitude < minLongitude {
-                minLongitude = gpsXY.coordinate.longitude
-            }
-            if gpsXY.coordinate.longitude > maxLongitude {
-                maxLongitude = gpsXY.coordinate.longitude
-            }
-        }
-        let center = CLLocationCoordinate2D(latitude: (minLatitude + maxLatitude)*0.5, longitude: (minLongitude + maxLongitude)*0.5)
-        let centerSpan = MKCoordinateSpan(latitudeDelta: (maxLatitude - minLatitude)*1.2, longitudeDelta: (maxLongitude - minLongitude)*1.2)
-        let fitRegion = MKCoordinateRegion(center: center, span: centerSpan)
-        
-        return fitRegion
-    }
-    
-    func getPolyline() -> MKPolyline {
-        var coords = [CLLocationCoordinate2D]()
-        let numOfLocations = RunTracker.shared.locations?.count
-        for location in RunTracker.shared.locations! {
-            coords.append(location.coordinate)
-        }
-        return MKPolyline(coordinates: coords, count: numOfLocations!)
-    }
-    
-    func getColoredPolyline() -> [MulticolorPolylineSegment] {
-        let meanSpeed = (self.bestSpeed + self.worstSpeed) * 0.5
-        let locationSet = RunTracker.shared.locations!
-        var colorSegments = [MulticolorPolylineSegment]()
-        for index in 1...(locationSet.count-1) {
-            let firstLoc = locationSet[index-1]
-            let secondLoc = locationSet[index]
-            var color: UIColor?
-            if secondLoc.speed < meanSpeed {
-                let ratio = (secondLoc.speed - self.worstSpeed) / (meanSpeed - self.worstSpeed)
-                color = ColorGradient.colorBetweenRedAndYellow(ratio: ratio)
-            } else {
-                let ratio = (secondLoc.speed - meanSpeed) / (self.bestSpeed - meanSpeed)
-                color = ColorGradient.colorBetweenYellowAndBlue(ratio: ratio)
-            }
-            let colorSegment = MulticolorPolylineSegment(coordinates: [firstLoc.coordinate, secondLoc.coordinate], count: 2)
-            colorSegment.color = color
-            colorSegments.append(colorSegment)
-        }
-        return colorSegments
-    }
     
     func drawRouteOnMap() {
         if (RunTracker.shared.locations?.count)! > 1 {
-            self.routeMapView.setRegion(self.getMapRegion(), animated: true)
+            let mapCoorRegion: MKCoordinateRegion = RouteOnMap.getMapRegion(forlocations: RunTracker.shared.locations!)
+            self.routeMapView.setRegion(mapCoorRegion, animated: true)
             // self.routeMapView.addOverlays([self.getPolyline()])
-            self.routeMapView.addOverlays(self.getColoredPolyline())
+            let coloredPolylines: [MulticolorPolylineSegment] = RouteOnMap.getColoredPolyline(forlocations: RunTracker.shared.locations!, withBestSpeed: self.bestSpeed, withWorstSpeed: self.worstSpeed)
+            self.routeMapView.addOverlays(coloredPolylines)
+            
+            print("route is now on map")
         }
     }
     
@@ -331,30 +278,6 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate, 
             print("Unable to save run data to CoreData")
         }
         block()
-    }
-    
-    func retrieveRunDataFromCoreData() {
-        /*
-         
-         //create a fetch request, telling it about the entity
-         let fetchRequest: NSFetchRequest<Transcription> = Transcription.fetchRequest()
-         
-         do {
-         //go get the results
-         let searchResults = try getContext().fetch(fetchRequest)
-         
-         //I like to check the size of the returned results!
-         print ("num of results = \(searchResults.count)")
-         
-         //You need to convert to NSManagedObject to use 'for' loops
-         for trans in searchResults as [NSManagedObject] {
-         //get the Key Value pairs (although there may be a better way to do that...
-         print("\(trans.value(forKey: "audioFileUrlString"))")
-         }
-         } catch {
-         print("Error with request: \(error)")
-         }
-        */
     }
     
     /*
