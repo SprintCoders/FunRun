@@ -51,6 +51,7 @@ class RunTracker: NSObject, CLLocationManagerDelegate {
     var distanceSum: Double = 0.0 // in meters
     var caloriesSum: Double = 0.0 // in calories
     var timeSum: UInt32 = 0
+    var startTime: Date?
     
     
     override init() {
@@ -100,6 +101,7 @@ class RunTracker: NSObject, CLLocationManagerDelegate {
                 } else { // running
                     self.caloriesSum += 155.0 * 0.75 * tempLength / 1609.344
                 }
+                print("-- one location update")
                 self.runTrackerDelegate?.RunTrackerUpdate?(newDistance: self.distanceSum, newAvgPace: UInt(avgPaceInSeconds), newSpeed: lastSpeed, newTotalCal: self.caloriesSum)
             } else if self.runningStatus == RunningStatus.notStart {
                 self.runTrackerDelegate?.RunTrackerUpdate?(newLocation: locations.last)
@@ -113,6 +115,7 @@ class RunTracker: NSObject, CLLocationManagerDelegate {
         distanceSum = 0.0
         caloriesSum = 0.0
         timeSum = 0
+        startTime = Date()
     }
     
 }

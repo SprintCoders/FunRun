@@ -69,6 +69,7 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate, 
         
         // Setup Map View
         self.routeMapView.delegate = self
+        self.routeMapView.showsTraffic = false
         
         // Setup Emoji face images and their container view
         let tapFace1 = UITapGestureRecognizer(target: self, action: #selector(tapEmojiFace(gesture:)))
@@ -199,8 +200,10 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate, 
     }
     
     func saveButtonPressed() {
-        _ = self.navigationController?.popToRootViewController(animated: true)
-        RunTracker.shared.runningStatus = RunningStatus.notStart
+        self.saveRunDataToCoreData {
+            _ = self.navigationController?.popToRootViewController(animated: true)
+            RunTracker.shared.runningStatus = RunningStatus.notStart
+        }
     }
     
     func deleteButtonPressed() {
@@ -240,7 +243,7 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate, 
             }
         }
         let center = CLLocationCoordinate2D(latitude: (minLatitude + maxLatitude)*0.5, longitude: (minLongitude + maxLongitude)*0.5)
-        let centerSpan = MKCoordinateSpan(latitudeDelta: (maxLatitude - minLatitude)*1.1, longitudeDelta: (maxLongitude - minLongitude)*1.1)
+        let centerSpan = MKCoordinateSpan(latitudeDelta: (maxLatitude - minLatitude)*1.2, longitudeDelta: (maxLongitude - minLongitude)*1.2)
         let fitRegion = MKCoordinateRegion(center: center, span: centerSpan)
         
         return fitRegion
@@ -291,63 +294,74 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate, 
     fileprivate let lineNumberKey = "lineNumber"
     fileprivate let lineTextKey = "lineText"
     */
-    func saveRunDataToCoreData() {
-        /*
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.managedObjectContext
-        var error:NSError? = nil
-        for i in 0 ..< lineFields.count {
-            let textField = lineFields[i]
-            
-            let request = NSFetchRequest<NSFetchRequestResult>(entityName: lineEntityName)
-            let pred = NSPredicate(format: "%K = %d", lineNumberKey, i)
-            request.predicate = pred
-            
-            let objects = context?.executeFetchRequest(request, error: &error)
-            if let objectList = objects {
-                var theLine:NSManagedObject! = nil
-                if objectList.count > 0 {
-                    theLine = objectList[0] as! NSManagedObject
-                } else {
-                    theLine = NSEntityDescription.insertNewObject(forEntityName: lineEntityName, into: context!)
-                }
-                
-                theLine.setValue(i, forKey: lineNumberKey)
-                theLine.setValue(textField.text, forKey: lineTextKey)
-            } else {
-                println("There was an error")
-                // Do whatever error handling is appropriate
+    
+    func saveRunDataToCoreData(completion block: (() -> Void)) {
+        do {
+            var locationSet = [Any]()
+            for location in RunTracker.shared.locations! {
+                let oneLocationInfo: [String: Any] = [
+                    "latitude": location.coordinate.latitude,
+                    "longitude": location.coordinate.longitude,
+                    "speed": location.speed,
+                    "time": location.timestamp.description
+                ]
+                locationSet.append(oneLocationInfo as Any)
             }
+            let jsonObj = ["data": locationSet]
+            let jsonData = try JSONSerialization.data(withJSONObject: jsonObj, options: JSONSerialization.WritingOptions.prettyPrinted)
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            let entity = NSEntityDescription.entity(forEntityName: "RunActivity", in: context)
+            let transaction = NSManagedObject(entity: entity!, insertInto: context)
+            
+            transaction.setValue(RunTracker.shared.startTime, forKey: "day")
+            transaction.setValue(self.totalDistance, forKey: "totalDistance")
+            transaction.setValue(self.totalTime, forKey: "totalDuration")
+            transaction.setValue(self.calories, forKey: "totalCalories")
+            transaction.setValue(self.bestSpeed, forKey: "bestSpeed")
+            transaction.setValue(self.worstSpeed, forKey: "worstSpeed")
+            transaction.setValue(jsonData, forKey: "locationSet")
+        
+            try context.save()
+            print("Successfully saved a running data")
+        } catch let error as NSError {
+            print("Failed to save run data to CoreData: \(error.localizedDescription)")
+        } catch {
+            print("Unable to save run data to CoreData")
         }
-        appDelegate.saveContext()
-        */
+        block()
     }
     
     func retrieveRunDataFromCoreData() {
         /*
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.managedObjectContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: lineEntityName)
-        
-        var error: NSError? = nil
-        let objects = context?.executeFetchRequest(request, error: &error)
-        if let objectList = objects {
-            for oneObject in objectList {
-                let lineNum = oneObject.valueForKey(lineNumberKey)!.integerValue
-                let lineText = oneObject.valueForKey(lineTextKey) as! String
-                let textField = lineFields[lineNum]
-                textField.text = lineText
-            }
-        } else {
-            println("There was an error")
-            // Do whatever error handling is appropriate
-        }
+         
+         //create a fetch request, telling it about the entity
+         let fetchRequest: NSFetchRequest<Transcription> = Transcription.fetchRequest()
+         
+         do {
+         //go get the results
+         let searchResults = try getContext().fetch(fetchRequest)
+         
+         //I like to check the size of the returned results!
+         print ("num of results = \(searchResults.count)")
+         
+         //You need to convert to NSManagedObject to use 'for' loops
+         for trans in searchResults as [NSManagedObject] {
+         //get the Key Value pairs (although there may be a better way to do that...
+         print("\(trans.value(forKey: "audioFileUrlString"))")
+         }
+         } catch {
+         print("Error with request: \(error)")
+         }
         */
     }
     
+    /*
     func dataFilePath() -> String {
         let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
         return paths[0].appending("data.sqlite")
     }
+    */
         
 }

@@ -23,7 +23,8 @@
 		857328731DF3E8EB0065826D /* MakeNoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857328721DF3E8EB0065826D /* MakeNoteTableViewCell.swift */; };
 		857328781DF4E97D0065826D /* MulticolorPolylineSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857328771DF4E97D0065826D /* MulticolorPolylineSegment.swift */; };
 		8573287C1DF4EBB00065826D /* ColorGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8573287B1DF4EBB00065826D /* ColorGradient.swift */; };
-		85B6EA791DF568DB0050A0C3 /* RunActivity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 85B6EA771DF568DB0050A0C3 /* RunActivity.xcdatamodeld */; };
+		85B6EAAD1DF56A7E0050A0C3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B6EA711DF565530050A0C3 /* CoreData.framework */; };
+		85B6EAB51DF56D420050A0C3 /* FunRun.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 85B6EAB31DF56D420050A0C3 /* FunRun.xcdatamodeld */; };
 		85C6D5091DED74950063BD07 /* ActivitiesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D5061DED74950063BD07 /* ActivitiesData.swift */; };
 		85C6D50A1DED74950063BD07 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D5071DED74950063BD07 /* CSwiftV.swift */; };
 		85C6D50B1DED74950063BD07 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D5081DED74950063BD07 /* Profile.swift */; };
@@ -119,7 +120,7 @@
 		857328771DF4E97D0065826D /* MulticolorPolylineSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MulticolorPolylineSegment.swift; path = Models/MulticolorPolylineSegment.swift; sourceTree = "<group>"; };
 		8573287B1DF4EBB00065826D /* ColorGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorGradient.swift; sourceTree = "<group>"; };
 		85B6EA711DF565530050A0C3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		85B6EA781DF568DB0050A0C3 /* RunActivity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RunActivity.xcdatamodel; sourceTree = "<group>"; };
+		85B6EAB41DF56D420050A0C3 /* FunRun.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FunRun.xcdatamodel; sourceTree = "<group>"; };
 		85C6D5061DED74950063BD07 /* ActivitiesData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivitiesData.swift; path = Data/ActivitiesData.swift; sourceTree = "<group>"; };
 		85C6D5071DED74950063BD07 /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSwiftV.swift; path = Data/CSwiftV.swift; sourceTree = "<group>"; };
 		85C6D5081DED74950063BD07 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = Data/Profile.swift; sourceTree = "<group>"; };
@@ -145,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85B6EAAD1DF56A7E0050A0C3 /* CoreData.framework in Frameworks */,
 				B8702C001DED467400FEB4E8 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,11 +301,11 @@
 		B8DC28201DED3C8900BC38BA /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				85B6EAB31DF56D420050A0C3 /* FunRun.xcdatamodeld */,
 				85C6D50C1DED74AD0063BD07 /* cardioActivities.csv */,
 				85C6D5061DED74950063BD07 /* ActivitiesData.swift */,
 				85C6D5071DED74950063BD07 /* CSwiftV.swift */,
 				85C6D5081DED74950063BD07 /* Profile.swift */,
-				85B6EA771DF568DB0050A0C3 /* RunActivity.xcdatamodeld */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -477,8 +479,8 @@
 				852AE6311DDABFCF00FEAA82 /* AppDelegate.swift in Sources */,
 				85C6D51A1DED758F0063BD07 /* ChartViewController.swift in Sources */,
 				856949F81DEFB70E008543D3 /* LocationTracker.swift in Sources */,
+				85B6EAB51DF56D420050A0C3 /* FunRun.xcdatamodeld in Sources */,
 				85C6D5171DED756F0063BD07 /* ScheduleCell.swift in Sources */,
-				85B6EA791DF568DB0050A0C3 /* RunActivity.xcdatamodeld in Sources */,
 				857328671DF2C4880065826D /* UIScrollView+Extra.swift in Sources */,
 				852AE6551DDACCFA00FEAA82 /* StartRunningViewController.swift in Sources */,
 				85C6D5101DED75030063BD07 /* Date+Extra.swift in Sources */,
@@ -765,14 +767,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		85B6EA771DF568DB0050A0C3 /* RunActivity.xcdatamodeld */ = {
+		85B6EAB31DF56D420050A0C3 /* FunRun.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				85B6EA781DF568DB0050A0C3 /* RunActivity.xcdatamodel */,
+				85B6EAB41DF56D420050A0C3 /* FunRun.xcdatamodel */,
 			);
-			currentVersion = 85B6EA781DF568DB0050A0C3 /* RunActivity.xcdatamodel */;
-			name = RunActivity.xcdatamodeld;
-			path = Data/RunActivity.xcdatamodeld;
+			currentVersion = 85B6EAB41DF56D420050A0C3 /* FunRun.xcdatamodel */;
+			name = FunRun.xcdatamodeld;
+			path = Data/FunRun.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
