@@ -235,13 +235,6 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate, 
         }
     }
     
-    /*
-    @IBOutlet var lineFields:[UITextField]!
-    fileprivate let lineEntityName = "Line"
-    fileprivate let lineNumberKey = "lineNumber"
-    fileprivate let lineTextKey = "lineText"
-    */
-    
     func saveRunDataToCoreData(completion block: (() -> Void)) {
         do {
             var locationSet = [Any]()
@@ -262,7 +255,7 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate, 
             let entity = NSEntityDescription.entity(forEntityName: "RunActivity", in: context)
             let transaction = NSManagedObject(entity: entity!, insertInto: context)
             
-            transaction.setValue(RunTracker.shared.startTime, forKey: "day")
+            transaction.setValue(RunTracker.shared.startTime, forKey: "startDay")
             transaction.setValue(self.totalDistance, forKey: "totalDistance")
             transaction.setValue(self.totalTime, forKey: "totalDuration")
             transaction.setValue(self.calories, forKey: "totalCalories")
@@ -279,12 +272,5 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate, 
         }
         block()
     }
-    
-    /*
-    func dataFilePath() -> String {
-        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-        return paths[0].appending("data.sqlite")
-    }
-    */
         
 }

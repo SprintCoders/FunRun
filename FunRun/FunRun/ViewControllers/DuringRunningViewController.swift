@@ -53,18 +53,16 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
         self.distanceCountView.layer.borderWidth = 1.0
         
         // Setup buttons
-        /*
-        self.pauseBtn.layer.borderWidth = 2.0
-        self.pauseBtn.layer.cornerRadius = 5.0
-        let pauseBtnClr = self.pauseBtn.currentTitleColor
-        self.pauseBtn.layer.borderColor = pauseBtnClr.cgColor
+        // self.pauseBtn.layer.borderWidth = 2.0
+        self.pauseBtn.layer.cornerRadius = 10.0
+        // let pauseBtnClr = self.pauseBtn.currentTitleColor
+        // self.pauseBtn.layer.borderColor = pauseBtnClr.cgColor
         self.pauseBtn.clipsToBounds = true
-        self.stopBtn.layer.borderWidth = 2.0
-        self.stopBtn.layer.cornerRadius = 5.0
-        let stopBtnClr = self.stopBtn.currentTitleColor
-        self.stopBtn.layer.borderColor = stopBtnClr.cgColor
+        // self.stopBtn.layer.borderWidth = 2.0
+        self.stopBtn.layer.cornerRadius = 10.0
+        // let stopBtnClr = self.stopBtn.currentTitleColor
+        // self.stopBtn.layer.borderColor = stopBtnClr.cgColor
         self.stopBtn.clipsToBounds = true
-        */
         self.pauseBtn.addTarget(self, action: #selector(pauseRunning), for: UIControlEvents.touchUpInside)
         // self.stopBtn.addTarget(self, action: #selector(stopRunning), for: UIControlEvents.touchUpInside)
         

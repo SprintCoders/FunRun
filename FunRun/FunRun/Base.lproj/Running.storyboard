@@ -99,7 +99,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IdE-En-6in">
-                                <rect key="frame" x="0.0" y="80" width="187.5" height="195.5"/>
+                                <rect key="frame" x="0.0" y="69" width="187.5" height="199.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0d-9Y-WzQ">
                                         <rect key="frame" x="74" y="8" width="39" height="21"/>
@@ -108,13 +108,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="23" translatesAutoresizingMaskIntoConstraints="NO" id="QGV-WE-AED">
-                                        <rect key="frame" x="28" y="71" width="132" height="54"/>
+                                        <rect key="frame" x="28" y="73" width="132" height="54"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sec" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDY-w3-hLl">
-                                        <rect key="frame" x="152" y="133" width="27" height="21"/>
+                                        <rect key="frame" x="152" y="135" width="27" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -134,7 +134,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMP-8v-ObZ">
-                                <rect key="frame" x="187.5" y="80" width="187.5" height="391.5"/>
+                                <rect key="frame" x="187.5" y="69" width="187.5" height="398.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed Log" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOi-ms-LBc">
                                         <rect key="frame" x="53" y="8" width="82" height="21"/>
@@ -151,10 +151,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6SR-T5-KBY">
-                                <rect key="frame" x="0.0" y="275.5" width="187.5" height="196"/>
+                                <rect key="frame" x="0.0" y="268.5" width="187.5" height="199"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bDk-iX-b2O">
-                                        <rect key="frame" x="0.0" y="98" width="187.5" height="98"/>
+                                        <rect key="frame" x="0.0" y="99.5" width="187.5" height="99.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories burned" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nl8-Ks-iEq">
                                                 <rect key="frame" x="33" y="10" width="122" height="21"/>
@@ -163,7 +163,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Cal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="aI5-lM-x7t">
-                                                <rect key="frame" x="69" y="58" width="49.5" height="24"/>
+                                                <rect key="frame" x="69" y="59.5" width="49.5" height="24"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -180,10 +180,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mPh-aL-yGW">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="98"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="99.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00 min/mil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="He0-c5-Vud">
-                                                <rect key="frame" x="33" y="58" width="122" height="24"/>
+                                                <rect key="frame" x="33" y="59.5" width="122" height="24"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -220,7 +220,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mvD-hn-K9x">
-                                <rect key="frame" x="0.0" y="471.5" width="375" height="195.5"/>
+                                <rect key="frame" x="0.0" y="467.5" width="375" height="199.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DISTANCE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ofm-2L-Ouj">
                                         <rect key="frame" x="147" y="8" width="81" height="21"/>
@@ -229,13 +229,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="rAC-AU-dO4">
-                                        <rect key="frame" x="99" y="49" width="176" height="96"/>
+                                        <rect key="frame" x="99" y="52" width="176" height="96"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="80"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="miles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilV-h1-Z8t">
-                                        <rect key="frame" x="283" y="124" width="40" height="21"/>
+                                        <rect key="frame" x="283" y="127" width="40" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="gKi-fo-0Ei"/>
                                         </constraints>
@@ -258,21 +258,33 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aih-rr-Pvl">
-                                <rect key="frame" x="0.0" y="20" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="49"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSL-Pf-VVL">
-                                        <rect key="frame" x="8" y="11" width="109" height="38"/>
-                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
-                                        <color key="tintColor" red="0.36862745099999999" green="0.63137254899999995" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <inset key="contentEdgeInsets" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
-                                        <state key="normal" title="PAUSE"/>
+                                        <rect key="frame" x="8" y="10" width="128" height="29"/>
+                                        <color key="backgroundColor" red="0.36862745099999999" green="0.63137254899999995" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="128" id="jse-KW-lf4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                        <state key="normal" title="PAUSE">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEd-H2-gKw">
-                                        <rect key="frame" x="277" y="11" width="90" height="38"/>
-                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
-                                        <color key="tintColor" red="0.36862745099999999" green="0.63137254899999995" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <inset key="contentEdgeInsets" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
-                                        <state key="normal" title="STOP"/>
+                                        <rect key="frame" x="239" y="10" width="128" height="29"/>
+                                        <color key="backgroundColor" red="0.36862745099999999" green="0.63137254899999995" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="128" id="Jwd-Ha-hEa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                        <state key="normal" title="STOP">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <segue destination="5tQ-Mk-wWz" kind="show" identifier="DuringToFinish" id="X6n-OI-wqB">
                                                 <nil key="action"/>
@@ -283,7 +295,7 @@
                                 <constraints>
                                     <constraint firstItem="wSL-Pf-VVL" firstAttribute="centerY" secondItem="Aih-rr-Pvl" secondAttribute="centerY" id="1YF-aU-NaV"/>
                                     <constraint firstItem="wSL-Pf-VVL" firstAttribute="leading" secondItem="Aih-rr-Pvl" secondAttribute="leading" constant="8" id="Oj8-cq-knk"/>
-                                    <constraint firstAttribute="height" constant="60" id="VzN-S3-hL6"/>
+                                    <constraint firstAttribute="height" constant="49" id="VzN-S3-hL6"/>
                                     <constraint firstAttribute="trailing" secondItem="WEd-H2-gKw" secondAttribute="trailing" constant="8" id="XSp-Sr-vEW"/>
                                     <constraint firstItem="WEd-H2-gKw" firstAttribute="centerY" secondItem="Aih-rr-Pvl" secondAttribute="centerY" id="aNQ-JN-eMQ"/>
                                 </constraints>
@@ -717,7 +729,7 @@
                                             <constraint firstItem="tbD-XA-LgF" firstAttribute="leading" secondItem="bCB-GU-rip" secondAttribute="leading" constant="8" id="f0V-gh-RAs"/>
                                         </constraints>
                                     </view>
-                                    <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OTX-JG-ko4">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OTX-JG-ko4">
                                         <rect key="frame" x="0.0" y="764.5" width="375" height="49"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMr-4N-AEa">
@@ -727,10 +739,10 @@
                                                     <constraint firstAttribute="width" constant="118" id="Nce-R0-rqV"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                                                 <state key="normal" title="SAVE">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0r-Vi-rOZ">
@@ -740,10 +752,10 @@
                                                     <constraint firstAttribute="width" constant="118" id="fbT-6s-GXJ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                                                 <state key="normal" title="DELETE">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
                                         </subviews>
