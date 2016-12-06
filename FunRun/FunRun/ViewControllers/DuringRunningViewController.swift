@@ -38,6 +38,10 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
     var bestSpeed: Double = 0.0
     var worstSpeed: Double = DBL_MAX
     var calories: UInt32 = 0 // in calories
+    let speedLogPath: UIBezierPath = UIBezierPath()
+    var speedSet = [Double]()
+    
+    let themeGreen: UIColor = UIColor(displayP3Red: 0.435114, green: 0.684288, blue: 0.544333, alpha: 0.7)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +54,7 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
         self.timeCountView.layer.borderWidth = 1.0
         self.simpleStatsView.layer.borderWidth = 1.0
         self.speedLogView.layer.borderWidth = 1.0
+        self.speedLogView.clearsContextBeforeDrawing = true
         self.distanceCountView.layer.borderWidth = 1.0
         
         // Setup buttons
@@ -66,6 +71,7 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
         self.pauseBtn.addTarget(self, action: #selector(pauseRunning), for: UIControlEvents.touchUpInside)
         // self.stopBtn.addTarget(self, action: #selector(stopRunning), for: UIControlEvents.touchUpInside)
         
+        // Setup BezierPath
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -92,6 +98,9 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
                 self.accumulatedTime += 1
                 RunTracker.shared.timeSum = self.accumulatedTime
                 self.timeCountLabel.text = TimeCount.convertIntToTime(seconds: self.accumulatedTime)
+                if (self.accumulatedTime & 0x4) == 0 {
+                    self.drawSpeedGraph()
+                }
             })
         }
     }
@@ -137,6 +146,7 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
         self.avgPace = String(format: "%d:%d:%d", arguments: [paceHour, paceMin, paceSec])
         self.avgPaceLabel.text = self.avgPace.appending(" per mil")
         self.currentSpeed = speed
+        self.speedSet.append(abs(speed))
         if speed > self.bestSpeed {
             self.bestSpeed = speed
         }
@@ -178,5 +188,40 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
         
     }
     */
+    
+    func drawSpeedGraph() {
+        if self.speedSet.count > 0 {
+            let scopeWidth = Double(self.speedLogView.bounds.width - 20.0)
+            let scopeHeight = Double(self.speedLogView.bounds.height - 50.0)
+            let dy = scopeHeight/Double(self.speedSet.count)
+            
+            // let contextRecg = UIGraphicsGetCurrentContext()
+            // contextRecg!.saveGState()
+            self.speedLogPath.removeAllPoints()
+            self.speedLogPath.move(to: CGPoint(x: 10.0, y: 40.0))
+            var x = 10.0, y = 40.0
+            for speed in self.speedSet {
+                if self.bestSpeed > 0.0 {
+                    x = 10.0 + scopeWidth * speed / self.bestSpeed
+                }
+                y += dy
+                self.speedLogPath.addLine(to: CGPoint(x: x, y: y))
+            }
+            self.speedLogPath.addLine(to: CGPoint(x: 10.0, y: y))
+            self.speedLogPath.close()
+            // contextRecg!.restoreGState()
+            let shapeLayer: CAShapeLayer = CAShapeLayer()
+            shapeLayer.path = self.speedLogPath.cgPath
+            shapeLayer.fillColor = self.themeGreen.cgColor
+            shapeLayer.strokeColor = self.themeGreen.cgColor
+            shapeLayer.lineWidth = 1.0
+            if self.speedLogView.layer.sublayers != nil {
+                _ = self.speedLogView.layer.sublayers?.popLast()
+            }
+            self.speedLogView.layer.addSublayer(shapeLayer)
+            
+            print("draw once -- -- ")
+        }
+    }
     
 }
