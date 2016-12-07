@@ -79,7 +79,12 @@ class StartRunningViewController: UIViewController, CLLocationManagerDelegate {
             DuringRunningVC.paused = false
             DuringRunningVC.accumulatedTime = 0
             DuringRunningVC.accumulatedDistance = 0.0
+            DuringRunningVC.avgPace = "0:00:00"
             DuringRunningVC.currentSpeed = 0.0
+            DuringRunningVC.bestSpeed = 0.0
+            DuringRunningVC.worstSpeed = DBL_MAX
+            DuringRunningVC.calories = 0
+            DuringRunningVC.speedSet.removeAll()
             RunTracker.shared.reset()
             RunTracker.shared.runningStatus = RunningStatus.started
         }

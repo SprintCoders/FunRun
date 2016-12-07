@@ -143,11 +143,19 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Plv-26-CxV">
+                                        <rect key="frame" x="8" y="37" width="172" height="354"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Plv-26-CxV" secondAttribute="trailing" constant="8" id="3TY-ts-suX"/>
                                     <constraint firstItem="UOi-ms-LBc" firstAttribute="centerX" secondItem="cMP-8v-ObZ" secondAttribute="centerX" id="EPs-gQ-rRc"/>
+                                    <constraint firstItem="Plv-26-CxV" firstAttribute="leading" secondItem="cMP-8v-ObZ" secondAttribute="leading" constant="8" id="I28-3O-cVM"/>
+                                    <constraint firstItem="Plv-26-CxV" firstAttribute="top" secondItem="UOi-ms-LBc" secondAttribute="bottom" constant="8" id="Ye1-AU-Qkc"/>
+                                    <constraint firstAttribute="bottom" secondItem="Plv-26-CxV" secondAttribute="bottom" constant="8" id="gSD-0L-gcp"/>
                                     <constraint firstItem="UOi-ms-LBc" firstAttribute="top" secondItem="cMP-8v-ObZ" secondAttribute="top" constant="8" id="tdk-gW-Ce3"/>
                                 </constraints>
                             </view>
@@ -336,6 +344,7 @@
                         <outlet property="distanceUnitLabel" destination="ilV-h1-Z8t" id="KDT-j4-sUD"/>
                         <outlet property="pauseBtn" destination="wSL-Pf-VVL" id="Tkt-cT-oMZ"/>
                         <outlet property="simpleStatsView" destination="6SR-T5-KBY" id="c1L-a5-6Eg"/>
+                        <outlet property="speedLogCanvasView" destination="Plv-26-CxV" id="1g7-9T-wPc"/>
                         <outlet property="speedLogView" destination="cMP-8v-ObZ" id="l93-bn-LnJ"/>
                         <outlet property="stopBtn" destination="WEd-H2-gKw" id="xRM-12-15l"/>
                         <outlet property="timeCountLabel" destination="QGV-WE-AED" id="z6v-Dt-91K"/>
@@ -933,7 +942,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ShareCell" id="2ND-nc-mwo" customClass="MakeNoteTableViewCell" customModule="FunRun" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2ND-nc-mwo" id="lbM-J6-XG4">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

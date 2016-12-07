@@ -80,6 +80,7 @@ class RunTracker: NSObject, CLLocationManagerDelegate {
         if locations.count > 0 {
             if self.runningStatus == RunningStatus.started {
                 var tempLength: Double = 0.0
+                var hasValidLocation: Bool = false
                 for alocation in locations {
                     if alocation.horizontalAccuracy < 10 {
                         // update the record
@@ -88,21 +89,31 @@ class RunTracker: NSObject, CLLocationManagerDelegate {
                             tempLength += alocation.distance(from: lastLocation!)
                         }
                         self.locations?.append(alocation)
+                        hasValidLocation = true
                     }
                 }
-                self.distanceSum += tempLength
-                var avgPaceInSeconds: Double = 0.0
-                if self.distanceSum > 0 {
-                    avgPaceInSeconds = (Double(self.timeSum) / self.distanceSum) * 1609.344
+                if hasValidLocation {
+                    self.distanceSum += tempLength
+                    var avgPaceInSeconds: Double = 0.0
+                    if self.distanceSum > 0 {
+                        avgPaceInSeconds = (Double(self.timeSum) / self.distanceSum) * 1609.344
+                    }
+                    let lastSpeed: Double = abs((locations.last?.speed)!)
+                    print("in RunTracker, \(lastSpeed)")
+                    if lastSpeed.isInfinite || lastSpeed.isNaN {
+                        
+                        return
+                    }
+                    if lastSpeed < 1.3 { // walking
+                        self.caloriesSum += 155.0 * 0.53 * tempLength / 1609.344
+                    } else { // running
+                        self.caloriesSum += 155.0 * 0.75 * tempLength / 1609.344
+                    }
+                    self.runTrackerDelegate?.RunTrackerUpdate?(newDistance: self.distanceSum, newAvgPace: UInt(avgPaceInSeconds), newSpeed: lastSpeed, newTotalCal: self.caloriesSum)
+                } else {
+                    print("in RunTracker, no valid location")
                 }
-                let lastSpeed: Double = (locations.last?.speed)!
-                if lastSpeed < 1.3 { // walking
-                    self.caloriesSum += 155.0 * 0.53 * tempLength / 1609.344
-                } else { // running
-                    self.caloriesSum += 155.0 * 0.75 * tempLength / 1609.344
-                }
-                print("-- one location update")
-                self.runTrackerDelegate?.RunTrackerUpdate?(newDistance: self.distanceSum, newAvgPace: UInt(avgPaceInSeconds), newSpeed: lastSpeed, newTotalCal: self.caloriesSum)
+                
             } else if self.runningStatus == RunningStatus.notStart {
                 self.runTrackerDelegate?.RunTrackerUpdate?(newLocation: locations.last)
             }

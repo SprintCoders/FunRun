@@ -24,6 +24,7 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
     @IBOutlet weak var timeCountLabel: UILabel!
     @IBOutlet weak var avgPaceLabel: UILabel!
     @IBOutlet weak var caloriesLabel: UILabel!
+    @IBOutlet weak var speedLogCanvasView: UIView!
     @IBOutlet weak var distanceCountLabel: UILabel!
     @IBOutlet weak var distanceUnitLabel: UILabel!
     
@@ -98,9 +99,6 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
                 self.accumulatedTime += 1
                 RunTracker.shared.timeSum = self.accumulatedTime
                 self.timeCountLabel.text = TimeCount.convertIntToTime(seconds: self.accumulatedTime)
-                if (self.accumulatedTime & 0x4) == 0 {
-                    self.drawSpeedGraph()
-                }
             })
         }
     }
@@ -133,20 +131,12 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
     /* MARK: - RunTrackerDelegate functions */
     func RunTrackerUpdate(newDistance distance: Double, newAvgPace avgPace: UInt, newSpeed speed: Double, newTotalCal calories: Double) {
         self.accumulatedDistance = distance
-        if distance/1609.344 < 0.01 {
-            self.distanceCountLabel.text = String(format: "%.0f", arguments: [distance/0.3048])
-            self.distanceUnitLabel.text = "feet"
-        } else {
-            self.distanceCountLabel.text = String(format: "%.2f", arguments: [distance/1609.344])
-            self.distanceUnitLabel.text = "miles"
-        }
         let paceHour: UInt = UInt(avgPace) / 3600
         let paceMin: UInt = (UInt(avgPace) % 3600) / 60
         let paceSec: UInt = UInt(avgPace) % 60
         self.avgPace = String(format: "%d:%d:%d", arguments: [paceHour, paceMin, paceSec])
-        self.avgPaceLabel.text = self.avgPace.appending(" per mil")
         self.currentSpeed = speed
-        self.speedSet.append(abs(speed))
+        self.speedSet.append(speed)
         if speed > self.bestSpeed {
             self.bestSpeed = speed
         }
@@ -154,7 +144,21 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
             self.worstSpeed = speed
         }
         self.calories = UInt32(calories)
-        self.caloriesLabel.text = "\(self.calories) Cal"
+        
+        DispatchQueue.main.async {
+            if distance/1609.344 < 0.01 {
+                self.distanceCountLabel.text = String(format: "%.0f", arguments: [distance/0.3048])
+                self.distanceUnitLabel.text = "feet"
+            } else {
+                self.distanceCountLabel.text = String(format: "%.2f", arguments: [distance/1609.344])
+                self.distanceUnitLabel.text = "miles"
+            }
+            self.avgPaceLabel.text = self.avgPace.appending(" per mil")
+            self.caloriesLabel.text = "\(self.calories) Cal"
+            if (self.accumulatedTime & 0x4) == 0 {
+                self.drawSpeedGraph()
+            }
+        }
     }
     
     
@@ -191,36 +195,37 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
     
     func drawSpeedGraph() {
         if self.speedSet.count > 0 {
-            let scopeWidth = Double(self.speedLogView.bounds.width - 20.0)
-            let scopeHeight = Double(self.speedLogView.bounds.height - 50.0)
+            let scopeWidth = Double(self.speedLogCanvasView.bounds.width)
+            let scopeHeight = Double(self.speedLogCanvasView.bounds.height)
             let dy = scopeHeight/Double(self.speedSet.count)
             
             // let contextRecg = UIGraphicsGetCurrentContext()
             // contextRecg!.saveGState()
             self.speedLogPath.removeAllPoints()
-            self.speedLogPath.move(to: CGPoint(x: 10.0, y: 40.0))
-            var x = 10.0, y = 40.0
+            self.speedLogPath.move(to: CGPoint(x: 0.0, y: 0.0))
+            var x = 0.0, y = 0.0
             for speed in self.speedSet {
                 if self.bestSpeed > 0.0 {
-                    x = 10.0 + scopeWidth * speed / self.bestSpeed
+                    x = scopeWidth * speed / self.bestSpeed
                 }
                 y += dy
                 self.speedLogPath.addLine(to: CGPoint(x: x, y: y))
             }
-            self.speedLogPath.addLine(to: CGPoint(x: 10.0, y: y))
+            self.speedLogPath.addLine(to: CGPoint(x: 0.0, y: y))
             self.speedLogPath.close()
             // contextRecg!.restoreGState()
             let shapeLayer: CAShapeLayer = CAShapeLayer()
             shapeLayer.path = self.speedLogPath.cgPath
+            shapeLayer.backgroundColor = UIColor.clear.cgColor
             shapeLayer.fillColor = self.themeGreen.cgColor
             shapeLayer.strokeColor = self.themeGreen.cgColor
             shapeLayer.lineWidth = 1.0
-            if self.speedLogView.layer.sublayers != nil {
-                _ = self.speedLogView.layer.sublayers?.popLast()
+            if self.speedLogCanvasView.layer.sublayers != nil {
+                _ = self.speedLogCanvasView.layer.sublayers?.popLast()
             }
-            self.speedLogView.layer.addSublayer(shapeLayer)
+            self.speedLogCanvasView.layer.addSublayer(shapeLayer)
             
-            print("draw once -- -- ")
+            print("draw once -- -- \(self.bestSpeed)")
         }
     }
     
