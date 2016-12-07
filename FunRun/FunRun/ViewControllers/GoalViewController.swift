@@ -20,18 +20,31 @@ class GoalViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var GoalProgressLabel: UILabel!
     
+    @IBOutlet weak var segmentalControl: UISegmentedControl!
+    
     var schedule1: [String:String] = ["time": "Dec 11 2016 8:00 AM", "distance": "5 miles"]
     var schedule2: [String:String] = ["time": "Dec 12 2016 8:00 AM", "distance": "8 miles"]
     var schedule3: [String:String] = ["time": "Dec 13 2016 8:00 AM", "distance": "10 miles"]
+    
+    var goal1: [String:String] = ["time": "Goal1", "distance": "75%"]
+    var goal2: [String:String] = ["time": "Goal2", "distance": "35%"]
+    var goal3: [String:String] = ["time": "Goal3", "distance": "10%"]
+    
     var schedules = [[String:String]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        schedules.append(schedule1)
-        schedules.append(schedule2)
-        schedules.append(schedule3)
+        self.segmentalControl.layer.cornerRadius = 10.0
+        self.segmentalControl.layer.borderColor = UIColor.init(colorLiteralRed: 94.0/255.0, green: 161.0/255.0, blue: 120.0/255.0, alpha: 1).cgColor
+        self.segmentalControl.layer.borderWidth = 1.0
+        self.segmentalControl.layer.masksToBounds = true
+        
+        schedules.removeAll()
+        schedules.append(goal1)
+        schedules.append(goal2)
+        schedules.append(goal3)
         
         scheduleTableView.delegate = self
         scheduleTableView.dataSource = self
@@ -131,6 +144,24 @@ class GoalViewController: UIViewController, UITableViewDataSource, UITableViewDe
         goalPieChart.holeColor = UIColor.clear
         goalPieChart.transparentCircleColor = UIColor.clear
        // goalPieChart.drawEntryLabelsEnabled = false
+    }
+    
+    
+    @IBAction func segmentedControlAction(_ sender: UISegmentedControl) {
+        if(segmentalControl.selectedSegmentIndex == 0){
+            schedules.removeAll()
+            schedules.append(goal1)
+            schedules.append(goal2)
+            schedules.append(goal3)
+            scheduleTableView.reloadData()
+        }
+        else if(segmentalControl.selectedSegmentIndex == 1){
+            schedules.removeAll()
+            schedules.append(schedule1)
+            schedules.append(schedule2)
+            schedules.append(schedule3)
+            scheduleTableView.reloadData()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
