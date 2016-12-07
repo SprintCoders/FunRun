@@ -81,6 +81,15 @@ class StatsViewController: UIViewController {
         updateBarChart(barChartView: caloriesBarChartView, graphType:.caloriesBurned, duration: .daily)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let nav = self.navigationController?.navigationBar
+        nav?.barStyle = UIBarStyle.black
+        nav?.barTintColor = UIColor.init(colorLiteralRed: 94/255, green: 161/255, blue: 120/255, alpha: 1)
+        nav?.tintColor = UIColor.white
+    }
+    
     private func updateProfileView(){
         // name
         profileName.text = profile.name

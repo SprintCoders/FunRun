@@ -18,11 +18,11 @@
                         <viewControllerLayoutGuide type="bottom" id="cUM-Bl-csb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fbo-OE-6f5">
-                        <rect key="frame" x="0.0" y="64" width="375" height="2150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="2214"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLG-dE-H0A">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="2150"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="2150"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vb4-go-HgD" userLabel="Container View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="2150"/>
@@ -707,7 +707,6 @@
                                                         <color key="backgroundColor" red="0.36862745099999999" green="0.63137254899999995" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     </view>
                                                 </subviews>
-                                                <color key="backgroundColor" red="1" green="0.69001354739999998" blue="0.94909661310000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="YRD-yZ-jZT" secondAttribute="bottom" id="5TP-gy-0uO"/>
                                                     <constraint firstAttribute="trailing" secondItem="3Z4-32-ewk" secondAttribute="trailing" id="BIv-ID-7LU"/>
@@ -731,7 +730,6 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="oae-Je-2d1" firstAttribute="top" secondItem="vb4-go-HgD" secondAttribute="top" id="Ob7-fy-4bb"/>
                                             <constraint firstAttribute="height" constant="2150" id="cGg-Rq-thj"/>
@@ -741,7 +739,6 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="vb4-go-HgD" secondAttribute="trailing" id="W2W-25-9L5"/>
                                     <constraint firstItem="vb4-go-HgD" firstAttribute="top" secondItem="mLG-dE-H0A" secondAttribute="top" id="pyH-ym-OHp"/>
@@ -750,16 +747,15 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vb4-go-HgD" firstAttribute="width" secondItem="fbo-OE-6f5" secondAttribute="width" id="1Bk-HL-h2N"/>
-                            <constraint firstItem="mLG-dE-H0A" firstAttribute="top" secondItem="fbo-OE-6f5" secondAttribute="top" id="Xdl-xD-bPA"/>
+                            <constraint firstItem="mLG-dE-H0A" firstAttribute="top" secondItem="fbo-OE-6f5" secondAttribute="top" constant="64" id="Xdl-xD-bPA"/>
                             <constraint firstAttribute="trailing" secondItem="mLG-dE-H0A" secondAttribute="trailing" id="bUv-on-952"/>
                             <constraint firstItem="cUM-Bl-csb" firstAttribute="top" secondItem="mLG-dE-H0A" secondAttribute="bottom" id="dU7-jZ-g4N"/>
                             <constraint firstItem="mLG-dE-H0A" firstAttribute="leading" secondItem="fbo-OE-6f5" secondAttribute="leading" id="gj2-hy-2Di"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Statistics" id="E2z-Ho-q5j"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="2214"/>
@@ -846,11 +842,12 @@
             <objects>
                 <navigationController storyboardIdentifier="StatsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="ozc-iC-0Pn" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oiq-8x-XvR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="oiq-8x-XvR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
