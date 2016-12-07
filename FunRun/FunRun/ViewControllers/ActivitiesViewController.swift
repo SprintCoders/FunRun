@@ -12,6 +12,7 @@ import CoreData
 class ActivitiesViewController: UIViewController {
     
     let activities = ActivitiesData()
+    var recentActivities = [Activity]()
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,13 +53,36 @@ class ActivitiesViewController: UIViewController {
             let fetchResults = try context.fetch(fetchRequest)
             print("Successfully retrieved a running data")
             
+            self.recentActivities.removeAll()
+            
             for runActivity in fetchResults as [NSManagedObject] {
+                
+                let startDate = runActivity.value(forKey: "startDay") as! Date
+                let totalDistance = runActivity.value(forKey: "totalDistance") as! Double
+                let totalDuration = runActivity.value(forKey: "totalDuration") as! UInt32
+                let totalCalories = runActivity.value(forKey: "totalCalories") as! UInt32
+                let bestSpeed = runActivity.value(forKey: "bestSpeed") as! Double
+                let worstSpeed = runActivity.value(forKey: "worstSpeed") as! Double
+                let notes = runActivity.value(forKey: "notes") as! String
+                let avgPace = runActivity.value(forKey: "avgPace") as! String
+                
+                let oneActivity: Activity = Activity()
+                oneActivity.date = startDate
+                oneActivity.type = "By FunRun"
+                oneActivity.routeName = "defaultName"
+                oneActivity.distance = totalDistance/1609.344
+                oneActivity.duration = TimeCount.convertIntToTime(seconds: totalDuration)
+                oneActivity.avgPace = avgPace
+                oneActivity.avgSpeed = (bestSpeed + worstSpeed)*0.5
+                oneActivity.caloriesBurned = Double(totalCalories)
+                oneActivity.climb = 0.0
+                oneActivity.avgHeartRate = "didn't measure"
+                oneActivity.notes = notes
+                oneActivity.gpxFile = "unknown gpxFile"
+                
+                self.recentActivities.append(oneActivity)
+                
                 /*
-                let startDate = runActivity.value(forKey: "startDay")
-                let totalDistance = runActivity.value(forKey: "totalDistance")
-                let totalDuration = runActivity.value(forKey: "totalDuration")
-                let totalCalories = runActivity.value(forKey: "totalCalories")
-                */
                 let locationSetData = runActivity.value(forKey: "locationSet") as! Data
                 let locationSetJson = try JSONSerialization.jsonObject(with: locationSetData, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: [Any]]
                 if let locationSet = locationSetJson["data"] {
@@ -67,7 +91,9 @@ class ActivitiesViewController: UIViewController {
                         print("latitude is: \(locationJson["latitude"] as! Double)")
                     }
                 }
+                */
             }
+            self.tableView.reloadData()
         } catch {
             print("Error with request: \(error)")
         }
@@ -80,12 +106,16 @@ extension ActivitiesViewController:  UITableViewDataSource, UITableViewDelegate 
     
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return activities.count
+        return (recentActivities.count + activities.count)
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "activityCell", for: indexPath) as! ActivityCell
-        cell.activity = activities.getActivity(index:indexPath.row)
+        if indexPath.row < recentActivities.count {
+            cell.activity = recentActivities[indexPath.row]
+        } else {
+            cell.activity = activities.getActivity(index:indexPath.row)
+        }
         return cell
     }
 

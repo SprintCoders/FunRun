@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TabViewController: UITabBarController, UITabBarControllerDelegate {
     
@@ -19,7 +20,7 @@ class TabViewController: UITabBarController, UITabBarControllerDelegate {
         super.viewDidLoad()
         
         // self.selectedIndex = 0
-        
+        self.deleteAllCoreData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -85,6 +86,19 @@ class TabViewController: UITabBarController, UITabBarControllerDelegate {
             return viewController != self.goalNavCtr
         default:
             return true
+        }
+    }
+    
+    
+    func deleteAllCoreData() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "RunActivity")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        do {
+            try context.execute(deleteRequest)
+        } catch let error {
+            print("\(error.localizedDescription)")
         }
     }
     

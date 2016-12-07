@@ -272,12 +272,14 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate, 
             let entity = NSEntityDescription.entity(forEntityName: "RunActivity", in: context)
             let transaction = NSManagedObject(entity: entity!, insertInto: context)
             
+            transaction.setValue(self.notes, forKey: "notes")
             transaction.setValue(RunTracker.shared.startTime, forKey: "startDay")
             transaction.setValue(self.totalDistance, forKey: "totalDistance")
             transaction.setValue(self.totalTime, forKey: "totalDuration")
             transaction.setValue(self.calories, forKey: "totalCalories")
             transaction.setValue(self.bestSpeed, forKey: "bestSpeed")
             transaction.setValue(self.worstSpeed, forKey: "worstSpeed")
+            transaction.setValue(self.avgPace, forKey: "avgPace")
             transaction.setValue(jsonData, forKey: "locationSet")
         
             try context.save()

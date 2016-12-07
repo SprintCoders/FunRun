@@ -27,6 +27,7 @@
 		85B6EAC41DF675EE0050A0C3 /* MulticolorPolylineSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B6EAC31DF675EE0050A0C3 /* MulticolorPolylineSegment.swift */; };
 		85B6EAC61DF677450050A0C3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B6EAC51DF677450050A0C3 /* CoreData.framework */; };
 		85B6EACA1DF67B800050A0C3 /* RouteOnMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B6EAC91DF67B800050A0C3 /* RouteOnMap.swift */; };
+		85BD9E6C1DF7E42700256423 /* NewScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BD9E6B1DF7E42700256423 /* NewScheduleViewController.swift */; };
 		85C6D5091DED74950063BD07 /* ActivitiesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D5061DED74950063BD07 /* ActivitiesData.swift */; };
 		85C6D50A1DED74950063BD07 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D5071DED74950063BD07 /* CSwiftV.swift */; };
 		85C6D50B1DED74950063BD07 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D5081DED74950063BD07 /* Profile.swift */; };
@@ -42,7 +43,6 @@
 		85C6D5211DED76650063BD07 /* Running.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C6D51F1DED76650063BD07 /* Running.storyboard */; };
 		85C6D5271DED7A3A0063BD07 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C6D5251DED7A3A0063BD07 /* Activity.storyboard */; };
 		85ECFFC51DEBA8960058CBA4 /* DispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECFFC41DEBA8960058CBA4 /* DispatchTimer.swift */; };
-		A1D3A3411DF54EBB00A3F221 /* NewScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D3A3401DF54EBB00A3F221 /* NewScheduleViewController.swift */; };
 		B84985251DF4F3FD00863C7C /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84985241DF4F3FD00863C7C /* ActivitiesViewController.swift */; };
 		B849852A1DF563C100863C7C /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84985291DF563C100863C7C /* ActivityCell.swift */; };
 		B849852E1DF5648A00863C7C /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B849852D1DF5648A00863C7C /* Activity.swift */; };
@@ -129,6 +129,7 @@
 		85B6EAC31DF675EE0050A0C3 /* MulticolorPolylineSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MulticolorPolylineSegment.swift; path = Models/MulticolorPolylineSegment.swift; sourceTree = "<group>"; };
 		85B6EAC51DF677450050A0C3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		85B6EAC91DF67B800050A0C3 /* RouteOnMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteOnMap.swift; path = Utils/RouteOnMap.swift; sourceTree = "<group>"; };
+		85BD9E6B1DF7E42700256423 /* NewScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewScheduleViewController.swift; path = ViewControllers/NewScheduleViewController.swift; sourceTree = "<group>"; };
 		85C6D5061DED74950063BD07 /* ActivitiesData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivitiesData.swift; path = Data/ActivitiesData.swift; sourceTree = "<group>"; };
 		85C6D5071DED74950063BD07 /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSwiftV.swift; path = Data/CSwiftV.swift; sourceTree = "<group>"; };
 		85C6D5081DED74950063BD07 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = Data/Profile.swift; sourceTree = "<group>"; };
@@ -145,7 +146,6 @@
 		85C6D5261DED7A3A0063BD07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Activity.storyboard; sourceTree = "<group>"; };
 		85ECFFC41DEBA8960058CBA4 /* DispatchTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DispatchTimer.swift; path = Models/DispatchTimer.swift; sourceTree = "<group>"; };
 		8B9703FFEABF8065C4EAD10A /* Pods-FunRun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunRun.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunRun/Pods-FunRun.release.xcconfig"; sourceTree = "<group>"; };
-		A1D3A3401DF54EBB00A3F221 /* NewScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewScheduleViewController.swift; sourceTree = "<group>"; };
 		A1D3A3441DF5515800A3F221 /* FunRun-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FunRun-Bridging-Header.h"; sourceTree = "<group>"; };
 		B84985241DF4F3FD00863C7C /* ActivitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivitiesViewController.swift; path = ViewControllers/ActivitiesViewController.swift; sourceTree = "<group>"; };
 		B84985291DF563C100863C7C /* ActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityCell.swift; path = ViewControllers/ActivityCell.swift; sourceTree = "<group>"; };
@@ -294,10 +294,10 @@
 		85C6D5241DED79910063BD07 /* GoalViews */ = {
 			isa = PBXGroup;
 			children = (
+				85BD9E6B1DF7E42700256423 /* NewScheduleViewController.swift */,
 				85C6D5191DED758F0063BD07 /* GoalViewController.swift */,
 				85C6D5141DED756F0063BD07 /* NewGoalViewController.swift */,
 				85C6D5151DED756F0063BD07 /* ScheduleCell.swift */,
-				A1D3A3401DF54EBB00A3F221 /* NewScheduleViewController.swift */,
 			);
 			name = GoalViews;
 			sourceTree = "<group>";
@@ -409,7 +409,7 @@
 				TargetAttributes = {
 					852AE62C1DDABFCF00FEAA82 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = UBWJ53ZM94;
+						DevelopmentTeam = XYNA997C9P;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -527,7 +527,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		E01EDB99D2033AE5554D4943 /* [CP] Embed Pods Frameworks */ = {
@@ -568,9 +568,9 @@
 				85C6D51A1DED758F0063BD07 /* ChartViewController.swift in Sources */,
 				B849852A1DF563C100863C7C /* ActivityCell.swift in Sources */,
 				856949F81DEFB70E008543D3 /* LocationTracker.swift in Sources */,
-				A1D3A3411DF54EBB00A3F221 /* NewScheduleViewController.swift in Sources */,
 				85C6D5171DED756F0063BD07 /* ScheduleCell.swift in Sources */,
 				857328671DF2C4880065826D /* UIScrollView+Extra.swift in Sources */,
+				85BD9E6C1DF7E42700256423 /* NewScheduleViewController.swift in Sources */,
 				852AE6551DDACCFA00FEAA82 /* StartRunningViewController.swift in Sources */,
 				85C6D5101DED75030063BD07 /* Date+Extra.swift in Sources */,
 				85B6EACA1DF67B800050A0C3 /* RouteOnMap.swift in Sources */,
@@ -763,7 +763,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = UBWJ53ZM94;
+				DEVELOPMENT_TEAM = XYNA997C9P;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -783,7 +783,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = UBWJ53ZM94;
+				DEVELOPMENT_TEAM = XYNA997C9P;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
