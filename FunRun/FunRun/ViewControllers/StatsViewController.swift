@@ -63,10 +63,6 @@ class StatsViewController: UIViewController {
         highlightTermSegment.selectedSegmentIndex = HightlightDuration.lifeTime.rawValue
         updateHighlightView(duration: HightlightDuration.lifeTime)
         
-        // activities chart
-        activityChart.values = activities.distanceIndexArray()
-        activityChart.updateUI()
-        
         // distance chart
         updateBarChart(barChartView: distanceBarChartView, graphType:.distance, duration: .daily)
 
@@ -88,6 +84,14 @@ class StatsViewController: UIViewController {
         nav?.barStyle = UIBarStyle.black
         nav?.barTintColor = UIColor.init(colorLiteralRed: 94/255, green: 161/255, blue: 120/255, alpha: 1)
         nav?.tintColor = UIColor.white
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // activities chart
+        activityChart.values = activities.distanceIndexArray()
+        activityChart.updateUI()
     }
     
     private func updateProfileView(){

@@ -155,7 +155,7 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
             }
             self.avgPaceLabel.text = self.avgPace.appending(" per mil")
             self.caloriesLabel.text = "\(self.calories) Cal"
-            if (self.accumulatedTime & 0x4) == 0 {
+            if (self.accumulatedTime & 0x2) == 0 {
                 self.drawSpeedGraph()
             }
         }

@@ -280,6 +280,7 @@ class FinishRunningViewController: UIViewController, CLLocationManagerDelegate, 
             transaction.setValue(self.bestSpeed, forKey: "bestSpeed")
             transaction.setValue(self.worstSpeed, forKey: "worstSpeed")
             transaction.setValue(self.avgPace, forKey: "avgPace")
+            transaction.setValue(self.runDayLabel.text!, forKey: "runName")
             transaction.setValue(jsonData, forKey: "locationSet")
         
             try context.save()

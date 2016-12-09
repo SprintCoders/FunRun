@@ -12,6 +12,7 @@ class ActivityChartView: UIView {
     
     var values:[Int]? = nil
     
+    
     static let colors:[UIColor]! = [
         UIColor(red: 234/255, green: 234/255, blue: 234/255, alpha: 1), // EAEAEA - gray
         UIColor(red: 205/255, green: 229/255, blue: 106/255, alpha: 1), // CDE56D - light green
@@ -21,12 +22,10 @@ class ActivityChartView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        updateUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        updateUI()
     }
     
     //overide func view
@@ -77,7 +76,7 @@ class ActivityChartView: UIView {
                 let month: Int = cal.component(.month, from: date)
                 let y = 0
                 let label = UILabel(frame: CGRect(x: x, y: y, width: 14*4, height: 12))
-                label.textAlignment = .center
+                label.textAlignment = .left
                 label.text = cal.shortMonthSymbols[month-1]
                 label.font = label.font.withSize(10)
                 baseView.addSubview(label)
@@ -87,12 +86,14 @@ class ActivityChartView: UIView {
         var newFrame = baseView.frame;
         newFrame.size.width = CGFloat((week + 1) * 14);
         baseView.frame = newFrame
+        print("")
         
         // scroll view
-        let scrollView = UIScrollView(frame: CGRect(x: 30, y: 0, width: bounds.width - 30, height: 14 * 8))
-        scrollView.contentSize = baseView.bounds.size
+        let scrollView = UIScrollView()
         scrollView.addSubview(baseView)
+        scrollView.contentSize = baseView.bounds.size
         self.addSubview(scrollView)
+        scrollView.frame = CGRect(x: 30, y: 0, width: self.frame.width - 30, height: 14 * 8)
         
         scrollView.scrollToRight(animated: true)
     }

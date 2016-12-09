@@ -17,6 +17,10 @@ class ActivitiesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initTableView()
+        
+        let nav = self.navigationController?.navigationBar
+        nav?.barStyle = UIBarStyle.black
+        nav?.tintColor = UIColor.white
     }
     private func initTableView(){
         tableView.dataSource = self
@@ -65,11 +69,12 @@ class ActivitiesViewController: UIViewController {
                 let worstSpeed = runActivity.value(forKey: "worstSpeed") as! Double
                 let notes = runActivity.value(forKey: "notes") as! String
                 let avgPace = runActivity.value(forKey: "avgPace") as! String
+                let runName = runActivity.value(forKey: "runName") as! String
                 
                 let oneActivity: Activity = Activity()
                 oneActivity.date = startDate
                 oneActivity.type = "By FunRun"
-                oneActivity.routeName = "defaultName"
+                oneActivity.routeName = runName
                 oneActivity.distance = totalDistance/1609.344
                 oneActivity.duration = TimeCount.convertIntToTime(seconds: totalDuration)
                 oneActivity.avgPace = avgPace
@@ -104,6 +109,9 @@ class ActivitiesViewController: UIViewController {
 
 extension ActivitiesViewController:  UITableViewDataSource, UITableViewDelegate {
     
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return (recentActivities.count + activities.count)
@@ -112,11 +120,15 @@ extension ActivitiesViewController:  UITableViewDataSource, UITableViewDelegate 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "activityCell", for: indexPath) as! ActivityCell
         if indexPath.row < recentActivities.count {
-            cell.activity = recentActivities[indexPath.row]
+            cell.activity = recentActivities[(recentActivities.count - indexPath.row)-1]
         } else {
             cell.activity = activities.getActivity(index:indexPath.row)
         }
         return cell
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 }

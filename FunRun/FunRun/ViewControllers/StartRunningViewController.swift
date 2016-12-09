@@ -31,6 +31,7 @@ class StartRunningViewController: UIViewController, CLLocationManagerDelegate {
         let side = self.avatarImage.frame.width
         self.avatarImage.layer.cornerRadius = side/2.0
         self.avatarImage.clipsToBounds = true
+        self.avatarImage.image = UIImage(named: "hideki_profile")
         
         // Setup the segmented Controller
         self.typeSelector.selectedSegmentIndex = 0
