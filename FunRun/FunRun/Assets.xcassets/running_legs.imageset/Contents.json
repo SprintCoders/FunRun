@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "duration-1.png",
+      "filename" : "running_legs.png",
       "scale" : "1x"
     },
     {
@@ -11,7 +11,6 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "duration.png",
       "scale" : "3x"
     }
   ],

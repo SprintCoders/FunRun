@@ -95,6 +95,6 @@ class ActivityChartView: UIView {
         self.addSubview(scrollView)
         scrollView.frame = CGRect(x: 30, y: 0, width: self.frame.width - 30, height: 14 * 8)
         
-        scrollView.scrollToRight(animated: true)
+        scrollView.scrollToRight(animated: false)
     }
 }

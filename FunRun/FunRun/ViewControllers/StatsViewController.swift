@@ -41,6 +41,7 @@ class StatsViewController: UIViewController {
     
     // activities
     @IBOutlet weak var activityChart: ActivityChartView!
+    var activityChartLoaded: Bool = false
     
     // graphs
     @IBOutlet weak var distanceBarChartView: BarChartView!
@@ -90,8 +91,12 @@ class StatsViewController: UIViewController {
         super.viewDidAppear(animated)
         
         // activities chart
-        activityChart.values = activities.distanceIndexArray()
-        activityChart.updateUI()
+        if !activityChartLoaded {
+            activityChart.values = activities.distanceIndexArray()
+            activityChart.updateUI()
+            activityChartLoaded = true
+        }
+        
     }
     
     private func updateProfileView(){

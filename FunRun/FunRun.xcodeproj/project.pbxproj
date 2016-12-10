@@ -17,6 +17,7 @@
 		852AE6551DDACCFA00FEAA82 /* StartRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852AE6541DDACCFA00FEAA82 /* StartRunningViewController.swift */; };
 		8544D8B01DEA8BAD0019D011 /* DuringRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544D8AF1DEA8BAD0019D011 /* DuringRunningViewController.swift */; };
 		8544D8B21DEA93F20019D011 /* FinishRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544D8B11DEA93F20019D011 /* FinishRunningViewController.swift */; };
+		854728D61DFA89AC00BD87B7 /* ActivityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854728D51DFA89AC00BD87B7 /* ActivityListViewController.swift */; };
 		856949F81DEFB70E008543D3 /* LocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856949F71DEFB70E008543D3 /* LocationTracker.swift */; };
 		856949FA1DEFD3DB008543D3 /* RunTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856949F91DEFD3DB008543D3 /* RunTracker.swift */; };
 		857328671DF2C4880065826D /* UIScrollView+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857328661DF2C4880065826D /* UIScrollView+Extra.swift */; };
@@ -119,6 +120,7 @@
 		852AE6541DDACCFA00FEAA82 /* StartRunningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartRunningViewController.swift; path = ViewControllers/StartRunningViewController.swift; sourceTree = "<group>"; };
 		8544D8AF1DEA8BAD0019D011 /* DuringRunningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DuringRunningViewController.swift; path = ViewControllers/DuringRunningViewController.swift; sourceTree = "<group>"; };
 		8544D8B11DEA93F20019D011 /* FinishRunningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FinishRunningViewController.swift; path = ViewControllers/FinishRunningViewController.swift; sourceTree = "<group>"; };
+		854728D51DFA89AC00BD87B7 /* ActivityListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityListViewController.swift; path = ViewControllers/ActivityListViewController.swift; sourceTree = "<group>"; };
 		856949F71DEFB70E008543D3 /* LocationTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationTracker.swift; path = Models/LocationTracker.swift; sourceTree = "<group>"; };
 		856949F91DEFD3DB008543D3 /* RunTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RunTracker.swift; path = Services/RunTracker.swift; sourceTree = "<group>"; };
 		857328661DF2C4880065826D /* UIScrollView+Extra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIScrollView+Extra.swift"; path = "Utils/UIScrollView+Extra.swift"; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 			children = (
 				B84985241DF4F3FD00863C7C /* ActivitiesViewController.swift */,
 				B84985291DF563C100863C7C /* ActivityCell.swift */,
+				854728D51DFA89AC00BD87B7 /* ActivityListViewController.swift */,
 			);
 			name = ActivityViews;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				857328671DF2C4880065826D /* UIScrollView+Extra.swift in Sources */,
 				85BD9E6C1DF7E42700256423 /* NewScheduleViewController.swift in Sources */,
 				852AE6551DDACCFA00FEAA82 /* StartRunningViewController.swift in Sources */,
+				854728D61DFA89AC00BD87B7 /* ActivityListViewController.swift in Sources */,
 				85C6D5101DED75030063BD07 /* Date+Extra.swift in Sources */,
 				85B6EACA1DF67B800050A0C3 /* RouteOnMap.swift in Sources */,
 				85C6D5111DED75030063BD07 /* TimeCount.swift in Sources */,

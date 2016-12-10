@@ -23,13 +23,23 @@ class ActivityCell: UITableViewCell {
 //    var notes:String!
 //    var gpxFile:String!
     
+    @IBOutlet weak var runImageView: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
-    @IBOutlet weak var avgPaceLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
-    @IBOutlet weak var caloriesBurnedLabel: UILabel!
+    
+    @IBOutlet weak var leftButton: UIButton!
+    @IBOutlet weak var centerButton: UIButton!
+    @IBOutlet weak var rightButton: UIButton!
+    
+    let shareImage = UIImage(named: "shared")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+    let likeImage = UIImage(named: "like")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+    let durationImage = UIImage(named: "duration")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+    var leftBtnOn: Bool = false
+    var centerBtnOn: Bool = false
+    var rightBtnOn: Bool = false
     
     private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -52,16 +62,33 @@ class ActivityCell: UITableViewCell {
                 nameLabel.text = activity.routeName
             }
             distanceLabel.text =  String(format: "%.2f mi", activity.distance)
-            avgPaceLabel.text = String(format: "%@ min/mi", activity.avgPace)
+            // avgPaceLabel.text = String(format: "%@ min/mi", activity.avgPace)
             durationLabel.text =    String(format: "%@", activity.duration)
-            caloriesBurnedLabel.text = String(format: "%.0f cal", activity.caloriesBurned)
+            // caloriesBurnedLabel.text = String(format: "%.0f cal", activity.caloriesBurned)
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        //distanceLabel.textColor = UIColor(red: 53/255,  green: 151/255, blue: 44/255,  alpha: 1)
+        // Setup runImageView
+        runImageView.layer.cornerRadius = 3.0
+        runImageView.clipsToBounds = true
+        
+        // Setup Buttons
+        leftButton.setImage(shareImage, for: UIControlState.normal)
+        leftButton.imageView?.alpha = 0.4
+        leftButton.imageView?.tintColor = UIColor.lightGray
+        leftButton.addTarget(self, action: #selector(leftButtonPressed), for: UIControlEvents.touchUpInside)
+        centerButton.setImage(likeImage, for: UIControlState.normal)
+        centerButton.imageView?.alpha = 0.4
+        centerButton.imageView?.tintColor = UIColor.lightGray
+        centerButton.addTarget(self, action: #selector(centerButtonPressed), for: UIControlEvents.touchUpInside)
+        rightButton.setImage(durationImage, for: UIControlState.normal)
+        rightButton.imageView?.alpha = 0.4
+        rightButton.imageView?.tintColor = UIColor.lightGray
+        rightButton.addTarget(self, action: #selector(rightButtonPressed), for: UIControlEvents.touchUpInside)
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -70,4 +97,42 @@ class ActivityCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    
+    /* MARK: - helper functions */
+    func leftButtonPressed() {
+        if leftBtnOn {
+            leftButton.imageView?.alpha = 0.4
+            leftButton.imageView?.tintColor = UIColor.lightGray
+            leftBtnOn = false
+        } else {
+            leftButton.imageView?.alpha = 1.0
+            leftButton.imageView?.tintColor = UIColor.blue
+            leftBtnOn = true
+        }
+    }
+    
+    func centerButtonPressed() {
+        if centerBtnOn {
+            centerButton.imageView?.alpha = 0.4
+            centerButton.imageView?.tintColor = UIColor.lightGray
+            centerBtnOn = false
+        } else {
+            centerButton.imageView?.alpha = 1.0
+            centerButton.imageView?.tintColor = UIColor.blue
+            centerBtnOn = true
+        }
+    }
+    
+    func rightButtonPressed() {
+        if rightBtnOn {
+            rightButton.imageView?.alpha = 0.4
+            rightButton.imageView?.tintColor = UIColor.lightGray
+            rightBtnOn = false
+        } else {
+            rightButton.imageView?.alpha = 1.0
+            rightButton.imageView?.tintColor = UIColor.blue
+            rightBtnOn = true
+        }
+    }
+    
 }
