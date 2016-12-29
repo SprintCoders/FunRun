@@ -12,6 +12,13 @@ import CoreLocation
 
 class RouteOnMap: NSObject {
     
+    // RGB for red (slowest)
+    static let redSpeedColor = UIColor(colorLiteralRed: 1.0, green: 51.0/255.0, blue: 51.0/255.0, alpha: 1.0)
+    // RGB for yellow (middle)
+    static let yellowSpeedColor = UIColor(colorLiteralRed: 1.0, green: 153.0/255.0, blue: 51.0/255.0, alpha: 1.0)
+    // RGB for blue (fastest)
+    static let blueSpeedColor = UIColor(colorLiteralRed: 51.0/255.0, green: 153.0/255.0, blue: 1.0, alpha: 1.0)
+    
     class func getMapRegion(forlocations locationSet: [CLLocation]) -> MKCoordinateRegion {
         var minLatitude: Double = (locationSet.first?.coordinate.latitude)!
         var minLongitude: Double = (locationSet.first?.coordinate.longitude)!
@@ -48,12 +55,23 @@ class RouteOnMap: NSObject {
     }
     
     class func getColoredPolyline(forlocations locationSet: [CLLocation], withBestSpeed bestSpeed: Double, withWorstSpeed worstSpeed: Double) -> [MulticolorPolylineSegment] {
-        let meanSpeed = (bestSpeed + worstSpeed) * 0.5
+        // let meanSpeed = (bestSpeed + worstSpeed) * 0.5
+        let speedDiff = bestSpeed - worstSpeed
+        let slowThreshold = worstSpeed + speedDiff*0.2
+        let fastThreshold = worstSpeed + speedDiff*0.4
         var colorSegments = [MulticolorPolylineSegment]()
         for index in 1...(locationSet.count-1) {
             let firstLoc = locationSet[index-1]
             let secondLoc = locationSet[index]
             var color: UIColor?
+            if secondLoc.speed < slowThreshold {
+                color = redSpeedColor
+            } else if secondLoc.speed < fastThreshold {
+                color = yellowSpeedColor
+            } else {
+                color = blueSpeedColor
+            }
+            /*
             if secondLoc.speed < meanSpeed {
                 let ratio = (secondLoc.speed - worstSpeed) / (meanSpeed - worstSpeed)
                 color = ColorGradient.colorBetweenRedAndYellow(ratio: ratio)
@@ -61,6 +79,7 @@ class RouteOnMap: NSObject {
                 let ratio = (secondLoc.speed - meanSpeed) / (bestSpeed - meanSpeed)
                 color = ColorGradient.colorBetweenYellowAndBlue(ratio: ratio)
             }
+            */
             let colorSegment = MulticolorPolylineSegment(coordinates: [firstLoc.coordinate, secondLoc.coordinate], count: 2)
             colorSegment.color = color
             colorSegments.append(colorSegment)

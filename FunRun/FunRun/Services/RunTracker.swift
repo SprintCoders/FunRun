@@ -80,8 +80,18 @@ class RunTracker: NSObject, CLLocationManagerDelegate {
         if locations.count > 0 {
             if self.runningStatus == RunningStatus.started {
                 var tempLength: Double = 0.0
-                var hasValidLocation: Bool = false
+                // var hasValidLocation: Bool = false
                 for alocation in locations {
+                    if abs(alocation.speed) < 10.0 {
+                        // update the record
+                        let lastLocation = self.locations?.last
+                        if lastLocation != nil {
+                            tempLength += alocation.distance(from: lastLocation!)
+                        }
+                        self.locations?.append(alocation)
+                    }
+                    
+                    /*
                     if alocation.horizontalAccuracy < 10 {
                         // update the record
                         let lastLocation = self.locations?.last
@@ -90,9 +100,9 @@ class RunTracker: NSObject, CLLocationManagerDelegate {
                         }
                         self.locations?.append(alocation)
                         hasValidLocation = true
-                    }
+                    }*/
                 }
-                if hasValidLocation {
+                // if hasValidLocation {
                     self.distanceSum += tempLength
                     var avgPaceInSeconds: Double = 0.0
                     if self.distanceSum > 0 {
@@ -110,9 +120,9 @@ class RunTracker: NSObject, CLLocationManagerDelegate {
                         self.caloriesSum += 155.0 * 0.75 * tempLength / 1609.344
                     }
                     self.runTrackerDelegate?.RunTrackerUpdate?(newDistance: self.distanceSum, newAvgPace: UInt(avgPaceInSeconds), newSpeed: lastSpeed, newTotalCal: self.caloriesSum)
-                } else {
-                    print("in RunTracker, no valid location")
-                }
+                // } else {
+                //     print("in RunTracker, no valid location")
+                // }
                 
             } else if self.runningStatus == RunningStatus.notStart {
                 self.runTrackerDelegate?.RunTrackerUpdate?(newLocation: locations.last)

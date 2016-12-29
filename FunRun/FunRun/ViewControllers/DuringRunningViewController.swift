@@ -7,16 +7,18 @@
 //
 
 import UIKit
+import MapKit
 
-class DuringRunningViewController: UIViewController, RunTrackerDelegate {
+class DuringRunningViewController: UIViewController, RunTrackerDelegate, UIGestureRecognizerDelegate, MKMapViewDelegate {
 
     
     @IBOutlet weak var buttonView: UIView!
-    @IBOutlet weak var timeCountView: UIView!
+    @IBOutlet weak var chartsView: UIView!
+    @IBOutlet weak var timeDistanceBarFrameView: UIView!
+    
+    
     @IBOutlet weak var simpleStatsView: UIView!
-    @IBOutlet weak var speedLogView: UIView!
-    @IBOutlet weak var distanceCountView: UIView!
-    @IBOutlet weak var distanceCountViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var speedLogCanvasView: UIView!
     
     @IBOutlet weak var pauseBtn: UIButton!
     @IBOutlet weak var stopBtn: UIButton!
@@ -24,10 +26,26 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
     @IBOutlet weak var timeCountLabel: UILabel!
     @IBOutlet weak var avgPaceLabel: UILabel!
     @IBOutlet weak var caloriesLabel: UILabel!
-    @IBOutlet weak var speedLogCanvasView: UIView!
     @IBOutlet weak var distanceCountLabel: UILabel!
     @IBOutlet weak var distanceUnitLabel: UILabel!
     
+    @IBOutlet weak var slidingContainerView: UIView!
+    @IBOutlet weak var bgMapView: MKMapView!
+    @IBOutlet weak var slidingContainerViewTopConstraint: NSLayoutConstraint!
+    
+    
+    @IBOutlet weak var slideupImageView: UIImageView!
+    @IBOutlet weak var slideUpBarView: UIView!
+    @IBOutlet weak var timeDistanceCountView: UIView!
+    @IBOutlet weak var slideDownBarView: UIView!
+    @IBOutlet weak var slidedownImageView: UIImageView!
+    
+    var slideDownPosCenter: CGPoint = CGPoint()
+    var slideUpPosCenter: CGPoint = CGPoint()
+    var slidedUp: Bool = false
+    var trayOriginalCenter: CGPoint = CGPoint()
+    var panGestureOriginalPoint: CGPoint = CGPoint()
+    var velocityOfTray: CGPoint = CGPoint()
     
     var timer: DispatchTimer?
     
@@ -46,52 +64,43 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         // self.hidesBottomBarWhenPushed = true
         RunTracker.shared.runTrackerDelegate = self
         
-        // Setup subview styles
-        self.timeCountView.layer.borderWidth = 1.0
-        self.simpleStatsView.layer.borderWidth = 1.0
-        self.speedLogView.layer.borderWidth = 1.0
-        self.speedLogView.clearsContextBeforeDrawing = true
-        self.distanceCountView.layer.borderWidth = 1.0
-        
         // Setup buttons
-        // self.pauseBtn.layer.borderWidth = 2.0
-        self.pauseBtn.layer.cornerRadius = 10.0
-        // let pauseBtnClr = self.pauseBtn.currentTitleColor
-        // self.pauseBtn.layer.borderColor = pauseBtnClr.cgColor
+        self.pauseBtn.layer.cornerRadius = 15.0
         self.pauseBtn.clipsToBounds = true
-        // self.stopBtn.layer.borderWidth = 2.0
-        self.stopBtn.layer.cornerRadius = 10.0
-        // let stopBtnClr = self.stopBtn.currentTitleColor
-        // self.stopBtn.layer.borderColor = stopBtnClr.cgColor
+        self.stopBtn.layer.cornerRadius = 15.0
         self.stopBtn.clipsToBounds = true
         self.pauseBtn.addTarget(self, action: #selector(pauseRunning), for: UIControlEvents.touchUpInside)
         // self.stopBtn.addTarget(self, action: #selector(stopRunning), for: UIControlEvents.touchUpInside)
         
-        // Setup BezierPath
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        /*
-        if self.paused {
-            self.tabBarController?.tabBar.isHidden = false
-            //self.distanceCountViewBottomConstraint.constant = (tabBarController?.tabBar.frame.height)!
-            
-        } else {
-            self.tabBarController?.tabBar.isHidden = true
-        }
-        */
-        self.distanceCountViewBottomConstraint.constant = 0.0
-        self.view.layoutIfNeeded()
+        // Setup arrows
+        self.slideupImageView.image = UIImage(named: "arrow_up")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        self.slideupImageView.tintColor = UIColor.lightGray
+        self.slidedownImageView.image = UIImage(named: "arrow_down")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        self.slidedownImageView.tintColor = UIColor.lightGray
+        self.slidedownImageView.alpha = 0.0
+        
+        // Setup mapView
+        self.bgMapView.showsUserLocation = false
+        self.bgMapView.delegate = self
+        // self.bgMapView.setUserTrackingMode(MKUserTrackingMode.none, animated: false)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        let centerX = self.view.frame.width*0.5
+        let slidingViewTopDownPosY = self.simpleStatsView.frame.origin.y - 82.0
+        let slidingViewHeight = self.slidingContainerView.frame.height
+        self.slideDownPosCenter = CGPoint(x: centerX, y: (slidingViewTopDownPosY + slidingViewHeight*0.5))
+        let slidingViewTopUpPosY = self.chartsView.frame.origin.y - 10.0
+        self.slideUpPosCenter = CGPoint(x: centerX, y: (slidingViewTopUpPosY + slidingViewHeight*0.5))
+        self.slidingContainerView.center = self.slideDownPosCenter
+        self.slidingContainerViewTopConstraint.constant = self.chartsView.frame.height - 82.0
         
         // Setup timer
         if self.timer == nil {
@@ -102,6 +111,7 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
             })
         }
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -130,6 +140,7 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
     
     /* MARK: - RunTrackerDelegate functions */
     func RunTrackerUpdate(newDistance distance: Double, newAvgPace avgPace: UInt, newSpeed speed: Double, newTotalCal calories: Double) {
+        
         self.accumulatedDistance = distance
         let paceHour: UInt = UInt(avgPace) / 3600
         let paceMin: UInt = (UInt(avgPace) % 3600) / 60
@@ -153,36 +164,44 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
                 self.distanceCountLabel.text = String(format: "%.2f", arguments: [distance/1609.344])
                 self.distanceUnitLabel.text = "miles"
             }
-            self.avgPaceLabel.text = self.avgPace.appending(" per mil")
-            self.caloriesLabel.text = "\(self.calories) Cal"
-            if (self.accumulatedTime & 0x2) == 0 {
-                self.drawSpeedGraph()
+            self.avgPaceLabel.text = self.avgPace
+            self.caloriesLabel.text = "\(self.calories)"
+            if !self.slidedUp {
+                if (self.accumulatedTime & 0x3) == 0 {
+                    self.drawSpeedGraph()
+                }
             }
         }
+ 
     }
     
+    
+    /* MARK: - MapView Delegate function */
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        if self.slidedUp {
+            let span = MKCoordinateSpanMake(0.005, 0.005)
+            let idealRegion = MKCoordinateRegion(center: userLocation.coordinate, span: span)
+            // self.bgMapView.centerCoordinate = userLocation.coordinate
+            let region = self.bgMapView.regionThatFits(idealRegion)
+            self.bgMapView.setRegion(region, animated: true)
+        }
+    }
     
     /* MARK: - Button function */
     func pauseRunning() {
         if self.paused {
             print("-- pressed resume button")
             self.timer?.resume()
-            self.pauseBtn.setTitle("PAUSE", for: UIControlState.normal)
+            self.pauseBtn.setTitle("Pause", for: UIControlState.normal)
             self.paused = false
             RunTracker.shared.runningStatus = RunningStatus.started
-            // self.tabBarController?.tabBar.isHidden = true
-            // self.distanceCountViewBottomConstraint.constant = 0.0
         } else {
             print("-- pressed pause button")
             self.timer?.suspend()
-            self.pauseBtn.setTitle("RESUME", for: UIControlState.normal)
+            self.pauseBtn.setTitle("Resume", for: UIControlState.normal)
             self.paused = true
             RunTracker.shared.runningStatus = RunningStatus.paused
-            // self.tabBarController?.tabBar.isHidden = false
-            // self.distanceCountViewBottomConstraint.constant = (tabBarController?.tabBar.frame.height)!
         }
-        // self.distanceCountViewBottomConstraint.constant = 0.0
-        // self.view.layoutIfNeeded()
     }
     
     /*
@@ -193,25 +212,109 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
     }
     */
     
+    
+    /* MARK: - Gesture Recognizer functions */
+    @IBAction func onTrayPanGesture(_ sender: UIPanGestureRecognizer) {
+        // print("panned !!! \n")
+        
+        let point = sender.location(in: self.view)
+        if sender.state == .began {
+            self.trayOriginalCenter = self.slidingContainerView.center
+            self.panGestureOriginalPoint = point
+        } else if sender.state == .changed {
+            self.velocityOfTray = sender.velocity(in: self.view)
+            let transitionY = point.y - self.panGestureOriginalPoint.y
+            self.slidingContainerView.center = CGPoint(x: self.trayOriginalCenter.x, y: (self.trayOriginalCenter.y + transitionY))
+            let gradient = transitionY/(self.slideDownPosCenter.y - self.slideUpPosCenter.y)
+            if self.slidedUp {
+                self.timeDistanceCountView.alpha = 0.5 + 0.5*gradient
+                self.simpleStatsView.alpha = 0.5 + 0.5*gradient
+                self.slidedownImageView.alpha = 1.0 - gradient
+                self.slidingContainerViewTopConstraint.constant = -10.0 + transitionY
+            } else {
+                self.timeDistanceCountView.alpha = 1.0 + 0.5*gradient
+                self.simpleStatsView.alpha = 1.0 + 0.5*gradient
+                self.slideupImageView.alpha = 1.0 + gradient
+                self.slidingContainerViewTopConstraint.constant = (self.chartsView.frame.height - 82.0) + transitionY
+            }
+        } else if sender.state == .ended {
+            if self.velocityOfTray.y < 0 {
+                UIView.animate(withDuration: 0.8, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+                    self.slidingContainerView.center = self.slideUpPosCenter
+                    self.slideupImageView.alpha = 0.0
+                    self.slidedownImageView.alpha = 1.0
+                    self.timeDistanceCountView.alpha = 0.5
+                    self.simpleStatsView.alpha = 0.5
+                    self.slidingContainerViewTopConstraint.constant = -10.0
+                    self.bgMapView.showsUserLocation = true
+                    self.slidedUp = true
+                }, completion: nil)
+            } else if self.velocityOfTray.y > 0 {
+                UIView.animate(withDuration: 0.8, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+                    self.slidingContainerView.center = self.slideDownPosCenter
+                    self.slideupImageView.alpha = 1.0
+                    self.slidedownImageView.alpha = 0.0
+                    self.timeDistanceCountView.alpha = 1.0
+                    self.simpleStatsView.alpha = 1.0
+                    self.slidingContainerViewTopConstraint.constant = self.chartsView.frame.height - 82.0
+                    self.bgMapView.showsUserLocation = false
+                    self.slidedUp = false
+                }, completion: nil)
+            }
+        }
+        
+    }
+    
+    @IBAction func onTrayTapGesture(_ sender: UITapGestureRecognizer) {
+        // print("tapped !!! \n")
+        if self.slidedUp {
+            UIView.animate(withDuration: 0.8, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+                self.slidingContainerView.center = self.slideDownPosCenter
+                self.slideupImageView.alpha = 1.0
+                self.slidedownImageView.alpha = 0.0
+                self.timeDistanceCountView.alpha = 1.0
+                self.simpleStatsView.alpha = 1.0
+                self.slidingContainerViewTopConstraint.constant = self.chartsView.frame.height - 82.0
+                self.bgMapView.showsUserLocation = false
+                self.slidedUp = false
+            }, completion: nil)
+        } else {
+            UIView.animate(withDuration: 0.2, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+                self.slidingContainerView.center = CGPoint(x: self.slideDownPosCenter.x, y: self.slideDownPosCenter.y-15.0)
+                self.slideupImageView.alpha = 0.0
+                self.slidingContainerViewTopConstraint.constant = (self.chartsView.frame.height - 82.0) - 15.0
+            }, completion: {(Bool) -> Void in
+                UIView.animate(withDuration: 0.2, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+                    self.slidingContainerView.center = self.slideDownPosCenter
+                    self.slideupImageView.alpha = 1.0
+                    self.slidingContainerViewTopConstraint.constant = self.chartsView.frame.height - 82.0
+                }, completion: nil)
+            })
+        }
+    }
+    
+    
+    
+    /* MARK: - helper functions */
     func drawSpeedGraph() {
         if self.speedSet.count > 0 {
             let scopeWidth = Double(self.speedLogCanvasView.bounds.width)
             let scopeHeight = Double(self.speedLogCanvasView.bounds.height)
-            let dy = scopeHeight/Double(self.speedSet.count)
+            let dx = scopeWidth/Double(self.speedSet.count)
             
             // let contextRecg = UIGraphicsGetCurrentContext()
             // contextRecg!.saveGState()
             self.speedLogPath.removeAllPoints()
-            self.speedLogPath.move(to: CGPoint(x: 0.0, y: 0.0))
-            var x = 0.0, y = 0.0
+            self.speedLogPath.move(to: CGPoint(x: 0.0, y: scopeHeight))
+            var x = 0.0, y = scopeHeight
             for speed in self.speedSet {
                 if self.bestSpeed > 0.0 {
-                    x = scopeWidth * speed / self.bestSpeed
+                    y = scopeHeight - (scopeHeight * speed / self.bestSpeed)
                 }
-                y += dy
+                x += dx
                 self.speedLogPath.addLine(to: CGPoint(x: x, y: y))
             }
-            self.speedLogPath.addLine(to: CGPoint(x: 0.0, y: y))
+            self.speedLogPath.addLine(to: CGPoint(x: x, y: scopeHeight))
             self.speedLogPath.close()
             // contextRecg!.restoreGState()
             let shapeLayer: CAShapeLayer = CAShapeLayer()
@@ -225,7 +328,7 @@ class DuringRunningViewController: UIViewController, RunTrackerDelegate {
             }
             self.speedLogCanvasView.layer.addSublayer(shapeLayer)
             
-            print("draw once -- -- \(self.bestSpeed)")
+            // print("draw once -- -- \(self.bestSpeed)")
         }
     }
     

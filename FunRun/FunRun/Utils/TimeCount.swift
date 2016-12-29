@@ -12,9 +12,12 @@ class TimeCount: NSObject {
     
     class func convertIntToTime(seconds: UInt32) -> String {
         var res = ""
+        /*
         if seconds/3600 > 0 {
             res += "\(seconds/3600):"
         }
+        */
+        res += "\(seconds/3600):"
         let lt1h = seconds%3600
         res += String(format: "%02d:", arguments: [lt1h/60])
         res += String(format: "%02d", arguments: [lt1h%60])

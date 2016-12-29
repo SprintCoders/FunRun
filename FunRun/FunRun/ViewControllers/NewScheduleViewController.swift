@@ -38,7 +38,7 @@ class NewScheduleViewController: UIViewController, JTCalendarDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func calendar(_ calendar: JTCalendarManager!, prepareDayView dayView: JTCalendarDayView!) {
+    @nonobjc func calendar(_ calendar: JTCalendarManager!, prepareDayView dayView: JTCalendarDayView!) {
         dayView.isHidden = false
 //        if(dayView.isFromAnotherMonth){
 //            dayView.isHidden = true
@@ -70,7 +70,7 @@ class NewScheduleViewController: UIViewController, JTCalendarDelegate {
         }
     }
     
-    func calendar(_ calendar: JTCalendarManager!, didTouchDayView dayView: JTCalendarDayView!) {
+    @nonobjc func calendar(_ calendar: JTCalendarManager!, didTouchDayView dayView: JTCalendarDayView!) {
          _dateSelected = dayView.date
         
         dayView.circleView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
